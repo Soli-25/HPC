@@ -1,10 +1,10 @@
-# Grace Church Melbourne - Próximos Passos
+# HPC Atlanta - Próximos Passos
 
-Uma página web elegante e luxuosa com design neutro para a Grace Church Melbourne, apresentando oportunidades de envolvimento e próximos passos na jornada de fé.
+Uma página web elegante e luxuosa com design neutro para a HPC (House of Prayer for all Nations), apresentando oportunidades de envolvimento e próximos passos na jornada de fé.
 
 ## 🌟 Visão Geral
 
-Este site foi inspirado na página original da Grace Church Melbourne (https://www.gracechurch.life/nextsteps) e recriado com um design moderno, elegante e sofisticado usando tons neutros.
+Este site foi criado com um design moderno, elegante e sofisticado usando tons neutros para a igreja brasileira HPC Atlanta, localizada em Marietta, Georgia.
 
 ## 🎨 Design
 
@@ -16,7 +16,33 @@ Este site foi inspirado na página original da Grace Church Melbourne (https://w
 ## 🚀 URLs Públicas
 
 - **Desenvolvimento**: https://3000-ihvtjt4eoboqu6y8hpg0r-c07dda5e.sandbox.novita.ai
-- **Instagram**: https://www.instagram.com/gracechurch.life/
+- **Instagram**: https://www.instagram.com/hpcatlanta/
+
+## ⛪ Informações da Igreja
+
+### **Nome Completo**
+HPC - House of Prayer for all Nations (Casa de Oração para Todas as Nações)
+
+### **Localização**
+📍 3379 Canton Rd, Marietta, GA 30066, Estados Unidos
+
+### **Contato**
+- 📞 Telefone: +1 (770) 862-0756
+- 📱 Instagram: @hpcatlanta
+
+### **Pastores**
+- Pr. Otávio Amorim
+- Natália Müller
+
+### **Horários de Culto**
+- 🗓️ **Domingo**: 10:00 AM
+- 🗓️ **Terça-feira**: 8:00 PM  
+- 🗓️ **Quinta-feira**: 8:00 PM
+
+### **Sobre**
+Uma igreja brasileira (Brazilian Church) em Marietta, GA. Uma casa de oração para todas as nações onde todos são bem-vindos!
+
+**Missão**: Venha viver o que Deus tem para você! 🙏
 
 ## ✨ Funcionalidades Implementadas
 
@@ -24,15 +50,16 @@ Este site foi inspirado na página original da Grace Church Melbourne (https://w
 
 1. **Hero Section** (Cabeçalho Principal)
    - Título impactante: "Dê Seu Próximo Passo"
-   - Frase de missão da igreja
+   - Frase da missão: "Uma casa de oração para todas as nações"
    - Banner de inscrição com data destacada
 
-2. **Descubra a Grace Church**
-   - Informações sobre a orientação para novos membros
-   - Próximo evento com data e horário
+2. **Descubra a HPC**
+   - Informações sobre a igreja brasileira
+   - Horários de culto completos
+   - Informações dos pastores
    - Formulário de inscrição via modal
 
-3. **Equipe dos Sonhos**
+3. **Faça Parte da Equipe**
    - Oportunidades de servir na igreja
    - Ministérios disponíveis
    - Formulário de interesse com áreas específicas
@@ -64,17 +91,6 @@ Este site foi inspirado na página original da Grace Church Melbourne (https://w
 - ✅ Estados de loading em formulários
 - ✅ Validação de formulários
 - ✅ Mensagens de sucesso
-
-## 📊 Estrutura de Dados
-
-### Horários de Culto
-- Quintas-feiras às 19:30
-- Domingos às 8:30, 10:15 e 12:00
-
-### Informações de Contato
-- Email: contato@gracechurch.life
-- Telefone: (321) 555-0123
-- Instagram: @gracechurch.life
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -154,6 +170,7 @@ npm run deploy
 - [ ] Integração com calendário de eventos
 - [ ] Sistema de pagamentos para contribuições
 - [ ] Analytics e métricas de uso
+- [ ] Google Maps integrado com localização da igreja
 
 ## 📝 Próximos Passos Recomendados
 
@@ -163,7 +180,8 @@ npm run deploy
 4. **CMS**: Adicionar sistema de gerenciamento de conteúdo
 5. **SEO**: Otimizar meta tags e structured data
 6. **Analytics**: Integrar Google Analytics ou similar
-7. **A/B Testing**: Testar variações de design e conteúdo
+7. **Google Maps**: Adicionar mapa interativo da localização
+8. **Multi-idioma**: Adicionar versão em inglês do site
 
 ## 🎨 Customização
 
@@ -213,19 +231,22 @@ O site é totalmente responsivo com breakpoints:
 
 ## 📄 Licença
 
-© 2025 Grace Church Melbourne. Todos os direitos reservados.
+© 2025 HPC Atlanta - House of Prayer for all Nations. Todos os direitos reservados.
 
-## 👥 Missão da Igreja
+## 🙏 Sobre a HPC Atlanta
 
-**"Transformando a Costa Espacial com o amor radical de Jesus"**
+**House of Prayer for all Nations**
 
-Na Grace Church, somos apaixonados por criar uma atmosfera acolhedora onde as pessoas podem se reunir para celebrar e aprender sobre a esperança e o amor de Jesus. Nos esforçamos para criar um ambiente onde todos se sintam bem-vindos e amados, não importa quem você seja ou de onde você venha.
+Uma igreja brasileira (Brazilian Church) em Marietta, Georgia, dedicada a ser uma casa de oração acolhedora para pessoas de todas as nações. Sob a liderança dos Pastores Otávio Amorim e Natália Müller, a HPC Atlanta oferece cultos em português e cria um ambiente onde todos podem experimentar o amor de Deus.
+
+**Venha viver o que Deus tem para você!** ❤️‍🔥
 
 ## 📞 Suporte
 
 Para questões técnicas ou sugestões de melhorias, entre em contato através de:
-- Email: contato@gracechurch.life
-- Instagram: @gracechurch.life
+- Telefone: +1 (770) 862-0756
+- Instagram: @hpcatlanta
+- Localização: 3379 Canton Rd, Marietta, GA 30066
 
 ---
 
