@@ -1,131 +1,232 @@
-# Grace Church - Próximos Passos
+# Grace Church Melbourne - Próximos Passos
 
-Uma aplicação web moderna e responsiva inspirada na página "Next Steps" da Grace Church, recriada com Hono, Tailwind CSS e Cloudflare Pages.
+Uma página web elegante e luxuosa com design neutro para a Grace Church Melbourne, apresentando oportunidades de envolvimento e próximos passos na jornada de fé.
 
-## 🎯 Visão Geral do Projeto
+## 🌟 Visão Geral
 
-Este site foi projetado para ajudar visitantes e membros da igreja a descobrir oportunidades de engajamento, crescimento espiritual e conexão com a comunidade.
+Este site foi inspirado na página original da Grace Church Melbourne (https://www.gracechurch.life/nextsteps) e recriado com um design moderno, elegante e sofisticado usando tons neutros.
+
+## 🎨 Design
+
+- **Paleta de Cores**: Tons neutros elegantes (cinza, preto, branco, bege)
+- **Tipografia**: Playfair Display (serif) + Inter (sans-serif)
+- **Estilo**: Luxuoso, minimalista, clean e profissional
+- **Responsivo**: Totalmente adaptável para mobile, tablet e desktop
+
+## 🚀 URLs Públicas
+
+- **Desenvolvimento**: https://3000-ihvtjt4eoboqu6y8hpg0r-c07dda5e.sandbox.novita.ai
+- **Instagram**: https://www.instagram.com/gracechurch.life/
 
 ## ✨ Funcionalidades Implementadas
 
 ### Seções Principais
 
-1. **Hero Section** - Banner de boas-vindas com call-to-action e informações sobre próximos eventos
-2. **Descobrir a Grace Church** - Orientação para recém-chegados sobre visão e valores da igreja
-3. **Equipe dos Sonhos** - Introdução ao serviço voluntário e oportunidades de envolvimento
-4. **Batismo** - Informações sobre batismo com citação bíblica (Atos 2:38) e formulário de inscrição
-5. **Grupos de Conexão** - Apresentação de grupos de estudo bíblico, atividades e serviço
-6. **Conectar-se** - Cartão de conexão, pedidos de oração e contribuições
-7. **Guia SOAP** - Método de estudo bíblico (Escritura, Observação, Aplicação, Oração)
+1. **Hero Section** (Cabeçalho Principal)
+   - Título impactante: "Dê Seu Próximo Passo"
+   - Frase de missão da igreja
+   - Banner de inscrição com data destacada
 
-### Características Técnicas
+2. **Descubra a Grace Church**
+   - Informações sobre a orientação para novos membros
+   - Próximo evento com data e horário
+   - Formulário de inscrição via modal
 
-- ✅ **Design Responsivo** - Layout adaptável para desktop, tablet e mobile
-- ✅ **Navegação Smooth Scroll** - Rolagem suave entre seções
-- ✅ **Menu Mobile** - Menu hambúrguer para dispositivos móveis
-- ✅ **Sistema de Modais** - Formulários interativos para cada tipo de inscrição
-- ✅ **Animações** - Transições suaves e efeitos visuais
-- ✅ **Validação de Formulários** - Campos obrigatórios e validação de email
-- ✅ **Mensagens de Sucesso** - Feedback visual após envio de formulários
-- ✅ **Ícones Font Awesome** - Ícones modernos e profissionais
-- ✅ **Tailwind CSS** - Estilização moderna e eficiente
+3. **Equipe dos Sonhos**
+   - Oportunidades de servir na igreja
+   - Ministérios disponíveis
+   - Formulário de interesse com áreas específicas
 
-## 🌐 URLs
+4. **Batismo**
+   - Informações sobre o batismo
+   - Versículo bíblico (Atos 2:38)
+   - Formulário de interesse em ser batizado
 
-- **Desenvolvimento Local**: https://3000-ihvtjt4eoboqu6y8hpg0r-c07dda5e.sandbox.novita.ai
-- **Porta Local**: http://localhost:3000
+5. **Grupos de Conexão**
+   - Três tipos de grupos: Estudo Bíblico, Atividades, Serviço
+   - Inscrições abertas
+   - Formulário de interesse
 
-## 🏗️ Arquitetura de Dados
+6. **Conecte-se Conosco**
+   - Cartão de conexão
+   - Pedidos de oração
+   - Contribuições
+   - Guia SOAP para estudo bíblico
 
-### Estrutura de Dados dos Formulários
+### Funcionalidades Interativas
 
-Cada modal coleta informações específicas baseadas no tipo de engajamento:
+- ✅ Menu de navegação responsivo com mobile menu
+- ✅ Smooth scrolling para navegação interna
+- ✅ Modais dinâmicos para formulários
+- ✅ Sistema de formulários específicos para cada seção
+- ✅ Animações suaves (fade-in, hover effects)
+- ✅ Barra de progresso de scroll
+- ✅ Estados de loading em formulários
+- ✅ Validação de formulários
+- ✅ Mensagens de sucesso
 
-- **Discover** - Nome, Email, Telefone, Status de visita, Comentários
-- **Team** - Nome, Email, Telefone, Área de interesse, Habilidades
-- **Baptism** - Nome, Email, Telefone, Status de salvação, Batismo anterior, Testemunho
-- **Groups** - Nome, Email, Telefone, Tipo de grupo, Preferência de horário
-- **Connect** - Nome, Email, Telefone, Status de visitante, Como ajudar
-- **Prayer** - Nome, Email, Telefone, Pedido de oração, Confidencialidade
-- **Give** - Nome, Email, Telefone, Tipo de contribuição, Valor
+## 📊 Estrutura de Dados
 
-### Serviços de Armazenamento
+### Horários de Culto
+- Quintas-feiras às 19:30
+- Domingos às 8:30, 10:15 e 12:00
 
-Atualmente os dados são simulados no frontend. Para produção, pode-se integrar:
+### Informações de Contato
+- Email: contato@gracechurch.life
+- Telefone: (321) 555-0123
+- Instagram: @gracechurch.life
 
-- **Cloudflare D1** - Banco de dados SQLite para armazenar inscrições
-- **Cloudflare KV** - Cache de configurações e conteúdo
-- **APIs de Email** - SendGrid, Mailgun ou Resend para notificações
+## 🛠️ Tecnologias Utilizadas
 
-## 📱 Guia do Usuário
-
-### Para Visitantes
-
-1. **Explore as Seções** - Role a página ou use o menu de navegação
-2. **Inscreva-se em Eventos** - Clique nos botões "Inscreva-se Agora" para registrar interesse
-3. **Preencha Formulários** - Modais intuitivos guiam você pelo processo
-4. **Conecte-se** - Use o cartão de conexão ou envie pedidos de oração
-
-### Para Administradores
-
-Os dados dos formulários podem ser enviados para:
-- Sistema de gerenciamento de membros da igreja
-- Planilhas Google via API
-- Banco de dados Cloudflare D1
-- Serviços de email marketing
-
-## 🚀 Deployment
-
-### Status Atual
-- ✅ **Sandbox Ativo** - Rodando localmente com PM2
-- ⏳ **Cloudflare Pages** - Pronto para deploy
-- ⏳ **GitHub** - Pronto para versionamento
-
-### Stack Tecnológica
-- **Framework**: Hono (Edge-first web framework)
-- **Frontend**: Tailwind CSS + Vanilla JavaScript
+- **Framework Backend**: Hono (TypeScript)
 - **Runtime**: Cloudflare Workers/Pages
 - **Build Tool**: Vite
-- **Process Manager**: PM2 (desenvolvimento)
+- **Styling**: Tailwind CSS + Custom CSS
+- **Fonts**: Google Fonts (Playfair Display, Inter)
+- **Icons**: Font Awesome 6.4.0
+- **Process Manager**: PM2
 
-### Última Atualização
-2 de Dezembro de 2025
+## 📁 Estrutura do Projeto
 
-## 🛠️ Comandos Úteis
+```
+webapp/
+├── src/
+│   ├── index.tsx          # Aplicação principal Hono
+│   └── renderer.tsx       # Renderizador JSX
+├── public/
+│   └── static/
+│       ├── style.css      # Estilos customizados
+│       └── app.js         # JavaScript interativo
+├── dist/                  # Build de produção
+├── ecosystem.config.cjs   # Configuração PM2
+├── wrangler.jsonc         # Configuração Cloudflare
+├── package.json
+└── README.md
+```
+
+## 🚦 Como Executar
+
+### Desenvolvimento Local
 
 ```bash
+# Instalar dependências
+npm install
+
 # Build do projeto
 npm run build
 
-# Iniciar servidor de desenvolvimento
+# Iniciar servidor de desenvolvimento com PM2
 pm2 start ecosystem.config.cjs
+
+# Verificar status
+pm2 list
 
 # Ver logs
 pm2 logs webapp --nostream
 
-# Parar serviço
+# Parar servidor
 pm2 stop webapp
+```
 
-# Reiniciar serviço
-pm2 restart webapp
+### Comandos Úteis
+
+```bash
+# Limpar porta 3000
+npm run clean-port
+
+# Testar servidor
+npm test  # ou curl http://localhost:3000
+
+# Build para produção
+npm run build
 
 # Deploy para Cloudflare Pages
 npm run deploy
 ```
 
-## 📋 Próximos Passos Recomendados
+## 🎯 Funcionalidades Pendentes
 
-1. **Integração Backend** - Conectar formulários a um banco de dados real (Cloudflare D1)
-2. **Sistema de Email** - Configurar notificações automáticas por email
-3. **CMS Integration** - Adicionar painel administrativo para gerenciar conteúdo
-4. **Analytics** - Implementar rastreamento de eventos e conversões
-5. **SEO** - Otimizar meta tags e structured data
-6. **Imagens Reais** - Substituir placeholders por fotos reais da igreja
-7. **Autenticação** - Sistema de login para membros
-8. **Calendário de Eventos** - Sistema de RSVP para eventos futuros
-9. **Multilíngue** - Suporte para múltiplos idiomas
-10. **Acessibilidade** - Melhorar ARIA labels e navegação por teclado
+- [ ] Integração com backend para envio de formulários
+- [ ] Sistema de autenticação
+- [ ] Dashboard administrativo
+- [ ] Integração com sistema de gerenciamento de membros
+- [ ] Sistema de notificações por email
+- [ ] Integração com calendário de eventos
+- [ ] Sistema de pagamentos para contribuições
+- [ ] Analytics e métricas de uso
+
+## 📝 Próximos Passos Recomendados
+
+1. **Backend API**: Implementar endpoints para processar formulários
+2. **Database**: Configurar Cloudflare D1 para armazenar dados
+3. **Email**: Integrar serviço de email (SendGrid, Mailgun)
+4. **CMS**: Adicionar sistema de gerenciamento de conteúdo
+5. **SEO**: Otimizar meta tags e structured data
+6. **Analytics**: Integrar Google Analytics ou similar
+7. **A/B Testing**: Testar variações de design e conteúdo
+
+## 🎨 Customização
+
+### Cores Principais
+
+As cores podem ser ajustadas no arquivo `public/static/style.css`:
+
+```css
+:root {
+  --color-primary: #2C2C2C;    /* Cinza escuro principal */
+  --color-secondary: #1A1A1A;  /* Preto suave */
+  --color-accent: #8B7355;     /* Bege/marrom */
+  --color-text: #4A4A4A;       /* Cinza texto */
+  --color-light: #F5F5F5;      /* Cinza claro */
+}
+```
+
+### Tipografia
+
+```css
+--font-serif: 'Playfair Display', serif;  /* Títulos */
+--font-sans: 'Inter', sans-serif;         /* Corpo de texto */
+```
+
+## 📱 Responsividade
+
+O site é totalmente responsivo com breakpoints:
+
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## ♿ Acessibilidade
+
+- Navegação por teclado
+- Estados de foco visíveis
+- Contraste adequado de cores
+- Textos alternativos para ícones
+- Estrutura semântica HTML5
+
+## 🔒 Segurança
+
+- Validação de formulários no cliente
+- Proteção contra XSS
+- HTTPS obrigatório em produção
+- Headers de segurança configurados
 
 ## 📄 Licença
 
-Este é um projeto de demonstração inspirado no design da Grace Church Melbourne.
+© 2025 Grace Church Melbourne. Todos os direitos reservados.
+
+## 👥 Missão da Igreja
+
+**"Transformando a Costa Espacial com o amor radical de Jesus"**
+
+Na Grace Church, somos apaixonados por criar uma atmosfera acolhedora onde as pessoas podem se reunir para celebrar e aprender sobre a esperança e o amor de Jesus. Nos esforçamos para criar um ambiente onde todos se sintam bem-vindos e amados, não importa quem você seja ou de onde você venha.
+
+## 📞 Suporte
+
+Para questões técnicas ou sugestões de melhorias, entre em contato através de:
+- Email: contato@gracechurch.life
+- Instagram: @gracechurch.life
+
+---
+
+**Desenvolvido com ❤️ usando Hono + Cloudflare Pages**
