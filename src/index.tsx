@@ -7,107 +7,114 @@ app.use(renderer)
 
 app.get('/', (c) => {
   return c.render(
-    <div class="min-h-screen bg-gray-50">
+    <div class="min-h-screen bg-neutral-50">
       {/* Navigation */}
-      <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+      <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex justify-between items-center h-16">
+          <div class="flex justify-between items-center h-20">
             <div class="flex items-center">
-              <h1 class="text-2xl font-bold text-gray-900">Grace Church</h1>
+              <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">Grace Church Melbourne</h1>
             </div>
-            <div class="hidden md:flex space-x-8">
-              <a href="#discover" class="text-gray-700 hover:text-blue-600 transition">Descobrir</a>
-              <a href="#team" class="text-gray-700 hover:text-blue-600 transition">Equipe</a>
-              <a href="#baptism" class="text-gray-700 hover:text-blue-600 transition">Batismo</a>
-              <a href="#groups" class="text-gray-700 hover:text-blue-600 transition">Grupos</a>
-              <a href="#connect" class="text-gray-700 hover:text-blue-600 transition">Conectar</a>
+            <div class="hidden md:flex space-x-10">
+              <a href="#discover" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Descobrir</a>
+              <a href="#team" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Servir</a>
+              <a href="#baptism" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Batismo</a>
+              <a href="#groups" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Grupos</a>
+              <a href="#connect" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Conectar</a>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+            <button id="mobile-menu-btn" class="md:hidden text-neutral-700">
               <i class="fas fa-bars text-xl"></i>
             </button>
           </div>
         </div>
         {/* Mobile Menu */}
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-neutral-200">
           <div class="px-2 pt-2 pb-3 space-y-1">
-            <a href="#discover" class="block px-3 py-2 text-gray-700 hover:bg-gray-100">Descobrir</a>
-            <a href="#team" class="block px-3 py-2 text-gray-700 hover:bg-gray-100">Equipe</a>
-            <a href="#baptism" class="block px-3 py-2 text-gray-700 hover:bg-gray-100">Batismo</a>
-            <a href="#groups" class="block px-3 py-2 text-gray-700 hover:bg-gray-100">Grupos</a>
-            <a href="#connect" class="block px-3 py-2 text-gray-700 hover:bg-gray-100">Conectar</a>
+            <a href="#discover" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Descobrir</a>
+            <a href="#team" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Servir</a>
+            <a href="#baptism" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Batismo</a>
+            <a href="#groups" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Grupos</a>
+            <a href="#connect" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Conectar</a>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section class="pt-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <div class="text-center">
-            <h2 class="text-5xl md:text-6xl font-bold mb-6">Dê Seu Próximo Passo.</h2>
-            <p class="text-xl md:text-2xl mb-8 text-blue-100">
-              Junte-se a nós em uma jornada de fé, crescimento e comunidade.
+      <section class="pt-20 bg-gradient-to-br from-neutral-800 via-neutral-700 to-neutral-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
+          <div class="text-center max-w-4xl mx-auto">
+            <p class="text-sm font-medium tracking-widest text-neutral-300 uppercase mb-6">Grace Church Melbourne</p>
+            <h2 class="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">Dê Seu Próximo Passo.</h2>
+            <p class="text-xl md:text-2xl mb-10 text-neutral-200 font-light leading-relaxed">
+              Venha e encontre esperança real para a vida real que só pode ser encontrada em Jesus!
             </p>
-            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 inline-block">
-              <p class="text-lg font-semibold">
-                <i class="far fa-calendar-check mr-2"></i>
-                Agora inscrevendo para 2 de Dezembro de 2025
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-8 inline-block">
+              <p class="text-base font-medium text-neutral-100 mb-2 uppercase tracking-wide">
+                Inscrevendo Agora
+              </p>
+              <p class="text-2xl font-serif font-bold">
+                2 de Dezembro de 2025
               </p>
             </div>
           </div>
         </div>
-        <div class="wave-bottom"></div>
       </section>
 
       {/* Discover Grace Church Section */}
-      <section id="discover" class="py-20 bg-white">
+      <section id="discover" class="py-24 md:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h3 class="text-4xl font-bold text-gray-900 mb-6">Descubra a Grace Church</h3>
-              <p class="text-lg text-gray-700 mb-6">
-                Uma orientação especial para recém-chegados conhecerem nossa visão, valores fundamentais e como encontrar seu lugar em nossa comunidade.
+              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Bem-vindo</p>
+              <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-8 leading-tight">Descubra a Grace Church</h3>
+              <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+                Na Grace Church, somos apaixonados por criar uma atmosfera acolhedora onde as pessoas podem se reunir para celebrar e aprender sobre a esperança e o amor de Jesus.
               </p>
-              <div class="bg-blue-50 rounded-lg p-6 mb-6">
-                <p class="text-lg font-semibold text-blue-900 mb-2">
+              <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-8 mb-8">
+                <p class="text-sm font-medium text-neutral-500 mb-3 uppercase tracking-wide">
                   <i class="far fa-calendar mr-2"></i>
                   Próximo Evento
                 </p>
-                <p class="text-gray-700">20 de Novembro de 2025 às 18:00</p>
+                <p class="text-2xl font-serif font-bold text-neutral-900 mb-1">20 de Novembro de 2025</p>
+                <p class="text-neutral-600">18:00</p>
               </div>
-              <p class="text-gray-700 mb-6">
-                Este evento ajuda você a descobrir onde você pertence e como ser conectado, conhecido e amado em nossa comunidade.
+              <p class="text-neutral-600 mb-8 leading-relaxed">
+                Nos esforçamos para criar um ambiente onde todos se sintam bem-vindos e amados, não importa quem você seja ou de onde você venha.
               </p>
               <button class="btn-primary" onclick="openModal('discover')">
                 Inscreva-se Agora
               </button>
             </div>
             <div class="relative">
-              <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg shadow-2xl flex items-center justify-center">
-                <i class="fas fa-church text-white text-9xl opacity-20"></i>
+              <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl flex items-center justify-center overflow-hidden">
+                <i class="fas fa-church text-neutral-400 text-9xl"></i>
               </div>
+              <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Dream Team Section */}
-      <section id="team" class="py-20 bg-gray-50">
+      <section id="team" class="py-24 md:py-32 bg-neutral-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="grid md:grid-cols-2 gap-16 items-center">
             <div class="order-2 md:order-1 relative">
-              <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg shadow-2xl flex items-center justify-center">
-                <i class="fas fa-users text-white text-9xl opacity-20"></i>
+              <div class="aspect-square bg-gradient-to-br from-neutral-700 via-neutral-600 to-neutral-800 rounded-lg shadow-xl flex items-center justify-center overflow-hidden">
+                <i class="fas fa-hands-helping text-neutral-400 text-9xl"></i>
               </div>
+              <div class="absolute -top-6 -left-6 w-32 h-32 bg-neutral-100 rounded-lg -z-10"></div>
             </div>
             <div class="order-1 md:order-2">
-              <h3 class="text-4xl font-bold text-gray-900 mb-6">Descubra a Equipe dos Sonhos</h3>
-              <p class="text-lg text-gray-700 mb-6">
-                Uma introdução ao serviço e envolvimento da equipe. Descubra como crescer espiritualmente através do serviço aos outros.
+              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Oportunidades de Servir</p>
+              <h3 class="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">Descubra a Equipe dos Sonhos</h3>
+              <p class="text-lg text-neutral-300 mb-8 leading-relaxed">
+                Explore a vida da nossa igreja, incluindo nossos ministérios vibrantes, eventos futuros e oportunidades de servir.
               </p>
-              <p class="text-gray-700 mb-6">
-                Perfeito para recém-chegados ou aqueles que se sentem estagnados em sua fé. Ajudamos você a encontrar os próximos passos para servir e fazer a diferença.
+              <p class="text-neutral-300 mb-8 leading-relaxed">
+                Perfeito para recém-chegados ou aqueles que se sentem estagnados em sua fé. Ajudamos você a encontrar os próximos passos para servir e fazer a diferença na comunidade.
               </p>
-              <button class="btn-primary" onclick="openModal('team')">
+              <button class="bg-white text-neutral-900 px-8 py-4 rounded-lg text-base font-semibold hover:bg-neutral-100 transition tracking-wide" onclick="openModal('team')">
                 Junte-se à Equipe
               </button>
             </div>
@@ -116,31 +123,33 @@ app.get('/', (c) => {
       </section>
 
       {/* Baptism Section */}
-      <section id="baptism" class="py-20 bg-white">
+      <section id="baptism" class="py-24 md:py-32 bg-neutral-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
-            <h3 class="text-4xl font-bold text-gray-900 mb-6">Batismo</h3>
-            <p class="text-xl text-gray-700 mb-6">
+          <div class="text-center mb-16">
+            <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Um Passo de Fé</p>
+            <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-6">Batismo</h3>
+            <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
               Adoraríamos que você participasse do Batismo!
             </p>
           </div>
-          <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="grid md:grid-cols-2 gap-16 items-center">
             <div class="relative">
-              <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg shadow-2xl flex items-center justify-center overflow-hidden">
-                <i class="fas fa-water text-white text-9xl opacity-20"></i>
+              <div class="aspect-square bg-gradient-to-br from-neutral-200 via-neutral-100 to-white rounded-lg shadow-xl flex items-center justify-center overflow-hidden border border-neutral-200">
+                <i class="fas fa-water text-neutral-300 text-9xl"></i>
               </div>
+              <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
             </div>
             <div>
-              <div class="bg-blue-50 rounded-lg p-8 mb-6">
-                <p class="text-lg text-gray-800 mb-4">
-                  <i class="fas fa-book-bible mr-2 text-blue-600"></i>
-                  <strong>Atos 2:38</strong>
+              <div class="bg-white border border-neutral-200 rounded-lg p-8 mb-8 shadow-sm">
+                <p class="text-sm font-medium text-neutral-500 mb-4 uppercase tracking-wide">
+                  <i class="fas fa-book-bible mr-2"></i>
+                  Atos 2:38
                 </p>
-                <p class="text-gray-700 italic">
+                <p class="text-lg text-neutral-700 italic leading-relaxed">
                   "Arrependam-se, e cada um de vocês seja batizado em nome de Jesus Cristo para perdão dos seus pecados, e receberão o dom do Espírito Santo."
                 </p>
               </div>
-              <p class="text-gray-700 mb-6">
+              <p class="text-neutral-600 mb-8 leading-relaxed">
                 O batismo é um passo importante na jornada de fé. É uma declaração pública do seu compromisso com Cristo e uma celebração da nova vida que você encontrou Nele.
               </p>
               <button class="btn-primary" onclick="openModal('baptism')">
@@ -152,43 +161,44 @@ app.get('/', (c) => {
       </section>
 
       {/* Connection Groups Section */}
-      <section id="groups" class="py-20 bg-gradient-to-br from-purple-600 to-pink-600 text-white">
+      <section id="groups" class="py-24 md:py-32 bg-neutral-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
-            <h3 class="text-4xl font-bold mb-6">Grupos de Conexão</h3>
-            <p class="text-2xl font-semibold mb-4">Somos Melhores Juntos</p>
-            <p class="text-xl text-purple-100">
+          <div class="text-center mb-16">
+            <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Comunidade</p>
+            <h3 class="text-4xl md:text-5xl font-serif font-bold mb-6">Grupos de Conexão</h3>
+            <p class="text-2xl font-serif font-semibold mb-4 text-neutral-100">Somos Melhores Juntos</p>
+            <p class="text-lg text-neutral-300 max-w-2xl mx-auto">
               As inscrições estão abertas para grupos de outono!
             </p>
           </div>
-          <div class="grid md:grid-cols-3 gap-8 mb-12">
-            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <i class="fas fa-book-open text-4xl mb-4"></i>
-              <h4 class="text-xl font-bold mb-3">Estudo Bíblico</h4>
-              <p class="text-purple-100">
+          <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-8 hover:bg-neutral-750 transition">
+              <i class="fas fa-book-open text-4xl mb-6 text-neutral-400"></i>
+              <h4 class="text-xl font-semibold mb-4 text-neutral-100">Estudo Bíblico</h4>
+              <p class="text-neutral-300 leading-relaxed">
                 Aprofunde-se na Palavra de Deus com outros crentes em um ambiente acolhedor e encorajador.
               </p>
             </div>
-            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <i class="fas fa-heart text-4xl mb-4"></i>
-              <h4 class="text-xl font-bold mb-3">Grupos de Atividades</h4>
-              <p class="text-purple-100">
+            <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-8 hover:bg-neutral-750 transition">
+              <i class="fas fa-heart text-4xl mb-6 text-neutral-400"></i>
+              <h4 class="text-xl font-semibold mb-4 text-neutral-100">Grupos de Atividades</h4>
+              <p class="text-neutral-300 leading-relaxed">
                 Construa amizades através de interesses compartilhados e atividades divertidas.
               </p>
             </div>
-            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <i class="fas fa-hands-helping text-4xl mb-4"></i>
-              <h4 class="text-xl font-bold mb-3">Grupos de Serviço</h4>
-              <p class="text-purple-100">
+            <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-8 hover:bg-neutral-750 transition">
+              <i class="fas fa-hands-helping text-4xl mb-6 text-neutral-400"></i>
+              <h4 class="text-xl font-semibold mb-4 text-neutral-100">Grupos de Serviço</h4>
+              <p class="text-neutral-300 leading-relaxed">
                 Sirva juntos e faça a diferença na comunidade enquanto cresce em fé.
               </p>
             </div>
           </div>
           <div class="text-center">
-            <p class="text-xl mb-6">
+            <p class="text-lg mb-8 text-neutral-300">
               Construa amizades, compartilhe a vida e desenvolva relacionamentos autênticos.
             </p>
-            <button class="bg-white text-purple-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 transition" onclick="openModal('groups')">
+            <button class="bg-white text-neutral-900 px-8 py-4 rounded-lg text-base font-semibold hover:bg-neutral-100 transition tracking-wide" onclick="openModal('groups')">
               Encontre Seu Grupo
             </button>
           </div>
@@ -196,39 +206,40 @@ app.get('/', (c) => {
       </section>
 
       {/* Get Connected Section */}
-      <section id="connect" class="py-20 bg-white">
+      <section id="connect" class="py-24 md:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
-            <h3 class="text-4xl font-bold text-gray-900 mb-6">Conecte-se Conosco</h3>
-            <p class="text-xl text-gray-700">
+          <div class="text-center mb-16">
+            <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Faça Parte</p>
+            <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-6">Conecte-se Conosco</h3>
+            <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
               Não importa em que fase da vida você esteja, queremos ajudá-lo a dar o próximo passo.
             </p>
           </div>
           <div class="grid md:grid-cols-3 gap-8">
-            <div class="text-center p-8 bg-gray-50 rounded-lg hover:shadow-lg transition">
-              <i class="fas fa-id-card text-5xl text-blue-600 mb-4"></i>
-              <h4 class="text-2xl font-bold text-gray-900 mb-4">Cartão de Conexão</h4>
-              <p class="text-gray-700 mb-6">
+            <div class="text-center p-10 bg-neutral-50 border border-neutral-200 rounded-lg hover:shadow-xl hover:border-neutral-300 transition">
+              <i class="fas fa-id-card text-5xl text-neutral-700 mb-6"></i>
+              <h4 class="text-xl font-semibold text-neutral-900 mb-4">Cartão de Conexão</h4>
+              <p class="text-neutral-600 mb-8 leading-relaxed">
                 Preencha um cartão de conexão para nos contar mais sobre você.
               </p>
               <button class="btn-secondary" onclick="openModal('connect')">
                 Preencher Cartão
               </button>
             </div>
-            <div class="text-center p-8 bg-gray-50 rounded-lg hover:shadow-lg transition">
-              <i class="fas fa-praying-hands text-5xl text-green-600 mb-4"></i>
-              <h4 class="text-2xl font-bold text-gray-900 mb-4">Pedidos de Oração</h4>
-              <p class="text-gray-700 mb-6">
+            <div class="text-center p-10 bg-neutral-50 border border-neutral-200 rounded-lg hover:shadow-xl hover:border-neutral-300 transition">
+              <i class="fas fa-praying-hands text-5xl text-neutral-700 mb-6"></i>
+              <h4 class="text-xl font-semibold text-neutral-900 mb-4">Pedidos de Oração</h4>
+              <p class="text-neutral-600 mb-8 leading-relaxed">
                 Compartilhe seus pedidos de oração conosco. Adoraríamos orar por você.
               </p>
               <button class="btn-secondary" onclick="openModal('prayer')">
                 Enviar Pedido
               </button>
             </div>
-            <div class="text-center p-8 bg-gray-50 rounded-lg hover:shadow-lg transition">
-              <i class="fas fa-hand-holding-heart text-5xl text-purple-600 mb-4"></i>
-              <h4 class="text-2xl font-bold text-gray-900 mb-4">Contribuir</h4>
-              <p class="text-gray-700 mb-6">
+            <div class="text-center p-10 bg-neutral-50 border border-neutral-200 rounded-lg hover:shadow-xl hover:border-neutral-300 transition">
+              <i class="fas fa-hand-holding-heart text-5xl text-neutral-700 mb-6"></i>
+              <h4 class="text-xl font-semibold text-neutral-900 mb-4">Contribuir</h4>
+              <p class="text-neutral-600 mb-8 leading-relaxed">
                 Apoie o ministério da Grace Church com sua generosidade.
               </p>
               <button class="btn-secondary" onclick="openModal('give')">
@@ -236,15 +247,15 @@ app.get('/', (c) => {
               </button>
             </div>
           </div>
-          <div class="mt-16 bg-blue-50 rounded-lg p-8">
+          <div class="mt-16 bg-neutral-900 rounded-lg p-10 md:p-12 text-white">
             <div class="flex flex-col md:flex-row items-center justify-between">
-              <div class="mb-6 md:mb-0">
-                <h4 class="text-2xl font-bold text-gray-900 mb-2">Guia SOAP</h4>
-                <p class="text-gray-700">
+              <div class="mb-8 md:mb-0 md:mr-8">
+                <h4 class="text-2xl font-serif font-bold mb-3">Guia SOAP</h4>
+                <p class="text-neutral-300 leading-relaxed">
                   Leia a Bíblia usando o método de estudo SOAP: Escritura, Observação, Aplicação, Oração.
                 </p>
               </div>
-              <button class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+              <button class="bg-white text-neutral-900 px-8 py-4 rounded-lg text-base font-semibold hover:bg-neutral-100 transition tracking-wide whitespace-nowrap">
                 Baixar Guia
               </button>
             </div>
@@ -253,43 +264,58 @@ app.get('/', (c) => {
       </section>
 
       {/* Footer */}
-      <footer class="bg-gray-900 text-white py-12">
+      <footer class="bg-neutral-900 border-t border-neutral-800 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid md:grid-cols-3 gap-8 mb-8">
+          <div class="grid md:grid-cols-3 gap-12 mb-12">
             <div>
-              <h4 class="text-xl font-bold mb-4">Grace Church</h4>
-              <p class="text-gray-400">
-                Uma comunidade de fé, esperança e amor.
+              <h4 class="text-xl font-serif font-bold mb-4">Grace Church Melbourne</h4>
+              <p class="text-neutral-400 leading-relaxed mb-4">
+                Transformando a Costa Espacial com o amor radical de Jesus.
+              </p>
+              <p class="text-sm text-neutral-500">
+                Uma atmosfera acolhedora onde todos se sentem bem-vindos e amados.
               </p>
             </div>
             <div>
-              <h4 class="text-xl font-bold mb-4">Contato</h4>
-              <p class="text-gray-400 mb-2">
-                <i class="fas fa-envelope mr-2"></i>
-                contato@gracechurch.com
+              <h4 class="text-lg font-semibold mb-4 uppercase tracking-wide text-neutral-300">Horários de Culto</h4>
+              <p class="text-neutral-400 mb-2">
+                Quintas-feiras às 19:30
               </p>
-              <p class="text-gray-400">
-                <i class="fas fa-phone mr-2"></i>
-                (11) 1234-5678
+              <p class="text-neutral-400 mb-2">
+                Domingos às 8:30, 10:15 e 12:00
               </p>
-            </div>
-            <div>
-              <h4 class="text-xl font-bold mb-4">Siga-nos</h4>
-              <div class="flex space-x-4">
-                <a href="#" class="text-gray-400 hover:text-white transition">
-                  <i class="fab fa-facebook text-2xl"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white transition">
-                  <i class="fab fa-instagram text-2xl"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-white transition">
-                  <i class="fab fa-youtube text-2xl"></i>
-                </a>
+              <div class="mt-6">
+                <h4 class="text-lg font-semibold mb-4 uppercase tracking-wide text-neutral-300">Contato</h4>
+                <p class="text-neutral-400 mb-2">
+                  <i class="fas fa-envelope mr-2"></i>
+                  contato@gracechurch.life
+                </p>
+                <p class="text-neutral-400">
+                  <i class="fas fa-phone mr-2"></i>
+                  (321) 555-0123
+                </p>
               </div>
             </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4 uppercase tracking-wide text-neutral-300">Siga-nos</h4>
+              <div class="flex space-x-4 mb-8">
+                <a href="https://www.instagram.com/gracechurch.life/" target="_blank" class="w-12 h-12 bg-neutral-800 hover:bg-neutral-700 rounded-lg flex items-center justify-center transition">
+                  <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-neutral-800 hover:bg-neutral-700 rounded-lg flex items-center justify-center transition">
+                  <i class="fab fa-facebook text-xl"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-neutral-800 hover:bg-neutral-700 rounded-lg flex items-center justify-center transition">
+                  <i class="fab fa-youtube text-xl"></i>
+                </a>
+              </div>
+              <p class="text-sm text-neutral-500 leading-relaxed">
+                Junte-se à nossa comunidade online e fique por dentro de todos os eventos e notícias.
+              </p>
+            </div>
           </div>
-          <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Grace Church. Todos os direitos reservados.</p>
+          <div class="border-t border-neutral-800 pt-8 text-center">
+            <p class="text-neutral-500 text-sm">&copy; 2025 Grace Church Melbourne. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>
