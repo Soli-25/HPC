@@ -13,7 +13,7 @@ app.get('/', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-20">
             <div class="flex items-center">
-              <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">Grace Church Melbourne</h1>
+              <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">HPC Atlanta</h1>
             </div>
             <div class="hidden md:flex space-x-10">
               <a href="#discover" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Descobrir</a>
@@ -43,10 +43,10 @@ app.get('/', (c) => {
       <section class="pt-20 bg-gradient-to-br from-neutral-800 via-neutral-700 to-neutral-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
           <div class="text-center max-w-4xl mx-auto">
-            <p class="text-sm font-medium tracking-widest text-neutral-300 uppercase mb-6">Grace Church Melbourne</p>
+            <p class="text-sm font-medium tracking-widest text-neutral-300 uppercase mb-6">HPC - House of Prayer for all Nations</p>
             <h2 class="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">Dê Seu Próximo Passo.</h2>
             <p class="text-xl md:text-2xl mb-10 text-neutral-200 font-light leading-relaxed">
-              Venha e encontre esperança real para a vida real que só pode ser encontrada em Jesus!
+              Uma casa de oração para todas as nações. Venha viver o que Deus tem para você!
             </p>
             <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-8 inline-block">
               <p class="text-base font-medium text-neutral-100 mb-2 uppercase tracking-wide">
@@ -66,20 +66,21 @@ app.get('/', (c) => {
           <div class="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Bem-vindo</p>
-              <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-8 leading-tight">Descubra a Grace Church</h3>
+              <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-8 leading-tight">Descubra a HPC</h3>
               <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
-                Na Grace Church, somos apaixonados por criar uma atmosfera acolhedora onde as pessoas podem se reunir para celebrar e aprender sobre a esperança e o amor de Jesus.
+                Na HPC Atlanta, somos uma igreja brasileira apaixonada por criar uma casa de oração para todas as nações. Venha celebrar e experimentar o amor de Deus conosco!
               </p>
               <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-8 mb-8">
                 <p class="text-sm font-medium text-neutral-500 mb-3 uppercase tracking-wide">
                   <i class="far fa-calendar mr-2"></i>
-                  Próximo Evento
+                  Horários de Culto
                 </p>
-                <p class="text-2xl font-serif font-bold text-neutral-900 mb-1">20 de Novembro de 2025</p>
-                <p class="text-neutral-600">18:00</p>
+                <p class="text-xl font-semibold text-neutral-900 mb-2">Domingo às 10:00 AM</p>
+                <p class="text-neutral-600 mb-1">Terça-feira às 8:00 PM</p>
+                <p class="text-neutral-600">Quinta-feira às 8:00 PM</p>
               </div>
               <p class="text-neutral-600 mb-8 leading-relaxed">
-                Nos esforçamos para criar um ambiente onde todos se sintam bem-vindos e amados, não importa quem você seja ou de onde você venha.
+                Pastores: Pr. Otávio Amorim e Natália Müller. Uma comunidade onde todos são bem-vindos!
               </p>
               <button class="btn-primary" onclick="openModal('discover')">
                 Inscreva-se Agora
@@ -107,12 +108,12 @@ app.get('/', (c) => {
             </div>
             <div class="order-1 md:order-2">
               <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Oportunidades de Servir</p>
-              <h3 class="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">Descubra a Equipe dos Sonhos</h3>
+              <h3 class="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">Faça Parte da Equipe</h3>
               <p class="text-lg text-neutral-300 mb-8 leading-relaxed">
-                Explore a vida da nossa igreja, incluindo nossos ministérios vibrantes, eventos futuros e oportunidades de servir.
+                Explore a vida da HPC Atlanta, incluindo nossos ministérios vibrantes, eventos futuros e oportunidades de servir no Reino de Deus.
               </p>
               <p class="text-neutral-300 mb-8 leading-relaxed">
-                Perfeito para recém-chegados ou aqueles que se sentem estagnados em sua fé. Ajudamos você a encontrar os próximos passos para servir e fazer a diferença na comunidade.
+                Seja parte de uma casa de oração para todas as nações. Venha usar seus dons e talentos para abençoar vidas e glorificar a Deus!
               </p>
               <button class="bg-white text-neutral-900 px-8 py-4 rounded-lg text-base font-semibold hover:bg-neutral-100 transition tracking-wide" onclick="openModal('team')">
                 Junte-se à Equipe
@@ -240,7 +241,7 @@ app.get('/', (c) => {
               <i class="fas fa-hand-holding-heart text-5xl text-neutral-700 mb-6"></i>
               <h4 class="text-xl font-semibold text-neutral-900 mb-4">Contribuir</h4>
               <p class="text-neutral-600 mb-8 leading-relaxed">
-                Apoie o ministério da Grace Church com sua generosidade.
+                Apoie o ministério da HPC Atlanta com sua generosidade.
               </p>
               <button class="btn-secondary" onclick="openModal('give')">
                 Fazer Doação
@@ -268,38 +269,48 @@ app.get('/', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid md:grid-cols-3 gap-12 mb-12">
             <div>
-              <h4 class="text-xl font-serif font-bold mb-4">Grace Church Melbourne</h4>
+              <h4 class="text-xl font-serif font-bold mb-4">HPC Atlanta</h4>
               <p class="text-neutral-400 leading-relaxed mb-4">
-                Transformando a Costa Espacial com o amor radical de Jesus.
+                House of Prayer for all Nations - Uma casa de oração para todas as nações.
               </p>
               <p class="text-sm text-neutral-500">
-                Uma atmosfera acolhedora onde todos se sentem bem-vindos e amados.
+                Brazilian Church em Marietta, GA. Venha viver o que Deus tem para você!
               </p>
             </div>
             <div>
               <h4 class="text-lg font-semibold mb-4 uppercase tracking-wide text-neutral-300">Horários de Culto</h4>
               <p class="text-neutral-400 mb-2">
-                Quintas-feiras às 19:30
+                <i class="fas fa-calendar-alt mr-2"></i>
+                Domingo às 10:00 AM
               </p>
               <p class="text-neutral-400 mb-2">
-                Domingos às 8:30, 10:15 e 12:00
+                <i class="fas fa-calendar-alt mr-2"></i>
+                Terça-feira às 8:00 PM
+              </p>
+              <p class="text-neutral-400 mb-6">
+                <i class="fas fa-calendar-alt mr-2"></i>
+                Quinta-feira às 8:00 PM
               </p>
               <div class="mt-6">
-                <h4 class="text-lg font-semibold mb-4 uppercase tracking-wide text-neutral-300">Contato</h4>
+                <h4 class="text-lg font-semibold mb-4 uppercase tracking-wide text-neutral-300">Contato & Localização</h4>
                 <p class="text-neutral-400 mb-2">
-                  <i class="fas fa-envelope mr-2"></i>
-                  contato@gracechurch.life
+                  <i class="fas fa-map-marker-alt mr-2"></i>
+                  3379 Canton Rd, Marietta, GA 30066
+                </p>
+                <p class="text-neutral-400 mb-2">
+                  <i class="fas fa-phone mr-2"></i>
+                  +1 (770) 862-0756
                 </p>
                 <p class="text-neutral-400">
-                  <i class="fas fa-phone mr-2"></i>
-                  (321) 555-0123
+                  <i class="fas fa-users mr-2"></i>
+                  Pastores: Pr. Otávio Amorim e Natália Müller
                 </p>
               </div>
             </div>
             <div>
               <h4 class="text-lg font-semibold mb-4 uppercase tracking-wide text-neutral-300">Siga-nos</h4>
               <div class="flex space-x-4 mb-8">
-                <a href="https://www.instagram.com/gracechurch.life/" target="_blank" class="w-12 h-12 bg-neutral-800 hover:bg-neutral-700 rounded-lg flex items-center justify-center transition">
+                <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="w-12 h-12 bg-neutral-800 hover:bg-neutral-700 rounded-lg flex items-center justify-center transition">
                   <i class="fab fa-instagram text-xl"></i>
                 </a>
                 <a href="#" class="w-12 h-12 bg-neutral-800 hover:bg-neutral-700 rounded-lg flex items-center justify-center transition">
@@ -315,7 +326,7 @@ app.get('/', (c) => {
             </div>
           </div>
           <div class="border-t border-neutral-800 pt-8 text-center">
-            <p class="text-neutral-500 text-sm">&copy; 2025 Grace Church Melbourne. Todos os direitos reservados.</p>
+            <p class="text-neutral-500 text-sm">&copy; 2025 HPC Atlanta - House of Prayer for all Nations. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>

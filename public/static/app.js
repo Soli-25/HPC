@@ -67,11 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // Modal Functionality
 const modalData = {
   discover: {
-    title: 'Inscreva-se: Descubra a Grace Church',
+    title: 'Inscreva-se: Descubra a HPC Atlanta',
     extraFields: ''
   },
   team: {
-    title: 'Junte-se à Equipe dos Sonhos',
+    title: 'Junte-se à Equipe da HPC',
     extraFields: `
       <div>
         <label class="block text-gray-700 font-semibold mb-2">Área de Interesse</label>
@@ -140,7 +140,7 @@ const modalData = {
         <textarea name="prayer_request" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="Compartilhe seus pedidos de oração..."></textarea>
       </div>
       <div>
-        <label class="block text-gray-700 font-semibold mb-2">Como conheceu a Grace Church?</label>
+        <label class="block text-gray-700 font-semibold mb-2">Como conheceu a HPC Atlanta?</label>
         <select name="how_found" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
           <option value="">Selecione</option>
           <option value="friend">Amigo/Familiar</option>
@@ -168,11 +168,11 @@ const modalData = {
     `
   },
   give: {
-    title: 'Contribuir para a Grace Church',
+    title: 'Contribuir para a HPC Atlanta',
     extraFields: `
       <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-6 mb-6">
         <p class="text-gray-700 mb-4 leading-relaxed">
-          Sua generosidade ajuda a transformar vidas e espalhar o amor de Jesus em nossa comunidade e além.
+          Sua generosidade ajuda a manter a casa de oração aberta e espalhar o amor de Jesus para todas as nações.
         </p>
         <p class="text-sm text-gray-600">
           "Cada um dê conforme determinou em seu coração, não com pesar ou por obrigação, pois Deus ama quem dá com alegria." - 2 Coríntios 9:7
