@@ -161,6 +161,112 @@ app.get('/', (c) => {
         </div>
       </section>
 
+      {/* Instagram Gallery Section */}
+      <section class="py-24 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Nossa Comunidade</p>
+            <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-6">Momentos da HPC</h3>
+            <p class="text-xl text-neutral-600 max-w-2xl mx-auto mb-8">
+              Confira os momentos especiais da nossa igreja através do Instagram
+            </p>
+            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="inline-flex items-center text-neutral-900 hover:text-neutral-600 transition font-semibold">
+              <i class="fab fa-instagram text-2xl mr-2"></i>
+              @hpcatlanta
+            </a>
+          </div>
+          
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {/* Instagram Photo 1 */}
+            <div class="aspect-square bg-gradient-to-br from-neutral-200 to-neutral-300 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
+                <i class="fas fa-church text-neutral-400 text-6xl opacity-30"></i>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
+                <p class="text-white text-sm font-medium">Culto de Domingo</p>
+              </div>
+            </div>
+
+            {/* Instagram Photo 2 */}
+            <div class="aspect-square bg-gradient-to-br from-neutral-300 to-neutral-200 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
+                <i class="fas fa-praying-hands text-neutral-400 text-6xl opacity-30"></i>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
+                <p class="text-white text-sm font-medium">Momento de Oração</p>
+              </div>
+            </div>
+
+            {/* Instagram Photo 3 */}
+            <div class="aspect-square bg-gradient-to-br from-neutral-200 to-neutral-400 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
+                <i class="fas fa-hands-helping text-neutral-400 text-6xl opacity-30"></i>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
+                <p class="text-white text-sm font-medium">Servindo Juntos</p>
+              </div>
+            </div>
+
+            {/* Instagram Photo 4 */}
+            <div class="aspect-square bg-gradient-to-br from-neutral-300 to-neutral-300 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
+                <i class="fas fa-heart text-neutral-400 text-6xl opacity-30"></i>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
+                <p class="text-white text-sm font-medium">Comunhão</p>
+              </div>
+            </div>
+
+            {/* Instagram Photo 5 */}
+            <div class="aspect-square bg-gradient-to-br from-neutral-400 to-neutral-200 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
+                <i class="fas fa-music text-neutral-400 text-6xl opacity-30"></i>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
+                <p class="text-white text-sm font-medium">Louvor e Adoração</p>
+              </div>
+            </div>
+
+            {/* Instagram Photo 6 */}
+            <div class="aspect-square bg-gradient-to-br from-neutral-200 to-neutral-300 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
+                <i class="fas fa-users text-neutral-400 text-6xl opacity-30"></i>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
+                <p class="text-white text-sm font-medium">Nossa Família</p>
+              </div>
+            </div>
+
+            {/* Instagram Photo 7 */}
+            <div class="aspect-square bg-gradient-to-br from-neutral-300 to-neutral-400 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
+                <i class="fas fa-bible text-neutral-400 text-6xl opacity-30"></i>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
+                <p class="text-white text-sm font-medium">Palavra de Deus</p>
+              </div>
+            </div>
+
+            {/* Instagram Photo 8 */}
+            <div class="aspect-square bg-gradient-to-br from-neutral-200 to-neutral-200 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
+                <i class="fas fa-globe-americas text-neutral-400 text-6xl opacity-30"></i>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
+                <p class="text-white text-sm font-medium">Todas as Nações</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="inline-flex items-center bg-neutral-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-neutral-800 transition">
+              <i class="fab fa-instagram text-xl mr-3"></i>
+              Siga-nos no Instagram
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Connection Groups Section */}
       <section id="groups" class="py-24 md:py-32 bg-neutral-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
