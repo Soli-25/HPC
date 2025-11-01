@@ -226,84 +226,116 @@ app.get('/', (c) => {
           
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {/* Instagram Photo 1 */}
-            <div class="aspect-square bg-gradient-to-br from-neutral-200 to-neutral-300 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
-              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
-                <i class="fas fa-church text-neutral-400 text-6xl opacity-30"></i>
-              </div>
+            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
+              <img 
+                src="https://scontent.cdninstagram.com/v/t51.82787-15/530569080_17855597928490585_2936669851301207883_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=108&ccb=1-7&_nc_sid=58cdad&_nc_ohc=EZ9XwkJZ3qAQ7kNvwFyu8e1&_nc_ht=scontent.cdninstagram.com" 
+                alt="HPC Atlanta - Comunidade"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
                 <p class="text-white text-sm font-medium">Culto de Domingo</p>
               </div>
-            </div>
+            </a>
 
             {/* Instagram Photo 2 */}
-            <div class="aspect-square bg-gradient-to-br from-neutral-300 to-neutral-200 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
-              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
-                <i class="fas fa-praying-hands text-neutral-400 text-6xl opacity-30"></i>
-              </div>
+            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
+              <img 
+                src="https://scontent.cdninstagram.com/v/t51.82787-15/566634046_1350864833296295_3685072377985760122_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=105&ccb=1-7&_nc_sid=18de74&_nc_ohc=MWy9V4rRFg8Q7kNvgGCfQhv&_nc_ht=scontent.cdninstagram.com" 
+                alt="HPC Atlanta - Grupo HPC"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Momento de Oração</p>
+                <p class="text-white text-sm font-medium">Grupo HPC</p>
               </div>
-            </div>
+            </a>
 
             {/* Instagram Photo 3 */}
-            <div class="aspect-square bg-gradient-to-br from-neutral-200 to-neutral-400 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
-              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
-                <i class="fas fa-hands-helping text-neutral-400 text-6xl opacity-30"></i>
-              </div>
+            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
+              <img 
+                src="https://scontent.cdninstagram.com/v/t51.82787-15/563305192_17863107240490585_1080821731033642314_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=100&ccb=1-7&_nc_sid=18de74&_nc_ohc=BktTBfKjCYsQ7kNvgGJ7Wjc&_nc_ht=scontent.cdninstagram.com" 
+                alt="HPC Atlanta - Visita do Pr. PG"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Servindo Juntos</p>
+                <p class="text-white text-sm font-medium">Visita Especial</p>
               </div>
-            </div>
+            </a>
 
             {/* Instagram Photo 4 */}
-            <div class="aspect-square bg-gradient-to-br from-neutral-300 to-neutral-300 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
-              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
-                <i class="fas fa-heart text-neutral-400 text-6xl opacity-30"></i>
-              </div>
+            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
+              <img 
+                src="https://scontent.cdninstagram.com/v/t51.82787-15/561096550_1437843977690829_3319828866027055270_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=109&ccb=1-7&_nc_sid=18de74&_nc_ohc=yF8g1J3QkIEQ7kNvgGXFhRY&_nc_ht=scontent.cdninstagram.com" 
+                alt="HPC Atlanta - Culto"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Comunhão</p>
+                <p class="text-white text-sm font-medium">Culto Especial</p>
               </div>
-            </div>
+            </a>
 
             {/* Instagram Photo 5 */}
-            <div class="aspect-square bg-gradient-to-br from-neutral-400 to-neutral-200 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
-              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
-                <i class="fas fa-music text-neutral-400 text-6xl opacity-30"></i>
-              </div>
+            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
+              <img 
+                src="https://scontent.cdninstagram.com/v/t51.82787-15/559894457_18372738904194154_4937057567211985368_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=101&ccb=1-7&_nc_sid=18de74&_nc_ohc=v8XKHzN8mX8Q7kNvgHLXbJt&_nc_ht=scontent.cdninstagram.com" 
+                alt="HPC Atlanta - Mensagem de Fé"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Louvor e Adoração</p>
+                <p class="text-white text-sm font-medium">Palavra de Fé</p>
               </div>
-            </div>
+            </a>
 
             {/* Instagram Photo 6 */}
-            <div class="aspect-square bg-gradient-to-br from-neutral-200 to-neutral-300 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
-              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
-                <i class="fas fa-users text-neutral-400 text-6xl opacity-30"></i>
-              </div>
+            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
+              <img 
+                src="https://scontent.cdninstagram.com/v/t51.82787-15/559776359_17862050721490585_5944130804050215600_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=106&ccb=1-7&_nc_sid=18de74&_nc_ohc=wP9Xf5b2XNMQ7kNvgHKp8Fh&_nc_ht=scontent.cdninstagram.com" 
+                alt="HPC Atlanta - Família Reunida"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
                 <p class="text-white text-sm font-medium">Nossa Família</p>
               </div>
-            </div>
+            </a>
 
             {/* Instagram Photo 7 */}
-            <div class="aspect-square bg-gradient-to-br from-neutral-300 to-neutral-400 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
-              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
-                <i class="fas fa-bible text-neutral-400 text-6xl opacity-30"></i>
-              </div>
+            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
+              <img 
+                src="https://scontent.cdninstagram.com/v/t51.82787-15/554906771_18371893435194154_4303645085401162689_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=102&ccb=1-7&_nc_sid=18de74&_nc_ohc=dL8PmJ9vYy0Q7kNvgFZRXwN&_nc_ht=scontent.cdninstagram.com" 
+                alt="HPC Atlanta - Dia Especial"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Palavra de Deus</p>
+                <p class="text-white text-sm font-medium">Dia Especial</p>
               </div>
-            </div>
+            </a>
 
             {/* Instagram Photo 8 */}
-            <div class="aspect-square bg-gradient-to-br from-neutral-200 to-neutral-200 rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative">
-              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition flex items-center justify-center">
-                <i class="fas fa-globe-americas text-neutral-400 text-6xl opacity-30"></i>
-              </div>
+            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
+              <img 
+                src="https://scontent.cdninstagram.com/v/t51.82787-15/552573643_17860612692490585_6881815553668219175_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=111&ccb=1-7&_nc_sid=18de74&_nc_ohc=KL9YmF8jXB4Q7kNvgHwXcNz&_nc_ht=scontent.cdninstagram.com" 
+                alt="HPC Atlanta - Visita do Bispo"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Todas as Nações</p>
+                <p class="text-white text-sm font-medium">Visita do Bispo</p>
               </div>
-            </div>
+            </a>
           </div>
 
           <div class="text-center mt-12">
