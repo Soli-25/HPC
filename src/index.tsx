@@ -140,11 +140,11 @@ app.get('/', (c) => {
               </button>
             </div>
             <div class="relative">
-              <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl flex items-center justify-center overflow-hidden p-12">
+              <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
                 <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" 
-                  alt="House of Prayer Logo" 
-                  class="w-full h-full object-contain"
+                  src="https://page.gensparksite.com/v1/base64_upload/83e4ca4ceb1cb41bfa31534864273b94" 
+                  alt="Pastores Pr. Otávio Amorim e Natália Müller - HPC Atlanta" 
+                  class="w-full h-full object-cover"
                 />
               </div>
               <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
@@ -158,11 +158,11 @@ app.get('/', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid md:grid-cols-2 gap-16 items-center">
             <div class="order-2 md:order-1 relative">
-              <div class="aspect-square bg-gradient-to-br from-neutral-700 via-neutral-600 to-neutral-800 rounded-lg shadow-xl flex items-center justify-center overflow-hidden p-12">
+              <div class="aspect-square bg-gradient-to-br from-neutral-700 via-neutral-600 to-neutral-800 rounded-lg shadow-xl overflow-hidden">
                 <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" 
-                  alt="House of Prayer Logo" 
-                  class="w-full h-full object-contain brightness-200"
+                  src="https://page.gensparksite.com/v1/base64_upload/a9eef18df924d19ddf1f7d71fcaf3398" 
+                  alt="Pregação na HPC Atlanta - Pr. Otávio Amorim" 
+                  class="w-full h-full object-cover"
                 />
               </div>
               <div class="absolute -top-6 -left-6 w-32 h-32 bg-neutral-100 rounded-lg -z-10"></div>
@@ -256,31 +256,31 @@ app.get('/', (c) => {
               </div>
             </a>
 
-            {/* Instagram Photo 2 */}
+            {/* Instagram Photo 2 - Pastores */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
-                src="https://scontent.cdninstagram.com/v/t51.82787-15/566634046_1350864833296295_3685072377985760122_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=105&ccb=1-7&_nc_sid=18de74&_nc_ohc=MWy9V4rRFg8Q7kNvgGCfQhv&_nc_ht=scontent.cdninstagram.com" 
-                alt="HPC Atlanta - Grupo HPC"
+                src="https://page.gensparksite.com/v1/base64_upload/83e4ca4ceb1cb41bfa31534864273b94" 
+                alt="HPC Atlanta - Pastores Pr. Otávio Amorim e Natália Müller"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Grupo HPC</p>
+                <p class="text-white text-sm font-medium">Nossos Pastores</p>
               </div>
             </a>
 
-            {/* Instagram Photo 3 */}
+            {/* Instagram Photo 3 - Pregação */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
-                src="https://scontent.cdninstagram.com/v/t51.82787-15/563305192_17863107240490585_1080821731033642314_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=100&ccb=1-7&_nc_sid=18de74&_nc_ohc=BktTBfKjCYsQ7kNvgGJ7Wjc&_nc_ht=scontent.cdninstagram.com" 
-                alt="HPC Atlanta - Visita do Pr. PG"
+                src="https://page.gensparksite.com/v1/base64_upload/a9eef18df924d19ddf1f7d71fcaf3398" 
+                alt="HPC Atlanta - Pregação com Pr. Otávio Amorim"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Visita Especial</p>
+                <p class="text-white text-sm font-medium">Palavra de Deus</p>
               </div>
             </a>
 
