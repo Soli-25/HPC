@@ -58,12 +58,14 @@ Uma igreja brasileira (Brazilian Church) em Marietta, GA. Uma casa de oração p
    - Banner com horários de culto destacados (Domingo 10AM, Terça 8PM, Quinta 8PM)
 
 2. **Descubra a HPC**
+   - **Foto real dos pastores**: Pr. Otávio Amorim e Natália Müller
    - Informações sobre a igreja brasileira
    - Horários de culto completos
    - Informações dos pastores
    - Formulário de inscrição via modal
 
 3. **Faça Parte da Equipe**
+   - **Foto real de pregação**: Pr. Otávio Amorim ministrando a Palavra
    - Oportunidades de servir na igreja
    - Ministérios disponíveis
    - Formulário de interesse com áreas específicas
@@ -75,10 +77,11 @@ Uma igreja brasileira (Brazilian Church) em Marietta, GA. Uma casa de oração p
 
 5. **Galeria do Instagram**
    - 8 fotos reais da comunidade HPC Atlanta
+   - **Incluindo fotos dos pastores e pregação**
    - Fotos diretamente do Instagram @hpcatlanta
    - Links para o perfil do Instagram
    - Hover effects elegantes
-   - Fotos incluem: Cultos, Grupos, Visitas Especiais, Comunhão, Família
+   - Fotos incluem: Pastores, Pregação, Cultos, Visitas Especiais, Comunhão, Família
 
 6. **Grupos de Conexão**
    - Três tipos de grupos: Estudo Bíblico, Atividades, Serviço
