@@ -12,7 +12,12 @@ app.get('/', (c) => {
       <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-20">
-            <div class="flex items-center">
+            <div class="flex items-center gap-3">
+              <img 
+                src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" 
+                alt="House of Prayer - New Destiny Logo" 
+                class="h-12 w-12 object-contain"
+              />
               <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">HPC Atlanta</h1>
             </div>
             <div class="hidden md:flex space-x-8 items-center">
@@ -135,8 +140,12 @@ app.get('/', (c) => {
               </button>
             </div>
             <div class="relative">
-              <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl flex items-center justify-center overflow-hidden">
-                <i class="fas fa-church text-neutral-400 text-9xl"></i>
+              <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl flex items-center justify-center overflow-hidden p-12">
+                <img 
+                  src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" 
+                  alt="House of Prayer Logo" 
+                  class="w-full h-full object-contain"
+                />
               </div>
               <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
             </div>
@@ -149,8 +158,12 @@ app.get('/', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid md:grid-cols-2 gap-16 items-center">
             <div class="order-2 md:order-1 relative">
-              <div class="aspect-square bg-gradient-to-br from-neutral-700 via-neutral-600 to-neutral-800 rounded-lg shadow-xl flex items-center justify-center overflow-hidden">
-                <i class="fas fa-hands-helping text-neutral-400 text-9xl"></i>
+              <div class="aspect-square bg-gradient-to-br from-neutral-700 via-neutral-600 to-neutral-800 rounded-lg shadow-xl flex items-center justify-center overflow-hidden p-12">
+                <img 
+                  src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" 
+                  alt="House of Prayer Logo" 
+                  class="w-full h-full object-contain brightness-200"
+                />
               </div>
               <div class="absolute -top-6 -left-6 w-32 h-32 bg-neutral-100 rounded-lg -z-10"></div>
             </div>
@@ -183,8 +196,12 @@ app.get('/', (c) => {
           </div>
           <div class="grid md:grid-cols-2 gap-16 items-center">
             <div class="relative">
-              <div class="aspect-square bg-gradient-to-br from-neutral-200 via-neutral-100 to-white rounded-lg shadow-xl flex items-center justify-center overflow-hidden border border-neutral-200">
-                <i class="fas fa-water text-neutral-300 text-9xl"></i>
+              <div class="aspect-square bg-gradient-to-br from-neutral-200 via-neutral-100 to-white rounded-lg shadow-xl flex items-center justify-center overflow-hidden border border-neutral-200 p-12">
+                <img 
+                  src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" 
+                  alt="House of Prayer Logo" 
+                  class="w-full h-full object-contain"
+                />
               </div>
               <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
             </div>
@@ -455,7 +472,14 @@ app.get('/', (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid md:grid-cols-3 gap-12 mb-12">
             <div>
-              <h4 class="text-xl font-serif font-bold mb-4">HPC Atlanta</h4>
+              <div class="flex items-center gap-3 mb-4">
+                <img 
+                  src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" 
+                  alt="House of Prayer - New Destiny Logo" 
+                  class="h-16 w-16 object-contain"
+                />
+                <h4 class="text-xl font-serif font-bold">HPC Atlanta</h4>
+              </div>
               <p class="text-neutral-400 leading-relaxed mb-4">
                 House of Prayer for all Nations - Uma casa de oração para todas as nações.
               </p>
