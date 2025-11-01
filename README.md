@@ -51,7 +51,9 @@ Uma igreja brasileira (Brazilian Church) em Marietta, GA. Uma casa de oração p
 1. **Hero Section** (Cabeçalho Principal)
    - Título impactante: "Dê Seu Próximo Passo"
    - Frase da missão: "Uma casa de oração para todas as nações"
-   - Banner de inscrição com data destacada
+   - Foto de fundo real do Instagram @hpcatlanta
+   - CTAs melhorados: "Faça Parte" e "Conheça a HPC"
+   - Banner com horários de culto destacados
 
 2. **Descubra a HPC**
    - Informações sobre a igreja brasileira
@@ -69,12 +71,19 @@ Uma igreja brasileira (Brazilian Church) em Marietta, GA. Uma casa de oração p
    - Versículo bíblico (Atos 2:38)
    - Formulário de interesse em ser batizado
 
-5. **Grupos de Conexão**
+5. **Galeria do Instagram**
+   - 8 fotos reais da comunidade HPC Atlanta
+   - Fotos diretamente do Instagram @hpcatlanta
+   - Links para o perfil do Instagram
+   - Hover effects elegantes
+   - Fotos incluem: Cultos, Grupos, Visitas Especiais, Comunhão, Família
+
+6. **Grupos de Conexão**
    - Três tipos de grupos: Estudo Bíblico, Atividades, Serviço
    - Inscrições abertas
    - Formulário de interesse
 
-6. **Conecte-se Conosco**
+7. **Conecte-se Conosco**
    - Cartão de conexão
    - Pedidos de oração
    - Contribuições
