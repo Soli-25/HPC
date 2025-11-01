@@ -83,14 +83,42 @@ Uma igreja brasileira (Brazilian Church) em Marietta, GA. Uma casa de oração p
 ### Funcionalidades Interativas
 
 - ✅ Menu de navegação responsivo com mobile menu
+- ✅ **Botão "Ofertar" destacado no menu** para acesso rápido às doações
 - ✅ Smooth scrolling para navegação interna
 - ✅ Modais dinâmicos para formulários
 - ✅ Sistema de formulários específicos para cada seção
+- ✅ **Sistema completo de Ofertas e Dízimos** com múltiplas formas de pagamento
 - ✅ Animações suaves (fade-in, hover effects)
 - ✅ Barra de progresso de scroll
 - ✅ Estados de loading em formulários
 - ✅ Validação de formulários
 - ✅ Mensagens de sucesso
+
+### 💰 Sistema de Doações e Ofertas
+
+#### Características Principais:
+- ✅ **Valores em Dólares (USD)** para facilitar doações nos EUA
+- ✅ **Tipo de Contribuição**: Oferta ou Dízimo (10%)
+- ✅ **Valores Sugeridos**: $20, $50, $100, $200, $500, $1000 ou valor personalizado
+- ✅ **Frequência**: Uma vez, semanal ou mensal
+- ✅ **Botão destacado** no menu de navegação para fácil acesso
+
+#### Formas de Pagamento nos EUA:
+- 💳 **PayPal**: Cartão de crédito, débito ou conta PayPal
+- 📱 **Venmo**: Pagamento rápido via app com QR Code
+- 💵 **Cash App**: Transferência instantânea com QR Code
+- ⚡ **Zelle**: Transferência bancária direta
+
+#### Formas de Pagamento Internacionais:
+- 🌍 **Wise (TransferWise)**: Transferências internacionais com baixas taxas
+- 💳 **PayPal Internacional**: Aceita cartões de todo o mundo
+- 🌎 **Western Union**: Transferência internacional em dinheiro
+- 📱 **PIX / QR Code**: Pagamento via QR Code (Brasil e outros países)
+
+#### Segurança:
+- 🔒 Todas as transações processadas por plataformas confiáveis e certificadas
+- ✅ Interface intuitiva e sem barreiras para facilitar doações
+- 📋 Formulário completo com informações do doador
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -168,9 +196,11 @@ npm run deploy
 - [ ] Integração com sistema de gerenciamento de membros
 - [ ] Sistema de notificações por email
 - [ ] Integração com calendário de eventos
-- [ ] Sistema de pagamentos para contribuições
+- [ ] **Integração com APIs de pagamento** (Stripe, PayPal API, etc.)
+- [ ] **QR Codes reais para Venmo, Cash App e PIX**
 - [ ] Analytics e métricas de uso
 - [ ] Google Maps integrado com localização da igreja
+- [ ] **Processamento automático de recibos de doações**
 
 ## 📝 Próximos Passos Recomendados
 

@@ -15,12 +15,16 @@ app.get('/', (c) => {
             <div class="flex items-center">
               <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">HPC Atlanta</h1>
             </div>
-            <div class="hidden md:flex space-x-10">
+            <div class="hidden md:flex space-x-8 items-center">
               <a href="#discover" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Descobrir</a>
               <a href="#team" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Servir</a>
               <a href="#baptism" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Batismo</a>
               <a href="#groups" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Grupos</a>
               <a href="#connect" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Conectar</a>
+              <button onclick="openModal('give')" class="bg-neutral-900 text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-neutral-800 transition transform hover:scale-105 shadow-md flex items-center gap-2">
+                <i class="fas fa-hand-holding-heart"></i>
+                Ofertar
+              </button>
             </div>
             <button id="mobile-menu-btn" class="md:hidden text-neutral-700">
               <i class="fas fa-bars text-xl"></i>
@@ -35,12 +39,29 @@ app.get('/', (c) => {
             <a href="#baptism" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Batismo</a>
             <a href="#groups" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Grupos</a>
             <a href="#connect" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Conectar</a>
+            <button onclick="openModal('give')" class="w-full text-left px-3 py-3 bg-neutral-900 text-white hover:bg-neutral-800 transition font-semibold flex items-center gap-2">
+              <i class="fas fa-hand-holding-heart"></i>
+              Ofertar
+            </button>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section class="pt-20 bg-gradient-to-br from-neutral-800 via-neutral-700 to-neutral-900 text-white">
+      <section class="pt-20 relative overflow-hidden min-h-screen flex items-center">
+        {/* Background Image */}
+        <div class="absolute inset-0 z-0">
+          <img 
+            src="https://scontent.cdninstagram.com/v/t51.82787-15/530569080_17855597928490585_2936669851301207883_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=108&ccb=1-7&_nc_sid=58cdad&_nc_ohc=EZ9XwkJZ3qAQ7kNvwFyu8e1&_nc_ht=scontent.cdninstagram.com" 
+            alt="HPC Atlanta - House of Prayer for all Nations"
+            class="w-full h-full object-cover"
+            onError="this.style.display='none'; this.parentElement.style.background='linear-gradient(to bottom right, rgb(38, 38, 38), rgb(64, 64, 64), rgb(23, 23, 23))'"
+          />
+          <div class="absolute inset-0 bg-gradient-to-br from-neutral-900/85 via-neutral-800/75 to-neutral-900/85"></div>
+        </div>
+        
+        {/* Content */}
+        <div class="relative z-10 w-full text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
           <div class="text-center max-w-4xl mx-auto">
             <p class="text-sm font-medium tracking-widest text-neutral-300 uppercase mb-6">HPC - House of Prayer for all Nations</p>
@@ -83,6 +104,7 @@ app.get('/', (c) => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
