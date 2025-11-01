@@ -8,10 +8,12 @@ Este site foi criado com um design moderno, elegante e sofisticado usando tons n
 
 ## 🎨 Design
 
+- **Logo Oficial**: Logo "House of Prayer - New Destiny" presente em todo o site
 - **Paleta de Cores**: Tons neutros elegantes (cinza, preto, branco, bege)
 - **Tipografia**: Playfair Display (serif) + Inter (sans-serif)
 - **Estilo**: Luxuoso, minimalista, clean e profissional
 - **Responsivo**: Totalmente adaptável para mobile, tablet e desktop
+- **Favicon**: Logo da HPC na aba do navegador
 
 ## 🚀 URLs Públicas
 
@@ -91,6 +93,7 @@ Uma igreja brasileira (Brazilian Church) em Marietta, GA. Uma casa de oração p
 
 ### Funcionalidades Interativas
 
+- ✅ **Logo oficial HPC** no header, footer, seções e favicon
 - ✅ Menu de navegação responsivo com mobile menu
 - ✅ **Botão "Ofertar" destacado no menu** para acesso rápido às doações
 - ✅ Smooth scrolling para navegação interna
