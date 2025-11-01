@@ -59,6 +59,22 @@ html {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Hero CTA Buttons Animation */
+@keyframes pulse-shadow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+  }
+}
+
+button:focus,
+a:focus {
+  outline: none;
+  animation: pulse-shadow 1.5s infinite;
+}
+
 .btn-secondary {
   background-color: transparent;
   color: var(--color-primary);

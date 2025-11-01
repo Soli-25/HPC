@@ -45,16 +45,42 @@ app.get('/', (c) => {
           <div class="text-center max-w-4xl mx-auto">
             <p class="text-sm font-medium tracking-widest text-neutral-300 uppercase mb-6">HPC - House of Prayer for all Nations</p>
             <h2 class="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">Dê Seu Próximo Passo.</h2>
-            <p class="text-xl md:text-2xl mb-10 text-neutral-200 font-light leading-relaxed">
+            <p class="text-xl md:text-2xl mb-12 text-neutral-200 font-light leading-relaxed">
               Uma casa de oração para todas as nações. Venha viver o que Deus tem para você!
             </p>
-            <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-8 inline-block">
-              <p class="text-base font-medium text-neutral-100 mb-2 uppercase tracking-wide">
-                Inscrevendo Agora
+            
+            {/* Call to Action Buttons */}
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+              <button onclick="openModal('discover')" class="bg-white text-neutral-900 px-10 py-4 rounded-lg text-lg font-bold hover:bg-neutral-100 transition transform hover:scale-105 shadow-xl">
+                Faça Parte
+              </button>
+              <a href="#discover" class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-lg text-lg font-bold hover:bg-white hover:text-neutral-900 transition transform hover:scale-105">
+                Conheça a HPC
+              </a>
+            </div>
+
+            {/* Service Times Badge */}
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 inline-block">
+              <p class="text-sm font-medium text-neutral-200 mb-3 uppercase tracking-wide">
+                <i class="far fa-clock mr-2"></i>
+                Nossos Cultos
               </p>
-              <p class="text-2xl font-serif font-bold">
-                2 de Dezembro de 2025
-              </p>
+              <div class="flex flex-col sm:flex-row gap-4 text-center">
+                <div>
+                  <p class="text-lg font-bold text-white">Domingo</p>
+                  <p class="text-neutral-200">10:00 AM</p>
+                </div>
+                <div class="hidden sm:block text-neutral-400">|</div>
+                <div>
+                  <p class="text-lg font-bold text-white">Terça</p>
+                  <p class="text-neutral-200">8:00 PM</p>
+                </div>
+                <div class="hidden sm:block text-neutral-400">|</div>
+                <div>
+                  <p class="text-lg font-bold text-white">Quinta</p>
+                  <p class="text-neutral-200">8:00 PM</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
