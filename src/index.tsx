@@ -52,8 +52,8 @@ app.get('/', (c) => {
         {/* Background Image */}
         <div class="absolute inset-0 z-0">
           <img 
-            src="https://scontent.cdninstagram.com/v/t51.82787-15/530569080_17855597928490585_2936669851301207883_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=108&ccb=1-7&_nc_sid=58cdad&_nc_ohc=EZ9XwkJZ3qAQ7kNvwFyu8e1&_nc_ht=scontent.cdninstagram.com" 
-            alt="HPC Atlanta - House of Prayer for all Nations"
+            src="https://page.gensparksite.com/v1/base64_upload/69b8d7407c00cb3f6eb54c1c9442525c" 
+            alt="HPC Atlanta - House of Prayer for all Nations - Momento de Louvor"
             class="w-full h-full object-cover"
             onError="this.style.display='none'; this.parentElement.style.background='linear-gradient(to bottom right, rgb(38, 38, 38), rgb(64, 64, 64), rgb(23, 23, 23))'"
           />
