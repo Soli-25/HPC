@@ -1450,6 +1450,186 @@ app.delete('/api/posts/:id', async (c) => {
   }
 })
 
+// Blog listing page
+app.get('/blog', async (c) => {
+  let blogPosts = []
+  try {
+    const { results } = await c.env.DB.prepare(
+      'SELECT * FROM blog_posts ORDER BY created_at DESC'
+    ).all()
+    blogPosts = results
+  } catch (error) {
+    console.error('Error fetching blog posts:', error)
+  }
+
+  return c.html(`
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Palavra - Mensagens e Estudos | HPC Atlanta</title>
+      <link rel="icon" type="image/png" href="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" />
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+      <link href="/static/style.css" rel="stylesheet">
+    </head>
+    <body>
+      <div class="min-h-screen bg-neutral-50">
+        <!-- Navigation -->
+        <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 border-b border-neutral-200">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+              <div class="flex items-center gap-3">
+                <img src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" alt="HPC Atlanta Logo" class="h-12 w-12 object-contain" />
+                <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">HPC Atlanta</h1>
+              </div>
+              <div class="flex items-center gap-6">
+                <a href="/" class="text-sm font-medium text-neutral-600 hover:text-neutral-900 transition">
+                  <i class="fas fa-home mr-2"></i>Início
+                </a>
+                <a href="/#connect" class="text-sm font-medium text-neutral-600 hover:text-neutral-900 transition">
+                  <i class="fas fa-envelope mr-2"></i>Contato
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="pt-32 pb-16 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 text-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm font-medium tracking-widest text-neutral-300 uppercase mb-4">
+              <i class="fas fa-book-open mr-2"></i>Palavra do Pastor
+            </p>
+            <h2 class="text-5xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+              Mensagens e Estudos
+            </h2>
+            <p class="text-xl text-neutral-300 max-w-3xl mx-auto mb-8">
+              Reflexões, ensinamentos e palavra profética do Pr. Otávio Amorim para edificar sua vida espiritual.
+            </p>
+            <div class="flex items-center justify-center gap-4">
+              <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3">
+                <p class="text-2xl font-bold">${blogPosts.length}</p>
+                <p class="text-sm text-neutral-300">Mensagens</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-3">
+                <p class="text-2xl font-bold">∞</p>
+                <p class="text-sm text-neutral-300">Vidas Transformadas</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class="py-16 md:py-24 bg-neutral-50">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            ${blogPosts.length === 0 ? `
+              <div class="text-center py-16">
+                <i class="fas fa-book-open text-6xl text-neutral-300 mb-6"></i>
+                <h3 class="text-2xl font-bold text-neutral-700 mb-3">Nenhuma mensagem publicada ainda</h3>
+                <p class="text-neutral-600">Em breve teremos novas mensagens disponíveis.</p>
+              </div>
+            ` : `
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                ${blogPosts.map(post => `
+                  <a href="/blog/${post.slug}" class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                      <img 
+                        src="${post.image_url || 'https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa'}" 
+                        alt="${post.title}" 
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div class="absolute top-4 left-4 bg-neutral-900 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                        ${post.category}
+                      </div>
+                      ${post.featured ? '<div class="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-semibold"><i class="fas fa-star mr-1"></i>Destaque</div>' : ''}
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                      <div class="flex items-center text-sm text-neutral-500 mb-3">
+                        <i class="far fa-calendar mr-2"></i>
+                        <span>${new Date(post.created_at).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                        <span class="mx-2">•</span>
+                        <i class="far fa-clock mr-2"></i>
+                        <span>${post.read_time}</span>
+                      </div>
+                      <h3 class="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-600 transition line-clamp-2">
+                        ${post.title}
+                      </h3>
+                      <p class="text-neutral-600 mb-4 leading-relaxed flex-1 line-clamp-3">
+                        ${post.excerpt}
+                      </p>
+                      <div class="flex items-center text-neutral-900 font-semibold group-hover:gap-2 transition-all">
+                        <span>Ler mensagem</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                      </div>
+                    </div>
+                  </a>
+                `).join('')}
+              </div>
+            `}
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-neutral-900 text-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-3xl font-serif font-bold mb-4">Quer Receber Nossas Mensagens?</h3>
+            <p class="text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">
+              Inscreva-se para receber as últimas mensagens e estudos bíblicos diretamente no seu email.
+            </p>
+            <a href="/#connect" class="inline-block bg-white text-neutral-900 px-8 py-4 rounded-lg font-bold hover:bg-neutral-100 transition transform hover:scale-105">
+              <i class="fas fa-envelope mr-2"></i>Inscrever-se
+            </a>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-neutral-900 border-t border-neutral-800 text-white py-12">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+              <div>
+                <div class="flex items-center gap-3 mb-4">
+                  <img src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" alt="HPC Atlanta Logo" class="h-12 w-12 object-contain" />
+                  <h4 class="text-xl font-serif font-bold">HPC Atlanta</h4>
+                </div>
+                <p class="text-neutral-400 text-sm">House of Prayer for all Nations</p>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold mb-4 uppercase tracking-wide text-neutral-300">Contato</h4>
+                <p class="text-neutral-400 text-sm mb-2"><i class="fas fa-map-marker-alt mr-2"></i>3379 Canton Rd, Marietta, GA 30066</p>
+                <p class="text-neutral-400 text-sm mb-2"><i class="fas fa-phone mr-2"></i>+1 (770) 862-0756</p>
+                <p class="text-neutral-400 text-sm"><i class="fas fa-users mr-2"></i>Pastores: Pr. Otávio Amorim e Natália Müller</p>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold mb-4 uppercase tracking-wide text-neutral-300">Siga-nos</h4>
+                <div class="flex gap-4">
+                  <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="w-10 h-10 bg-neutral-800 hover:bg-neutral-700 rounded-lg flex items-center justify-center transition">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" class="w-10 h-10 bg-neutral-800 hover:bg-neutral-700 rounded-lg flex items-center justify-center transition">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                  <a href="#" class="w-10 h-10 bg-neutral-800 hover:bg-neutral-700 rounded-lg flex items-center justify-center transition">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="border-t border-neutral-800 pt-8 text-center">
+              <p class="text-neutral-500 text-sm">© 2025 HPC Atlanta - House of Prayer for all Nations. Todos os direitos reservados.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+
+      <script src="/static/app.js"></script>
+    </body>
+    </html>
+  `)
+})
+
 app.get('/', async (c) => {
   // Fetch latest 3 blog posts from database
   let blogPosts = []
