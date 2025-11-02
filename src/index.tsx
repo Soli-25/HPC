@@ -161,10 +161,10 @@ app.get('/', (c) => {
             <div class="order-2 md:order-1 relative">
               <div class="aspect-square bg-gradient-to-br from-neutral-700 via-neutral-600 to-neutral-800 rounded-lg shadow-xl overflow-hidden">
                 <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/f48ffac985009bf0799538a2150bb9fb" 
-                  alt="Pregador ministrando a Palavra de Deus na HPC Atlanta" 
+                  src="https://page.gensparksite.com/v1/base64_upload/b49314cd2e986919e25794a9b6e028fc" 
+                  alt="Adoração na HPC Atlanta - Momento de louvor intenso" 
                   class="w-full h-full object-cover"
-                  style="object-position: center 35%;"
+                  style="object-position: center 40%;"
                 />
               </div>
               <div class="absolute -top-6 -left-6 w-32 h-32 bg-neutral-100 rounded-lg -z-10"></div>
@@ -273,17 +273,17 @@ app.get('/', (c) => {
               </div>
             </a>
 
-            {/* Instagram Photo 3 - Preacher Blue Blazer */}
+            {/* Instagram Photo 3 - Leadership Team */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
-                src="https://page.gensparksite.com/v1/base64_upload/f48ffac985009bf0799538a2150bb9fb" 
-                alt="HPC Atlanta - Pregador Ministrando"
+                src="https://page.gensparksite.com/v1/base64_upload/9638b9b069990adadcc7eb9e8dd78439" 
+                alt="HPC Atlanta - Equipe de Liderança"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Palavra de Deus</p>
+                <p class="text-white text-sm font-medium">Nossa Equipe</p>
               </div>
             </a>
 
@@ -343,17 +343,17 @@ app.get('/', (c) => {
               </div>
             </a>
 
-            {/* Instagram Photo 8 - Community */}
+            {/* Instagram Photo 8 - Preaching House of Prayer */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
-                src="https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa" 
-                alt="HPC Atlanta - Nossa Comunidade"
+                src="https://page.gensparksite.com/v1/base64_upload/a9eef18df924d19ddf1f7d71fcaf3398" 
+                alt="HPC Atlanta - Pregação House of Prayer"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Nossa Comunidade</p>
+                <p class="text-white text-sm font-medium">Palavra de Deus</p>
               </div>
             </a>
           </div>
