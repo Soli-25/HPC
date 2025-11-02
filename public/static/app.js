@@ -375,6 +375,28 @@ const modalData = {
           Após selecionar o método de pagamento, você será redirecionado para completar sua doação de forma segura.
         </p>
       </div>
+
+      <!-- Contact Information (Optional) -->
+      <div class="border-t border-neutral-300 pt-6 mt-6">
+        <p class="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">
+          <i class="fas fa-user-circle mr-2"></i>
+          Informações de Contato (Opcional)
+        </p>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-gray-700 font-semibold mb-2">Nome Completo</label>
+            <input type="text" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="Seu nome (opcional)" />
+          </div>
+          <div>
+            <label class="block text-gray-700 font-semibold mb-2">Email</label>
+            <input type="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="seu@email.com (opcional)" />
+          </div>
+          <div>
+            <label class="block text-gray-700 font-semibold mb-2">Telefone</label>
+            <input type="tel" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" placeholder="(000) 000-0000 (opcional)" />
+          </div>
+        </div>
+      </div>
     `
   }
 };
@@ -389,6 +411,19 @@ function openModal(type) {
     modalTitle.textContent = modalData[type].title;
     modalExtraFields.innerHTML = modalData[type].extraFields;
     modalForm.dataset.formType = type;
+    
+    // Hide base contact fields for 'give' modal (they're in extraFields now)
+    const baseContactFields = modalForm.querySelectorAll('input[name="name"], input[name="email"], input[name="phone"]');
+    baseContactFields.forEach(field => {
+      const fieldContainer = field.closest('div');
+      if (fieldContainer && fieldContainer.parentElement === modalForm) {
+        if (type === 'give') {
+          fieldContainer.style.display = 'none';
+        } else {
+          fieldContainer.style.display = '';
+        }
+      }
+    });
     
     modal.classList.remove('hidden');
     setTimeout(() => modal.classList.add('show'), 10);
