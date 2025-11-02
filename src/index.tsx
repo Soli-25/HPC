@@ -402,13 +402,14 @@ app.get('/', (c) => {
           <div class="mt-16 bg-neutral-900 rounded-lg p-10 md:p-12 text-white">
             <div class="flex flex-col md:flex-row items-center justify-between">
               <div class="mb-8 md:mb-0 md:mr-8">
-                <h4 class="text-2xl font-serif font-bold mb-3">Guia SOAP</h4>
+                <h4 class="text-2xl font-serif font-bold mb-3">Guia HPC Vivencial</h4>
                 <p class="text-neutral-300 leading-relaxed">
-                  Leia a Bíblia usando o método de estudo SOAP: Escritura, Observação, Aplicação, Oração.
+                  Método completo HPC: Habitar na Palavra, Perceber o Chamado, Cumprir em Oração. Guia transformador de 90 dias.
                 </p>
               </div>
-              <button class="bg-white text-neutral-900 px-8 py-4 rounded-lg text-base font-semibold hover:bg-neutral-100 transition tracking-wide whitespace-nowrap">
-                Baixar Guia
+              <button onclick="downloadGuide()" class="bg-white text-neutral-900 px-8 py-4 rounded-lg text-base font-semibold hover:bg-neutral-100 transition tracking-wide whitespace-nowrap flex items-center gap-2">
+                <i class="fas fa-download"></i>
+                Baixar Guia PDF
               </button>
             </div>
           </div>
