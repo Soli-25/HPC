@@ -1766,116 +1766,12 @@ app.get('/', async (c) => {
       <section id="discover" class="py-24 md:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Church Introduction */}
-          <div class="text-center mb-20">
+          <div class="text-center mb-12">
             <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Bem-vindo</p>
             <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-8 leading-tight">Igreja Família em Cristo</h3>
             <p class="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
               Uma casa de oração para todas as nações. Há 10 anos servindo a comunidade em Marietta, Georgia.
             </p>
-          </div>
-
-          {/* Main Info Grid */}
-          <div class="grid md:grid-cols-2 gap-16 items-start mb-24">
-            <div>
-              <h4 class="text-2xl font-bold text-neutral-900 mb-6">Nossa História</h4>
-              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
-                A Igreja Família em Cristo começou sua trajetória na residência dos fundadores, movendo-se posteriormente para um hotel, até encontrar seu lar permanente há 10 anos no endereço atual em 3379 Marietta, Georgia.
-              </p>
-              <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
-                Somos uma igreja brasileira apaixonada por criar uma casa de oração para todas as nações, onde cada pessoa pode experimentar o amor transformador de Deus.
-              </p>
-
-              {/* Location */}
-              <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-6 mb-8">
-                <p class="text-sm font-medium text-neutral-500 mb-3 uppercase tracking-wide">
-                  <i class="fas fa-map-marker-alt mr-2"></i>
-                  Localização
-                </p>
-                <p class="text-xl font-semibold text-neutral-900">3379 Canton Rd, Marietta, GA 30066</p>
-                <p class="text-neutral-600 mt-2">Há 10 anos neste local</p>
-              </div>
-
-              {/* Service Schedule */}
-              <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-6 mb-8">
-                <p class="text-sm font-medium text-neutral-500 mb-4 uppercase tracking-wide">
-                  <i class="far fa-calendar mr-2"></i>
-                  Horários de Cultos e Atividades
-                </p>
-                <div class="space-y-3">
-                  <div>
-                    <p class="text-lg font-semibold text-neutral-900">Domingo - 10:00 AM</p>
-                    <p class="text-neutral-600 text-sm">Culto de Celebração</p>
-                  </div>
-                  <div>
-                    <p class="text-lg font-semibold text-neutral-900">Quarta-feira - 19:00 (7:00 PM)</p>
-                    <p class="text-neutral-600 text-sm">Culto de Oração</p>
-                  </div>
-                  <div>
-                    <p class="text-lg font-semibold text-neutral-900">Sexta-feira - 19:00 (7:00 PM)</p>
-                    <p class="text-neutral-600 text-sm">Estudo Bíblico</p>
-                  </div>
-                  <div>
-                    <p class="text-lg font-semibold text-neutral-900">Segunda-feira - Noite</p>
-                    <p class="text-neutral-600 text-sm">Escola Teológica</p>
-                  </div>
-                </div>
-              </div>
-
-              <button class="btn-primary w-full" onclick="openModal('discover')">
-                Faça Parte da Nossa Comunidade
-              </button>
-            </div>
-
-            <div>
-              {/* Leadership */}
-              <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white rounded-lg p-8 mb-8 shadow-xl">
-                <h4 class="text-2xl font-bold mb-6">Liderança</h4>
-                
-                <div class="mb-6">
-                  <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-2">Fundadores</p>
-                  <p class="text-lg font-semibold">Pr. Otávio Amorim e Natália Müller</p>
-                </div>
-
-                <div class="mb-6">
-                  <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-2">Co-Fundadores</p>
-                  <p class="text-lg">Luciane Gomes e Ilson Gomes</p>
-                </div>
-
-                <div class="mb-6">
-                  <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-3">Diretoria</p>
-                  <div class="space-y-2 text-neutral-200">
-                    <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Douglas Fontes - Presidente</p>
-                    <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Taís Fontes - Vice Presidente</p>
-                    <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Elias Silveira - 1º Secretário</p>
-                    <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Priscila Silveira - 2ª Secretária</p>
-                    <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Sandra Godfrey - Tesoureira</p>
-                    <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Fabiano Ventura - 2º Tesoureiro</p>
-                  </div>
-                </div>
-
-                <div>
-                  <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-3">Ministério de Louvor</p>
-                  <div class="space-y-2 text-neutral-200">
-                    <p><i class="fas fa-music mr-2 text-neutral-400"></i>Líder: Renata Ventura</p>
-                    <p><i class="fas fa-music mr-2 text-neutral-400"></i>Diretora Musical: Pra. Natália Müller</p>
-                    <p><i class="fas fa-music mr-2 text-neutral-400"></i>Coordenadores: Fabiano e Ana</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Photo */}
-              <div class="relative">
-                <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
-                  <img 
-                    src="https://page.gensparksite.com/v1/base64_upload/6bfe356fa6a0d80d8f425c6c3735ada0" 
-                    alt="Pr. Otávio Amorim e Natália Müller - Fundadores da Igreja Família em Cristo" 
-                    class="w-full h-full object-cover object-center"
-                    style="object-position: center 30%;"
-                  />
-                </div>
-                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
-              </div>
-            </div>
           </div>
 
         </div>
@@ -2311,6 +2207,117 @@ app.get('/', async (c) => {
                 <p class="text-sm text-neutral-500 italic">
                   Unindo criatividade e evangelismo
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Nossa História e Liderança Section - Moved after Programs */}
+          <div class="mt-24">
+            <div class="text-center mb-12">
+              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Conheça Nossa Igreja</p>
+              <h4 class="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">Nossa História e Liderança</h4>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+              <div>
+                <h4 class="text-2xl font-bold text-neutral-900 mb-6">Nossa História</h4>
+                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                  A Igreja Família em Cristo começou sua trajetória na residência dos fundadores, movendo-se posteriormente para um hotel, até encontrar seu lar permanente há 10 anos no endereço atual em 3379 Marietta, Georgia.
+                </p>
+                <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+                  Somos uma igreja brasileira apaixonada por criar uma casa de oração para todas as nações, onde cada pessoa pode experimentar o amor transformador de Deus.
+                </p>
+
+                {/* Location */}
+                <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-6 mb-8">
+                  <p class="text-sm font-medium text-neutral-500 mb-3 uppercase tracking-wide">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    Localização
+                  </p>
+                  <p class="text-xl font-semibold text-neutral-900">3379 Canton Rd, Marietta, GA 30066</p>
+                  <p class="text-neutral-600 mt-2">Há 10 anos neste local</p>
+                </div>
+
+                {/* Service Schedule */}
+                <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-6 mb-8">
+                  <p class="text-sm font-medium text-neutral-500 mb-4 uppercase tracking-wide">
+                    <i class="far fa-calendar mr-2"></i>
+                    Horários de Cultos e Atividades
+                  </p>
+                  <div class="space-y-3">
+                    <div>
+                      <p class="text-lg font-semibold text-neutral-900">Domingo - 10:00 AM</p>
+                      <p class="text-neutral-600 text-sm">Culto de Celebração</p>
+                    </div>
+                    <div>
+                      <p class="text-lg font-semibold text-neutral-900">Quarta-feira - 19:00 (7:00 PM)</p>
+                      <p class="text-neutral-600 text-sm">Culto de Oração</p>
+                    </div>
+                    <div>
+                      <p class="text-lg font-semibold text-neutral-900">Sexta-feira - 19:00 (7:00 PM)</p>
+                      <p class="text-neutral-600 text-sm">Estudo Bíblico</p>
+                    </div>
+                    <div>
+                      <p class="text-lg font-semibold text-neutral-900">Segunda-feira - Noite</p>
+                      <p class="text-neutral-600 text-sm">Escola Teológica</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="btn-primary w-full" onclick="openModal('discover')">
+                  Faça Parte da Nossa Comunidade
+                </button>
+              </div>
+
+              <div>
+                {/* Leadership */}
+                <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white rounded-lg p-8 mb-8 shadow-xl">
+                  <h4 class="text-2xl font-bold mb-6">Liderança</h4>
+                  
+                  <div class="mb-6">
+                    <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-2">Fundadores</p>
+                    <p class="text-lg font-semibold">Pr. Otávio Amorim e Natália Müller</p>
+                  </div>
+
+                  <div class="mb-6">
+                    <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-2">Co-Fundadores</p>
+                    <p class="text-lg">Luciane Gomes e Ilson Gomes</p>
+                  </div>
+
+                  <div class="mb-6">
+                    <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-3">Diretoria</p>
+                    <div class="space-y-2 text-neutral-200">
+                      <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Douglas Fontes - Presidente</p>
+                      <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Taís Fontes - Vice Presidente</p>
+                      <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Elias Silveira - 1º Secretário</p>
+                      <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Priscila Silveira - 2ª Secretária</p>
+                      <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Sandra Godfrey - Tesoureira</p>
+                      <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Fabiano Ventura - 2º Tesoureiro</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-3">Ministério de Louvor</p>
+                    <div class="space-y-2 text-neutral-200">
+                      <p><i class="fas fa-music mr-2 text-neutral-400"></i>Líder: Renata Ventura</p>
+                      <p><i class="fas fa-music mr-2 text-neutral-400"></i>Diretora Musical: Pra. Natália Müller</p>
+                      <p><i class="fas fa-music mr-2 text-neutral-400"></i>Coordenadores: Fabiano e Ana</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Photo */}
+                <div class="relative">
+                  <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
+                    <img 
+                      src="https://page.gensparksite.com/v1/base64_upload/6bfe356fa6a0d80d8f425c6c3735ada0" 
+                      alt="Pr. Otávio Amorim e Natália Müller - Fundadores da Igreja Família em Cristo" 
+                      class="w-full h-full object-cover object-center"
+                      style="object-position: center 30%;"
+                    />
+                  </div>
+                  <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
+                </div>
               </div>
             </div>
           </div>
