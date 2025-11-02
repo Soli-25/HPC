@@ -142,10 +142,10 @@ app.get('/', (c) => {
             <div class="relative">
               <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
                 <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/9638b9b069990adadcc7eb9e8dd78439" 
-                  alt="Liderança HPC Atlanta - Pastores e líderes em frente ao logo" 
+                  src="https://page.gensparksite.com/v1/base64_upload/6bfe356fa6a0d80d8f425c6c3735ada0" 
+                  alt="Pr. Otávio Amorim - Pastor HPC Atlanta" 
                   class="w-full h-full object-cover object-center"
-                  style="object-position: center 40%;"
+                  style="object-position: center 30%;"
                 />
               </div>
               <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
@@ -161,10 +161,10 @@ app.get('/', (c) => {
             <div class="order-2 md:order-1 relative">
               <div class="aspect-square bg-gradient-to-br from-neutral-700 via-neutral-600 to-neutral-800 rounded-lg shadow-xl overflow-hidden">
                 <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/b49314cd2e986919e25794a9b6e028fc" 
-                  alt="Adoração na HPC Atlanta - Momento de louvor com mãos levantadas" 
+                  src="https://page.gensparksite.com/v1/base64_upload/f48ffac985009bf0799538a2150bb9fb" 
+                  alt="Pregador ministrando a Palavra de Deus na HPC Atlanta" 
                   class="w-full h-full object-cover"
-                  style="object-position: center center;"
+                  style="object-position: center 35%;"
                 />
               </div>
               <div class="absolute -top-6 -left-6 w-32 h-32 bg-neutral-100 rounded-lg -z-10"></div>
