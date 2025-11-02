@@ -30,8 +30,17 @@ app.get('/admin', (c) => {
         </div>
 
         <div class="bg-white rounded-2xl shadow-2xl p-8">
-          <h2 class="text-2xl font-bold text-neutral-900 mb-6">Login de Administrador</h2>
-          
+          <!-- Tab Navigation -->
+          <div class="flex mb-6 bg-neutral-100 rounded-lg p-1">
+            <button onclick="showLoginTab('credentials')" id="tab-credentials" class="flex-1 py-2 rounded-lg font-semibold transition bg-white shadow">
+              Login com Senha
+            </button>
+            <button onclick="showLoginTab('token')" id="tab-token" class="flex-1 py-2 rounded-lg font-semibold transition text-neutral-600">
+              Login com Token
+            </button>
+          </div>
+
+          <!-- Credentials Login Form -->
           <form id="loginForm" class="space-y-6">
             <div>
               <label class="block text-sm font-semibold text-neutral-700 mb-2">
@@ -67,6 +76,43 @@ app.get('/admin', (c) => {
             </button>
           </form>
 
+          <!-- Token Login Form -->
+          <form id="tokenForm" class="space-y-6 hidden">
+            <div class="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-4">
+              <p class="text-sm text-blue-800">
+                <i class="fas fa-info-circle mr-2"></i>
+                <strong>Já tem um token?</strong> Cole-o abaixo para fazer login automaticamente.
+              </p>
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-neutral-700 mb-2">
+                <i class="fas fa-key mr-2"></i>Token de Acesso
+              </label>
+              <textarea 
+                id="tokenInput" 
+                required
+                rows="4"
+                class="w-full px-4 py-3 border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition font-mono text-sm"
+                placeholder="Cole seu token aqui..."
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit"
+              class="w-full bg-neutral-900 text-white py-4 rounded-lg font-bold hover:bg-neutral-800 transition transform hover:scale-105 shadow-lg"
+            >
+              <i class="fas fa-sign-in-alt mr-2"></i>Entrar com Token
+            </button>
+
+            <div class="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-4">
+              <p class="text-xs text-yellow-800">
+                <i class="fas fa-shield-alt mr-2"></i>
+                <strong>Primeira vez?</strong> Faça login com usuário e senha para gerar seu token de acesso.
+              </p>
+            </div>
+          </form>
+
           <div id="error-message" class="hidden mt-4 p-4 bg-red-50 border-2 border-red-200 rounded-lg">
             <p class="text-red-700 text-sm font-semibold">
               <i class="fas fa-exclamation-circle mr-2"></i>
@@ -90,6 +136,50 @@ app.get('/admin', (c) => {
       </div>
 
       <script>
+        // Tab switching
+        function showLoginTab(tab) {
+          const credForm = document.getElementById('loginForm');
+          const tokenForm = document.getElementById('tokenForm');
+          const credTab = document.getElementById('tab-credentials');
+          const tokenTab = document.getElementById('tab-token');
+          
+          if (tab === 'credentials') {
+            credForm.classList.remove('hidden');
+            tokenForm.classList.add('hidden');
+            credTab.classList.add('bg-white', 'shadow');
+            credTab.classList.remove('text-neutral-600');
+            tokenTab.classList.remove('bg-white', 'shadow');
+            tokenTab.classList.add('text-neutral-600');
+          } else {
+            credForm.classList.add('hidden');
+            tokenForm.classList.remove('hidden');
+            tokenTab.classList.add('bg-white', 'shadow');
+            tokenTab.classList.remove('text-neutral-600');
+            credTab.classList.remove('bg-white', 'shadow');
+            credTab.classList.add('text-neutral-600');
+          }
+        }
+
+        // Check if already has token in localStorage
+        window.addEventListener('DOMContentLoaded', () => {
+          const token = localStorage.getItem('hpc_admin_token');
+          if (token) {
+            // Verify token and redirect if valid
+            fetch('/api/auth/verify', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ token })
+            })
+            .then(res => res.json())
+            .then(data => {
+              if (data.success && data.valid) {
+                window.location.href = '/admin/dashboard';
+              }
+            });
+          }
+        });
+
+        // Login with credentials
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
           e.preventDefault();
           
@@ -97,27 +187,100 @@ app.get('/admin', (c) => {
           const password = document.getElementById('password').value;
           const errorDiv = document.getElementById('error-message');
           const errorText = document.getElementById('error-text');
+          const submitBtn = e.target.querySelector('button[type="submit"]');
           
-          // Credenciais padrão (em produção, isso seria verificado no servidor)
-          // Usuário: pastor
-          // Senha: HPC@2025!
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Entrando...';
           
-          if (username === 'pastor' && password === 'HPC@2025!') {
-            // Salvar sessão no localStorage
-            localStorage.setItem('hpc_admin_session', btoa(username + ':' + new Date().getTime()));
+          try {
+            const response = await fetch('/api/auth/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ username, password })
+            });
             
-            // Redirecionar para dashboard
-            window.location.href = '/admin/dashboard';
-          } else {
+            const data = await response.json();
+            
+            if (data.success) {
+              // Save token in localStorage
+              localStorage.setItem('hpc_admin_token', data.token);
+              
+              // Show success message with token
+              errorDiv.classList.remove('hidden', 'bg-red-50', 'border-red-200');
+              errorDiv.classList.add('bg-green-50', 'border-green-200');
+              errorText.classList.remove('text-red-700');
+              errorText.classList.add('text-green-700');
+              errorText.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Token gerado com sucesso! Redirecionando...';
+              
+              // Show token details
+              setTimeout(() => {
+                alert('✅ Token gerado e salvo!\\n\\n📧 Email: ' + data.email + '\\n🔑 Token: ' + data.token.substring(0, 50) + '...\\n\\n⚠️  Seu token foi salvo localmente. Você permanecerá logado por 7 dias.');
+                window.location.href = '/admin/dashboard';
+              }, 1000);
+            } else {
+              errorDiv.classList.remove('hidden');
+              errorText.textContent = data.error || 'Credenciais inválidas';
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = '<i class="fas fa-sign-in-alt mr-2"></i>Entrar no Painel';
+            }
+          } catch (error) {
             errorDiv.classList.remove('hidden');
-            errorText.textContent = 'Usuário ou senha incorretos. Tente novamente.';
-            
-            // Limpar mensagem de erro após 3 segundos
-            setTimeout(() => {
-              errorDiv.classList.add('hidden');
-            }, 3000);
+            errorText.textContent = 'Erro ao conectar com servidor';
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-sign-in-alt mr-2"></i>Entrar no Painel';
           }
         });
+
+        // Login with token
+        document.getElementById('tokenForm').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          const token = document.getElementById('tokenInput').value.trim();
+          const errorDiv = document.getElementById('error-message');
+          const errorText = document.getElementById('error-text');
+          const submitBtn = e.target.querySelector('button[type="submit"]');
+          
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Verificando...';
+          
+          try {
+            const response = await fetch('/api/auth/verify', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ token })
+            });
+            
+            const data = await response.json();
+            
+            if (data.success && data.valid) {
+              // Save token in localStorage
+              localStorage.setItem('hpc_admin_token', token);
+              
+              errorDiv.classList.remove('hidden', 'bg-red-50', 'border-red-200');
+              errorDiv.classList.add('bg-green-50', 'border-green-200');
+              errorText.classList.remove('text-red-700');
+              errorText.classList.add('text-green-700');
+              errorText.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Token válido! Entrando...';
+              
+              setTimeout(() => {
+                window.location.href = '/admin/dashboard';
+              }, 1000);
+            } else {
+              errorDiv.classList.remove('hidden');
+              errorText.textContent = 'Token inválido ou expirado. Faça login com usuário e senha para gerar um novo.';
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = '<i class="fas fa-sign-in-alt mr-2"></i>Entrar com Token';
+            }
+          } catch (error) {
+            errorDiv.classList.remove('hidden');
+            errorText.textContent = 'Erro ao verificar token';
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-sign-in-alt mr-2"></i>Entrar com Token';
+          }
+        });
+
+        // Make showLoginTab global
+        window.showLoginTab = showLoginTab;
       </script>
     </body>
     </html>
@@ -139,9 +302,24 @@ app.get('/admin/dashboard', (c) => {
     <body class="bg-neutral-50">
       <!-- Check authentication -->
       <script>
-        const session = localStorage.getItem('hpc_admin_session');
-        if (!session) {
+        // Verify token on page load
+        const token = localStorage.getItem('hpc_admin_token');
+        if (!token) {
           window.location.href = '/admin';
+        } else {
+          // Verify token is still valid
+          fetch('/api/auth/verify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ token })
+          })
+          .then(res => res.json())
+          .then(data => {
+            if (!data.success || !data.valid) {
+              localStorage.removeItem('hpc_admin_token');
+              window.location.href = '/admin';
+            }
+          });
         }
       </script>
 
@@ -308,8 +486,8 @@ app.get('/admin/dashboard', (c) => {
 
       <script>
         function logout() {
-          if (confirm('Tem certeza que deseja sair?')) {
-            localStorage.removeItem('hpc_admin_session');
+          if (confirm('Tem certeza que deseja sair?\\n\\nSeu token permanecerá válido e você pode fazer login novamente sem senha.')) {
+            localStorage.removeItem('hpc_admin_token');
             window.location.href = '/admin';
           }
         }
@@ -326,6 +504,98 @@ app.get('/admin/dashboard', (c) => {
     </html>
   `)
 })
+
+// Authentication API Routes
+
+// Login with credentials and generate token
+app.post('/api/auth/login', async (c) => {
+  try {
+    const body = await c.req.json()
+    const { username, password } = body
+    
+    // Verify credentials
+    if (username === 'pastor' && password === 'HPC@2025!') {
+      // Generate access token
+      const token = generateSimpleToken({ username, email: 'infipros@solihull.pt', role: 'admin' })
+      
+      // Log token for email (in production, send via email service)
+      console.log('='.repeat(80))
+      console.log('🔐 NOVO TOKEN GERADO')
+      console.log('='.repeat(80))
+      console.log(`Email: infipros@solihull.pt`)
+      console.log(`Token: ${token}`)
+      console.log(`Validade: 7 dias`)
+      console.log('='.repeat(80))
+      console.log('⚠️  COPIE ESTE TOKEN - Ele não será mostrado novamente!')
+      console.log('='.repeat(80))
+      
+      return c.json({ 
+        success: true, 
+        token,
+        message: 'Login realizado com sucesso. Token gerado!',
+        email: 'infipros@solihull.pt'
+      })
+    } else {
+      return c.json({ success: false, error: 'Credenciais inválidas' }, 401)
+    }
+  } catch (error) {
+    return c.json({ success: false, error: 'Erro ao fazer login' }, 500)
+  }
+})
+
+// Verify token
+app.post('/api/auth/verify', async (c) => {
+  try {
+    const body = await c.req.json()
+    const { token } = body
+    
+    const payload = verifySimpleToken(token)
+    
+    if (payload) {
+      return c.json({ success: true, valid: true, user: payload })
+    } else {
+      return c.json({ success: false, valid: false, error: 'Token inválido ou expirado' }, 401)
+    }
+  } catch (error) {
+    return c.json({ success: false, valid: false, error: 'Erro ao verificar token' }, 500)
+  }
+})
+
+// Simple token generation (no external dependencies)
+function generateSimpleToken(payload: any): string {
+  const header = { alg: 'HS256', typ: 'JWT' }
+  const exp = Date.now() + 7 * 24 * 60 * 60 * 1000 // 7 days
+  
+  const tokenPayload = {
+    ...payload,
+    iat: Date.now(),
+    exp: exp
+  }
+  
+  const encodedHeader = Buffer.from(JSON.stringify(header)).toString('base64')
+  const encodedPayload = Buffer.from(JSON.stringify(tokenPayload)).toString('base64')
+  const signature = Buffer.from(`${encodedHeader}.${encodedPayload}.hpc-secret-2025`).toString('base64')
+  
+  return `${encodedHeader}.${encodedPayload}.${signature}`
+}
+
+function verifySimpleToken(token: string): any {
+  try {
+    const parts = token.split('.')
+    if (parts.length !== 3) return null
+    
+    const payload = JSON.parse(Buffer.from(parts[1], 'base64').toString())
+    
+    // Check expiration
+    if (payload.exp && payload.exp < Date.now()) {
+      return null
+    }
+    
+    return payload
+  } catch (error) {
+    return null
+  }
+}
 
 // API Routes for Blog Management
 
