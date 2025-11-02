@@ -245,39 +245,39 @@ app.get('/', (c) => {
           </div>
           
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {/* Instagram Photo 1 */}
+            {/* Instagram Photo 1 - Worship Leader */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
-                src="https://scontent.cdninstagram.com/v/t51.82787-15/530569080_17855597928490585_2936669851301207883_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=108&ccb=1-7&_nc_sid=58cdad&_nc_ohc=EZ9XwkJZ3qAQ7kNvwFyu8e1&_nc_ht=scontent.cdninstagram.com" 
-                alt="HPC Atlanta - Comunidade"
+                src="https://scontent-atl3-1.cdninstagram.com/v/t51.29350-15/471313556_1116755060461030_1346698037738569424_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=104&_nc_ohc=0Nk2sLUBZXsQ7kNvgGGlYxC&_nc_gid=5b2f4b354cb34d31b7f33db49e8a4efa&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzU1NDE5NTUzNTk5OTgxNTY5MA%3D%3D.3-ccb7-5&oh=00_AYCyF1LMIuBJ7W5qvF7mlgxYVxLkCQqA4AJgBLk7uvmQXQ&oe=678DD92D&_nc_sid=8b3546" 
+                alt="HPC Atlanta - Líder de Louvor em Adoração"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Culto de Domingo</p>
+                <p class="text-white text-sm font-medium">Louvor e Adoração</p>
               </div>
             </a>
 
-            {/* Instagram Photo 2 - Pastores */}
+            {/* Instagram Photo 2 - Team Photo */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
-                src="https://page.gensparksite.com/v1/base64_upload/83e4ca4ceb1cb41bfa31534864273b94" 
-                alt="HPC Atlanta - Pastores Pr. Otávio Amorim e Natália Müller"
+                src="https://scontent-atl3-1.cdninstagram.com/v/t51.29350-15/471243730_1110226914448502_3970451881090163886_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=109&_nc_ohc=IjSRmzlabWoQ7kNvgGXGdKo&_nc_gid=2f0e9f074c434450a8e44e47a3baec3f&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzU1NDEyNTQ4NjA3MTc0MDI1Nw%3D%3D.3-ccb7-5&oh=00_AYAvp1ozvxHa5CmD1l6UdZSoGUpzh1JVsN_76gC3cKbLJg&oe=678DC0B7&_nc_sid=8b3546" 
+                alt="HPC Atlanta - Equipe de Liderança e Staff"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Nossos Pastores</p>
+                <p class="text-white text-sm font-medium">Nossa Equipe</p>
               </div>
             </a>
 
-            {/* Instagram Photo 3 - Pregação */}
+            {/* Instagram Photo 3 - Preaching */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
-                src="https://page.gensparksite.com/v1/base64_upload/a9eef18df924d19ddf1f7d71fcaf3398" 
-                alt="HPC Atlanta - Pregação com Pr. Otávio Amorim"
+                src="https://scontent-atl3-2.cdninstagram.com/v/t51.29350-15/471216062_1116730303798163_8267991468033087788_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_cat=106&_nc_ohc=iKP8RMLaGpYQ7kNvgHLMsUd&_nc_gid=2f0e9f074c434450a8e44e47a3baec3f&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzU1NDA5MTc5MjkwMDMzNDE0MA%3D%3D.3-ccb7-5&oh=00_AYDcpN5Bg7sCDt-e4KlVl0SJZJXfGo4fGqhxFhPHXTglBg&oe=678DE56C&_nc_sid=8b3546" 
+                alt="HPC Atlanta - Pregação da Palavra de Deus"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -287,39 +287,25 @@ app.get('/', (c) => {
               </div>
             </a>
 
-            {/* Instagram Photo 4 */}
+            {/* Instagram Photo 4 - Worship Moment */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
-                src="https://scontent.cdninstagram.com/v/t51.82787-15/561096550_1437843977690829_3319828866027055270_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=109&ccb=1-7&_nc_sid=18de74&_nc_ohc=yF8g1J3QkIEQ7kNvgGXFhRY&_nc_ht=scontent.cdninstagram.com" 
-                alt="HPC Atlanta - Culto"
+                src="https://scontent-atl3-1.cdninstagram.com/v/t51.29350-15/471298453_1116730330464827_5699677677093598119_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=110&_nc_ohc=SaNUz86Ru0wQ7kNvgGMSw5D&_nc_gid=2f0e9f074c434450a8e44e47a3baec3f&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzU1NDA5MTc5MzQzNDQ0MjExOQ%3D%3D.3-ccb7-5&oh=00_AYA89jwHXE5MFo5TYJrAcfkHVi_ZxlYnx1r2wYX-BRq0zg&oe=678DC949&_nc_sid=8b3546" 
+                alt="HPC Atlanta - Momento de Adoração com Mãos Levantadas"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Culto Especial</p>
+                <p class="text-white text-sm font-medium">Adoração</p>
               </div>
             </a>
 
-            {/* Instagram Photo 5 */}
+            {/* Instagram Photo 5 - Large Group */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
-                src="https://scontent.cdninstagram.com/v/t51.82787-15/559894457_18372738904194154_4937057567211985368_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=101&ccb=1-7&_nc_sid=18de74&_nc_ohc=v8XKHzN8mX8Q7kNvgHLXbJt&_nc_ht=scontent.cdninstagram.com" 
-                alt="HPC Atlanta - Mensagem de Fé"
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Palavra de Fé</p>
-              </div>
-            </a>
-
-            {/* Instagram Photo 6 */}
-            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
-              <img 
-                src="https://scontent.cdninstagram.com/v/t51.82787-15/559776359_17862050721490585_5944130804050215600_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=106&ccb=1-7&_nc_sid=18de74&_nc_ohc=wP9Xf5b2XNMQ7kNvgHKp8Fh&_nc_ht=scontent.cdninstagram.com" 
-                alt="HPC Atlanta - Família Reunida"
+                src="https://scontent-atl3-1.cdninstagram.com/v/t51.29350-15/471272817_1116730383798155_3832085027337896344_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=103&_nc_ohc=phhxww8X9vQQ7kNvgFlJhD3&_nc_gid=2f0e9f074c434450a8e44e47a3baec3f&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzU1NDA5MTc5NDE2NzY0NTk4MA%3D%3D.3-ccb7-5&oh=00_AYAWCprgXG98VeGE2VBvaDqCVMCxiKr2h7-MuqR6N_vl6A&oe=678DEE6A&_nc_sid=8b3546" 
+                alt="HPC Atlanta - Grande Grupo com Famílias e Camisetas I Have Decided"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -329,31 +315,45 @@ app.get('/', (c) => {
               </div>
             </a>
 
-            {/* Instagram Photo 7 */}
+            {/* Instagram Photo 6 - Senior Speaker */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
-                src="https://scontent.cdninstagram.com/v/t51.82787-15/554906771_18371893435194154_4303645085401162689_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=102&ccb=1-7&_nc_sid=18de74&_nc_ohc=dL8PmJ9vYy0Q7kNvgFZRXwN&_nc_ht=scontent.cdninstagram.com" 
-                alt="HPC Atlanta - Dia Especial"
+                src="https://scontent-atl3-1.cdninstagram.com/v/t51.29350-15/471273073_1116730293798164_4069825066876849043_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=109&_nc_ohc=OG1e-bYjZX4Q7kNvgE7bz0Q&_nc_gid=2f0e9f074c434450a8e44e47a3baec3f&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzU1NDA5MTc5MzIyNDcxMTc5MA%3D%3D.3-ccb7-5&oh=00_AYCyOlYl06QhxnRBwQ3bKqq0DFN93Fuw29oafGPbw7z3tw&oe=678DF066&_nc_sid=8b3546" 
+                alt="HPC Atlanta - Pregador Convidado Ministrando"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Dia Especial</p>
+                <p class="text-white text-sm font-medium">Ministração</p>
               </div>
             </a>
 
-            {/* Instagram Photo 8 */}
+            {/* Instagram Photo 7 - Prayer */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
-                src="https://scontent.cdninstagram.com/v/t51.82787-15/552573643_17860612692490585_6881815553668219175_n.jpg?stp=dst-jpg_e35_s1080x1080&_nc_cat=111&ccb=1-7&_nc_sid=18de74&_nc_ohc=KL9YmF8jXB4Q7kNvgHwXcNz&_nc_ht=scontent.cdninstagram.com" 
-                alt="HPC Atlanta - Visita do Bispo"
+                src="https://scontent-atl3-2.cdninstagram.com/v/t51.29350-15/471256639_1116730327131494_4754881088447933996_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_cat=107&_nc_ohc=lkxCKNwIcN8Q7kNvgHk1Rzw&_nc_gid=2f0e9f074c434450a8e44e47a3baec3f&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzU1NDA5MTc5MzU4MTQwNjI5Mg%3D%3D.3-ccb7-5&oh=00_AYDwp0pDmtVlDY6VFTLNqGfYPSGWtRH6yLTFv9-1p5uPgA&oe=678DDD32&_nc_sid=8b3546" 
+                alt="HPC Atlanta - Momento de Oração em Grupo"
                 class="w-full h-full object-cover"
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
               <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Visita do Bispo</p>
+                <p class="text-white text-sm font-medium">Momento de Oração</p>
+              </div>
+            </a>
+
+            {/* Instagram Photo 8 - Pastor Otávio */}
+            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
+              <img 
+                src="https://scontent-atl3-1.cdninstagram.com/v/t51.29350-15/471185473_1116730360464824_5506336968302296468_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=110&_nc_ohc=qfKiIYbgTpoQ7kNvgETPX5w&_nc_gid=2f0e9f074c434450a8e44e47a3baec3f&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzU1NDA5MTc5Mzg0MDIzNzgyOA%3D%3D.3-ccb7-5&oh=00_AYDG56kY-1hxdYHp70hOnwLRdLqNgY8HxFANPqgB_YGbkA&oe=678DEFF5&_nc_sid=8b3546" 
+                alt="HPC Atlanta - Pr. Otávio Amorim Pregando no Púlpito"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
+                <p class="text-white text-sm font-medium">Pr. Otávio Amorim</p>
               </div>
             </a>
           </div>
