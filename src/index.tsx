@@ -1,7 +1,11 @@
 import { Hono } from 'hono'
 import { renderer } from './renderer'
 
-const app = new Hono()
+type Bindings = {
+  DB: D1Database;
+}
+
+const app = new Hono<{ Bindings: Bindings }>()
 
 app.use(renderer)
 
@@ -323,7 +327,138 @@ app.get('/admin/dashboard', (c) => {
   `)
 })
 
-app.get('/', (c) => {
+// API Routes for Blog Management
+
+// GET all posts
+app.get('/api/posts', async (c) => {
+  try {
+    const { results } = await c.env.DB.prepare(
+      'SELECT * FROM blog_posts ORDER BY created_at DESC'
+    ).all()
+    
+    return c.json({ success: true, posts: results })
+  } catch (error) {
+    return c.json({ success: false, error: 'Failed to fetch posts' }, 500)
+  }
+})
+
+// GET single post by slug
+app.get('/api/posts/:slug', async (c) => {
+  try {
+    const slug = c.req.param('slug')
+    const post = await c.env.DB.prepare(
+      'SELECT * FROM blog_posts WHERE slug = ?'
+    ).bind(slug).first()
+    
+    if (!post) {
+      return c.json({ success: false, error: 'Post not found' }, 404)
+    }
+    
+    return c.json({ success: true, post })
+  } catch (error) {
+    return c.json({ success: false, error: 'Failed to fetch post' }, 500)
+  }
+})
+
+// CREATE new post
+app.post('/api/posts', async (c) => {
+  try {
+    const body = await c.req.json()
+    const { title, slug, excerpt, content, category, image_url, read_time, featured } = body
+    
+    // Generate slug from title if not provided
+    const postSlug = slug || title.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove accents
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+    
+    await c.env.DB.prepare(`
+      INSERT INTO blog_posts (title, slug, excerpt, content, category, image_url, read_time, featured)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `).bind(
+      title,
+      postSlug,
+      excerpt,
+      content,
+      category,
+      image_url || 'https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa',
+      read_time || '5 min',
+      featured ? 1 : 0
+    ).run()
+    
+    return c.json({ success: true, message: 'Post created successfully', slug: postSlug })
+  } catch (error) {
+    console.error('Error creating post:', error)
+    return c.json({ success: false, error: 'Failed to create post' }, 500)
+  }
+})
+
+// UPDATE post
+app.put('/api/posts/:id', async (c) => {
+  try {
+    const id = c.req.param('id')
+    const body = await c.req.json()
+    const { title, slug, excerpt, content, category, image_url, read_time, featured } = body
+    
+    await c.env.DB.prepare(`
+      UPDATE blog_posts 
+      SET title = ?, slug = ?, excerpt = ?, content = ?, category = ?, 
+          image_url = ?, read_time = ?, featured = ?, updated_at = CURRENT_TIMESTAMP
+      WHERE id = ?
+    `).bind(
+      title,
+      slug,
+      excerpt,
+      content,
+      category,
+      image_url,
+      read_time,
+      featured ? 1 : 0,
+      id
+    ).run()
+    
+    return c.json({ success: true, message: 'Post updated successfully' })
+  } catch (error) {
+    return c.json({ success: false, error: 'Failed to update post' }, 500)
+  }
+})
+
+// DELETE post
+app.delete('/api/posts/:id', async (c) => {
+  try {
+    const id = c.req.param('id')
+    
+    await c.env.DB.prepare('DELETE FROM blog_posts WHERE id = ?').bind(id).run()
+    
+    return c.json({ success: true, message: 'Post deleted successfully' })
+  } catch (error) {
+    return c.json({ success: false, error: 'Failed to delete post' }, 500)
+  }
+})
+
+app.get('/', async (c) => {
+  // Fetch latest 3 blog posts from database
+  let blogPosts = []
+  try {
+    const { results } = await c.env.DB.prepare(
+      'SELECT * FROM blog_posts ORDER BY created_at DESC LIMIT 3'
+    ).all()
+    blogPosts = results
+  } catch (error) {
+    console.error('Error fetching blog posts:', error)
+    // Use empty array if database fails
+  }
+
+  // Format date helper
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString)
+    return date.toLocaleDateString('pt-BR', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  }
+
   return c.render(
     <div class="min-h-screen bg-neutral-50">
       {/* Navigation */}
@@ -644,104 +779,46 @@ app.get('/', (c) => {
           </div>
 
           <div class="grid md:grid-cols-3 gap-8 mb-12">
-            {/* Blog Post 1 */}
-            <a href="/blog/casa-de-oracao-para-todas-nacoes" class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
-              <div class="relative h-64 overflow-hidden">
-                <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa" 
-                  alt="A Casa de Oração Para Todas as Nações"
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div class="absolute top-4 left-4 bg-neutral-900 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                  Mensagens
-                </div>
+            {blogPosts.length > 0 ? (
+              blogPosts.map((post: any) => (
+                <a href={`/blog/${post.slug}`} class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+                  <div class="relative h-64 overflow-hidden">
+                    <img 
+                      src={post.image_url || 'https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa'} 
+                      alt={post.title}
+                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div class="absolute top-4 left-4 bg-neutral-900 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      {post.category}
+                    </div>
+                  </div>
+                  <div class="p-6 flex-1 flex flex-col">
+                    <div class="flex items-center text-sm text-neutral-500 mb-3">
+                      <i class="far fa-calendar mr-2"></i>
+                      <span>{formatDate(post.created_at)}</span>
+                      <span class="mx-2">•</span>
+                      <i class="far fa-clock mr-2"></i>
+                      <span>{post.read_time}</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-600 transition">
+                      {post.title}
+                    </h4>
+                    <p class="text-neutral-600 mb-4 leading-relaxed flex-1">
+                      {post.excerpt}
+                    </p>
+                    <div class="flex items-center text-neutral-900 font-semibold group-hover:gap-2 transition-all">
+                      <span>Ler mensagem</span>
+                      <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                  </div>
+                </a>
+              ))
+            ) : (
+              <div class="col-span-3 text-center py-12">
+                <i class="fas fa-book-open text-6xl text-neutral-300 mb-4"></i>
+                <p class="text-xl text-neutral-500">Nenhuma mensagem publicada ainda.</p>
               </div>
-              <div class="p-6 flex-1 flex flex-col">
-                <div class="flex items-center text-sm text-neutral-500 mb-3">
-                  <i class="far fa-calendar mr-2"></i>
-                  <span>15 de janeiro de 2025</span>
-                  <span class="mx-2">•</span>
-                  <i class="far fa-clock mr-2"></i>
-                  <span>5 min</span>
-                </div>
-                <h4 class="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-600 transition">
-                  A Casa de Oração Para Todas as Nações
-                </h4>
-                <p class="text-neutral-600 mb-4 leading-relaxed flex-1">
-                  Deus está chamando Seu povo para uma vida de oração profunda e transformadora. Descubra o que significa ser uma casa de oração.
-                </p>
-                <div class="flex items-center text-neutral-900 font-semibold group-hover:gap-2 transition-all">
-                  <span>Ler mensagem</span>
-                  <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                </div>
-              </div>
-            </a>
-
-            {/* Blog Post 2 */}
-            <a href="/blog/poder-da-adoracao-autentica" class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
-              <div class="relative h-64 overflow-hidden">
-                <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/b49314cd2e986919e25794a9b6e028fc" 
-                  alt="O Poder da Adoração Autêntica"
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div class="absolute top-4 left-4 bg-neutral-900 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                  Adoração
-                </div>
-              </div>
-              <div class="p-6 flex-1 flex flex-col">
-                <div class="flex items-center text-sm text-neutral-500 mb-3">
-                  <i class="far fa-calendar mr-2"></i>
-                  <span>8 de janeiro de 2025</span>
-                  <span class="mx-2">•</span>
-                  <i class="far fa-clock mr-2"></i>
-                  <span>4 min</span>
-                </div>
-                <h4 class="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-600 transition">
-                  O Poder da Adoração Autêntica
-                </h4>
-                <p class="text-neutral-600 mb-4 leading-relaxed flex-1">
-                  A verdadeira adoração transcende músicas e rituais. É um estilo de vida que transforma nosso coração e nossa comunidade.
-                </p>
-                <div class="flex items-center text-neutral-900 font-semibold group-hover:gap-2 transition-all">
-                  <span>Ler mensagem</span>
-                  <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                </div>
-              </div>
-            </a>
-
-            {/* Blog Post 3 */}
-            <a href="/blog/batismo-declaracao-publica-fe" class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
-              <div class="relative h-64 overflow-hidden">
-                <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/ae40562804a7da5523cd995eb819d9b5" 
-                  alt="Batismo: Declaração Pública de Fé"
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div class="absolute top-4 left-4 bg-neutral-900 text-white px-3 py-1 rounded-full text-xs font-semibold">
-                  Batismo
-                </div>
-              </div>
-              <div class="p-6 flex-1 flex flex-col">
-                <div class="flex items-center text-sm text-neutral-500 mb-3">
-                  <i class="far fa-calendar mr-2"></i>
-                  <span>1 de janeiro de 2025</span>
-                  <span class="mx-2">•</span>
-                  <i class="far fa-clock mr-2"></i>
-                  <span>6 min</span>
-                </div>
-                <h4 class="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-600 transition">
-                  Batismo: Declaração Pública de Fé
-                </h4>
-                <p class="text-neutral-600 mb-4 leading-relaxed flex-1">
-                  O batismo é mais que ritual religioso - é poderosa declaração de transformação e compromisso com Cristo.
-                </p>
-                <div class="flex items-center text-neutral-900 font-semibold group-hover:gap-2 transition-all">
-                  <span>Ler mensagem</span>
-                  <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                </div>
-              </div>
-            </a>
+            )}
           </div>
 
           <div class="text-center">
