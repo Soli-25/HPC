@@ -1878,116 +1878,6 @@ app.get('/', async (c) => {
             </div>
           </div>
 
-          {/* Missionary Projects Section */}
-          <div class="mb-24">
-            <div class="text-center mb-12">
-              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Alcançando Nações</p>
-              <h4 class="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">Projetos Missionários</h4>
-              <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
-                Levando o amor de Cristo às nações através de projetos transformadores
-              </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* Guinea-Bissau */}
-              <div class="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center mb-4">
-                  <i class="fas fa-globe-africa text-white text-xl"></i>
-                </div>
-                <h5 class="text-xl font-bold text-neutral-900 mb-3">Guiné-Bissau</h5>
-                <p class="text-neutral-600 mb-3">Projeto missionário na África apoiando orfanato infantil e escola para crianças.</p>
-                <p class="text-sm text-neutral-500">
-                  <i class="fas fa-user mr-2"></i>Missionário: Gilbert
-                </p>
-              </div>
-
-              {/* India */}
-              <div class="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center mb-4">
-                  <i class="fas fa-hands-praying text-white text-xl"></i>
-                </div>
-                <h5 class="text-xl font-bold text-neutral-900 mb-3">Índia</h5>
-                <p class="text-neutral-600 mb-3">Capacitação de 30 pastores indígenas através do Project Compassion.</p>
-                <p class="text-sm text-neutral-500">
-                  <i class="fas fa-user mr-2"></i>Missionário: Marcelo
-                </p>
-              </div>
-
-              {/* Portugal */}
-              <div class="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center mb-4">
-                  <i class="fas fa-church text-white text-xl"></i>
-                </div>
-                <h5 class="text-xl font-bold text-neutral-900 mb-3">Portugal</h5>
-                <p class="text-neutral-600 mb-3">Implantação de congregação e apoio a missões portuguesas.</p>
-                <p class="text-sm text-neutral-500">
-                  <i class="fas fa-user mr-2"></i>Missionário: Pr. Carlos Antunes
-                </p>
-              </div>
-
-              {/* Brazil */}
-              <div class="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center mb-4">
-                  <i class="fas fa-heart text-white text-xl"></i>
-                </div>
-                <h5 class="text-xl font-bold text-neutral-900 mb-3">Brasil</h5>
-                <p class="text-neutral-600 mb-3">Apoio a projetos sociais e evangelísticos em comunidades brasileiras.</p>
-                <p class="text-sm text-neutral-500">
-                  <i class="fas fa-map-marker-alt mr-2"></i>Várias regiões
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Programs Section */}
-          <div>
-            <div class="text-center mb-12">
-              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Servindo a Comunidade</p>
-              <h4 class="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">Programas e Iniciativas</h4>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-              {/* Sports Program */}
-              <div class="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg p-8">
-                <div class="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center mb-4">
-                  <i class="fas fa-futbol text-white text-2xl"></i>
-                </div>
-                <h5 class="text-xl font-bold text-neutral-900 mb-3">Escola de Futebol</h5>
-                <p class="text-neutral-700 mb-3 font-semibold">Pavillion One</p>
-                <p class="text-neutral-600">
-                  Programa esportivo para crianças e jovens, desenvolvendo talentos e valores cristãos através do esporte.
-                </p>
-              </div>
-
-              {/* Social Initiatives */}
-              <div class="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-lg p-8">
-                <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center mb-4">
-                  <i class="fas fa-hands-helping text-white text-2xl"></i>
-                </div>
-                <h5 class="text-xl font-bold text-neutral-900 mb-3">Iniciativas Sociais</h5>
-                <p class="text-neutral-600 space-y-2">
-                  <span class="block">• Visitas a lares de idosos</span>
-                  <span class="block">• Apoio a orfanatos</span>
-                  <span class="block">• Cafés comunitários</span>
-                  <span class="block">• Assistência a necessitados</span>
-                </p>
-              </div>
-
-              {/* Special Projects */}
-              <div class="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-8">
-                <div class="w-14 h-14 bg-purple-600 rounded-full flex items-center justify-center mb-4">
-                  <i class="fas fa-star text-white text-2xl"></i>
-                </div>
-                <h5 class="text-xl font-bold text-neutral-900 mb-3">Projeto Taysha Souza</h5>
-                <p class="text-neutral-600 mb-3">
-                  Desfiles de moda evangelísticos apresentando a mensagem de Cristo através da arte e da moda.
-                </p>
-                <p class="text-sm text-neutral-500 italic">
-                  Unindo criatividade e evangelismo
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -2311,6 +2201,117 @@ app.get('/', async (c) => {
                 <i class="fas fa-download"></i>
                 Baixar Guia PDF
               </button>
+            </div>
+          </div>
+
+          {/* Missionary Projects Section - Moved after HPC Guide */}
+          <div class="mt-24 mb-24">
+            <div class="text-center mb-12">
+              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Alcançando Nações</p>
+              <h4 class="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">Projetos Missionários</h4>
+              <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+                Levando o amor de Cristo às nações através de projetos transformadores
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Guinea-Bissau */}
+              <div class="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-globe-africa text-white text-xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Guiné-Bissau</h5>
+                <p class="text-neutral-600 mb-3">Projeto missionário na África apoiando orfanato infantil e escola para crianças.</p>
+                <p class="text-sm text-neutral-500">
+                  <i class="fas fa-user mr-2"></i>Missionário: Gilbert
+                </p>
+              </div>
+
+              {/* India */}
+              <div class="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-hands-praying text-white text-xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Índia</h5>
+                <p class="text-neutral-600 mb-3">Capacitação de 30 pastores indígenas através do Project Compassion.</p>
+                <p class="text-sm text-neutral-500">
+                  <i class="fas fa-user mr-2"></i>Missionário: Marcelo
+                </p>
+              </div>
+
+              {/* Portugal */}
+              <div class="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-church text-white text-xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Portugal</h5>
+                <p class="text-neutral-600 mb-3">Implantação de congregação e apoio a missões portuguesas.</p>
+                <p class="text-sm text-neutral-500">
+                  <i class="fas fa-user mr-2"></i>Missionário: Pr. Carlos Antunes
+                </p>
+              </div>
+
+              {/* Brazil */}
+              <div class="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-heart text-white text-xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Brasil</h5>
+                <p class="text-neutral-600 mb-3">Apoio a projetos sociais e evangelísticos em comunidades brasileiras.</p>
+                <p class="text-sm text-neutral-500">
+                  <i class="fas fa-map-marker-alt mr-2"></i>Várias regiões
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Programs Section - Moved after HPC Guide */}
+          <div class="mb-16">
+            <div class="text-center mb-12">
+              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Servindo a Comunidade</p>
+              <h4 class="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">Programas e Iniciativas</h4>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+              {/* Sports Program */}
+              <div class="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg p-8">
+                <div class="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-futbol text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Escola de Futebol</h5>
+                <p class="text-neutral-700 mb-3 font-semibold">Pavillion One</p>
+                <p class="text-neutral-600">
+                  Programa esportivo para crianças e jovens, desenvolvendo talentos e valores cristãos através do esporte.
+                </p>
+              </div>
+
+              {/* Social Initiatives */}
+              <div class="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-lg p-8">
+                <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-hands-helping text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Iniciativas Sociais</h5>
+                <p class="text-neutral-600 space-y-2">
+                  <span class="block">• Visitas a lares de idosos</span>
+                  <span class="block">• Apoio a orfanatos</span>
+                  <span class="block">• Cafés comunitários</span>
+                  <span class="block">• Assistência a necessitados</span>
+                </p>
+              </div>
+
+              {/* Special Projects */}
+              <div class="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-8">
+                <div class="w-14 h-14 bg-purple-600 rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-star text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Projeto Taysha Souza</h5>
+                <p class="text-neutral-600 mb-3">
+                  Desfiles de moda evangelísticos apresentando a mensagem de Cristo através da arte e da moda.
+                </p>
+                <p class="text-sm text-neutral-500 italic">
+                  Unindo criatividade e evangelismo
+                </p>
+              </div>
             </div>
           </div>
         </div>
