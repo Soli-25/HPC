@@ -53,7 +53,8 @@ Uma igreja brasileira (Brazilian Church) em Marietta, GA. Uma casa de oração p
 1. **Hero Section** (Cabeçalho Principal)
    - Título impactante: "Dê Seu Próximo Passo"
    - Frase da missão: "Uma casa de oração para todas as nações"
-   - **Foto de fundo real**: Momento de louvor e adoração da HPC Atlanta
+   - **Foto de fundo poderosa**: Adoração intensa com mãos levantadas em louvor
+   - Atmosfera de adoração autêntica da HPC Atlanta
    - CTAs melhorados: "Faça Parte" e "Conheça a HPC"
    - Banner com horários de culto destacados (Domingo 10AM, Terça 8PM, Quinta 8PM)
 
