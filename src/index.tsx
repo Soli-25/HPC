@@ -161,10 +161,10 @@ app.get('/', (c) => {
             <div class="order-2 md:order-1 relative">
               <div class="aspect-square bg-gradient-to-br from-neutral-700 via-neutral-600 to-neutral-800 rounded-lg shadow-xl overflow-hidden">
                 <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/a9eef18df924d19ddf1f7d71fcaf3398" 
-                  alt="Pregação na HPC Atlanta - Pr. Otávio Amorim" 
-                  class="w-full h-full object-cover scale-125"
-                  style="object-position: center 35%;"
+                  src="https://page.gensparksite.com/v1/base64_upload/b49314cd2e986919e25794a9b6e028fc" 
+                  alt="Adoração na HPC Atlanta - Momento de louvor com mãos levantadas" 
+                  class="w-full h-full object-cover"
+                  style="object-position: center center;"
                 />
               </div>
               <div class="absolute -top-6 -left-6 w-32 h-32 bg-neutral-100 rounded-lg -z-10"></div>
