@@ -477,7 +477,7 @@ app.get('/', async (c) => {
               <a href="#discover" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Descobrir</a>
               <a href="#team" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Servir</a>
               <a href="#baptism" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Batismo</a>
-              <a href="#blog" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Blog</a>
+              <a href="#blog" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Palavra</a>
               <a href="#groups" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Grupos</a>
               <a href="#connect" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Conectar</a>
               <button onclick="openModal('give')" class="bg-neutral-900 text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-neutral-800 transition transform hover:scale-105 shadow-md flex items-center gap-2">
@@ -496,7 +496,7 @@ app.get('/', async (c) => {
             <a href="#discover" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Descobrir</a>
             <a href="#team" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Servir</a>
             <a href="#baptism" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Batismo</a>
-            <a href="#blog" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Blog</a>
+            <a href="#blog" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Palavra</a>
             <a href="#groups" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Grupos</a>
             <a href="#connect" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Conectar</a>
             <button onclick="openModal('give')" class="w-full text-left px-3 py-3 bg-neutral-900 text-white hover:bg-neutral-800 transition font-semibold flex items-center gap-2">
