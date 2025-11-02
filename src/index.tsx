@@ -200,9 +200,10 @@ app.get('/', (c) => {
             <div class="relative">
               <div class="aspect-square bg-gradient-to-br from-blue-50 via-blue-100 to-cyan-50 rounded-lg shadow-xl overflow-hidden border border-blue-200">
                 <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/f10247914d6289f0af75486bffa997fb" 
-                  alt="Batismo na HPC Atlanta - Nova vida em Cristo" 
+                  src="https://page.gensparksite.com/v1/base64_upload/ae40562804a7da5523cd995eb819d9b5" 
+                  alt="Batismo na HPC Atlanta - Momento poderoso de nova vida em Cristo" 
                   class="w-full h-full object-cover"
+                  style="object-position: center 45%;"
                 />
               </div>
               <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
