@@ -73,7 +73,9 @@ Uma igreja brasileira (Brazilian Church) em Marietta, GA. Uma casa de oração p
    - Formulário de interesse com áreas específicas
 
 4. **Batismo**
-   - **Foto real de batismo**: Momento emocionante de batismo na HPC Atlanta
+   - **Foto poderosa de batismo**: Momento exato do batismo - pessoa sendo batizada
+   - Cena emocional e impactante do ato do batismo
+   - Pastor batizando no momento da água
    - Informações sobre o batismo
    - Versículo bíblico (Atos 2:38)
    - Background com cores de água (azul/ciano)
