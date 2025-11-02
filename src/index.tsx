@@ -2127,6 +2127,175 @@ app.get('/', async (c) => {
             </div>
           </div>
 
+          {/* Schedule and Leadership Section - After HPC Guide */}
+          <div class="mt-24 mb-24">
+            <div class="text-center mb-16">
+              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Informações da Igreja</p>
+              <h4 class="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">Horários e Liderança</h4>
+              <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+                Conheça nossos horários de cultos e a liderança da Igreja Família em Cristo
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16">
+              {/* Schedule Card */}
+              <div class="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-xl p-8 shadow-lg">
+                <div class="flex items-center mb-6">
+                  <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                    <i class="far fa-calendar-alt text-white text-2xl"></i>
+                  </div>
+                  <h5 class="text-2xl font-bold text-neutral-900">Horários de Cultos</h5>
+                </div>
+                
+                <div class="space-y-4">
+                  <div class="bg-white rounded-lg p-5 border border-blue-100 hover:shadow-md transition">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p class="text-xl font-bold text-neutral-900 mb-1">Domingo</p>
+                        <p class="text-neutral-600 text-sm">Culto de Celebração</p>
+                      </div>
+                      <div class="text-right">
+                        <p class="text-2xl font-bold text-blue-600">10:00 AM</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bg-white rounded-lg p-5 border border-blue-100 hover:shadow-md transition">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p class="text-xl font-bold text-neutral-900 mb-1">Quarta-feira</p>
+                        <p class="text-neutral-600 text-sm">Culto de Oração</p>
+                      </div>
+                      <div class="text-right">
+                        <p class="text-2xl font-bold text-blue-600">19:00</p>
+                        <p class="text-xs text-neutral-500">7:00 PM</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bg-white rounded-lg p-5 border border-blue-100 hover:shadow-md transition">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p class="text-xl font-bold text-neutral-900 mb-1">Sexta-feira</p>
+                        <p class="text-neutral-600 text-sm">Estudo Bíblico</p>
+                      </div>
+                      <div class="text-right">
+                        <p class="text-2xl font-bold text-blue-600">19:00</p>
+                        <p class="text-xs text-neutral-500">7:00 PM</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bg-white rounded-lg p-5 border border-blue-100 hover:shadow-md transition">
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p class="text-xl font-bold text-neutral-900 mb-1">Segunda-feira</p>
+                        <p class="text-neutral-600 text-sm">Escola Teológica</p>
+                      </div>
+                      <div class="text-right">
+                        <p class="text-2xl font-bold text-blue-600">Noite</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-blue-200">
+                  <div class="flex items-center text-neutral-600">
+                    <i class="fas fa-map-marker-alt mr-3 text-blue-600"></i>
+                    <div>
+                      <p class="font-semibold text-neutral-900">3379 Canton Rd</p>
+                      <p class="text-sm">Marietta, GA 30066</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center text-neutral-600 mt-3">
+                    <i class="fas fa-phone mr-3 text-blue-600"></i>
+                    <p class="font-semibold">+1 (770) 862-0756</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Leadership Card */}
+              <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white rounded-xl p-8 shadow-xl">
+                <div class="flex items-center mb-6">
+                  <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-users text-neutral-900 text-2xl"></i>
+                  </div>
+                  <h5 class="text-2xl font-bold">Liderança da Igreja</h5>
+                </div>
+
+                {/* Fundadores */}
+                <div class="mb-6 pb-6 border-b border-neutral-700">
+                  <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-3">
+                    <i class="fas fa-crown mr-2"></i>Fundadores
+                  </p>
+                  <p class="text-lg font-semibold text-white">Pr. Otávio Amorim e Natália Müller</p>
+                </div>
+
+                {/* Co-Fundadores */}
+                <div class="mb-6 pb-6 border-b border-neutral-700">
+                  <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-3">
+                    <i class="fas fa-hands-helping mr-2"></i>Co-Fundadores
+                  </p>
+                  <p class="text-base text-neutral-200">Luciane Gomes e Ilson Gomes</p>
+                </div>
+
+                {/* Diretoria */}
+                <div class="mb-6 pb-6 border-b border-neutral-700">
+                  <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">
+                    <i class="fas fa-user-tie mr-2"></i>Diretoria
+                  </p>
+                  <div class="grid grid-cols-1 gap-2 text-sm text-neutral-200">
+                    <div class="flex items-center">
+                      <i class="fas fa-circle text-xs mr-3 text-neutral-500"></i>
+                      <span><strong>Douglas Fontes</strong> - Presidente</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-circle text-xs mr-3 text-neutral-500"></i>
+                      <span><strong>Taís Fontes</strong> - Vice Presidente</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-circle text-xs mr-3 text-neutral-500"></i>
+                      <span><strong>Elias Silveira</strong> - 1º Secretário</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-circle text-xs mr-3 text-neutral-500"></i>
+                      <span><strong>Priscila Silveira</strong> - 2ª Secretária</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-circle text-xs mr-3 text-neutral-500"></i>
+                      <span><strong>Sandra Godfrey</strong> - Tesoureira</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-circle text-xs mr-3 text-neutral-500"></i>
+                      <span><strong>Fabiano Ventura</strong> - 2º Tesoureiro</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Ministério de Louvor */}
+                <div>
+                  <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">
+                    <i class="fas fa-music mr-2"></i>Ministério de Louvor
+                  </p>
+                  <div class="space-y-2 text-sm text-neutral-200">
+                    <div class="flex items-center">
+                      <i class="fas fa-microphone text-xs mr-3 text-neutral-500"></i>
+                      <span><strong>Renata Ventura</strong> - Líder</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-microphone text-xs mr-3 text-neutral-500"></i>
+                      <span><strong>Pra. Natália Müller</strong> - Diretora Musical</span>
+                    </div>
+                    <div class="flex items-center">
+                      <i class="fas fa-microphone text-xs mr-3 text-neutral-500"></i>
+                      <span><strong>Fabiano e Ana</strong> - Coordenadores</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Missionary Projects Section - Moved after HPC Guide */}
           <div class="mt-24 mb-24">
             <div class="text-center mb-12">
@@ -2238,116 +2407,6 @@ app.get('/', async (c) => {
             </div>
           </div>
 
-          {/* Nossa História e Liderança Section - Moved after Programs */}
-          <div class="mt-24">
-            <div class="text-center mb-12">
-              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Conheça Nossa Igreja</p>
-              <h4 class="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">Nossa História e Liderança</h4>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-16 items-start">
-              <div>
-                <h4 class="text-2xl font-bold text-neutral-900 mb-6">Nossa História</h4>
-                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
-                  A Igreja Família em Cristo começou sua trajetória na residência dos fundadores, movendo-se posteriormente para um hotel, até encontrar seu lar permanente há 10 anos no endereço atual em 3379 Marietta, Georgia.
-                </p>
-                <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
-                  Somos uma igreja brasileira apaixonada por criar uma casa de oração para todas as nações, onde cada pessoa pode experimentar o amor transformador de Deus.
-                </p>
-
-                {/* Location */}
-                <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-6 mb-8">
-                  <p class="text-sm font-medium text-neutral-500 mb-3 uppercase tracking-wide">
-                    <i class="fas fa-map-marker-alt mr-2"></i>
-                    Localização
-                  </p>
-                  <p class="text-xl font-semibold text-neutral-900">3379 Canton Rd, Marietta, GA 30066</p>
-                  <p class="text-neutral-600 mt-2">Há 10 anos neste local</p>
-                </div>
-
-                {/* Service Schedule */}
-                <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-6 mb-8">
-                  <p class="text-sm font-medium text-neutral-500 mb-4 uppercase tracking-wide">
-                    <i class="far fa-calendar mr-2"></i>
-                    Horários de Cultos e Atividades
-                  </p>
-                  <div class="space-y-3">
-                    <div>
-                      <p class="text-lg font-semibold text-neutral-900">Domingo - 10:00 AM</p>
-                      <p class="text-neutral-600 text-sm">Culto de Celebração</p>
-                    </div>
-                    <div>
-                      <p class="text-lg font-semibold text-neutral-900">Quarta-feira - 19:00 (7:00 PM)</p>
-                      <p class="text-neutral-600 text-sm">Culto de Oração</p>
-                    </div>
-                    <div>
-                      <p class="text-lg font-semibold text-neutral-900">Sexta-feira - 19:00 (7:00 PM)</p>
-                      <p class="text-neutral-600 text-sm">Estudo Bíblico</p>
-                    </div>
-                    <div>
-                      <p class="text-lg font-semibold text-neutral-900">Segunda-feira - Noite</p>
-                      <p class="text-neutral-600 text-sm">Escola Teológica</p>
-                    </div>
-                  </div>
-                </div>
-
-                <button class="btn-primary w-full" onclick="openModal('discover')">
-                  Faça Parte da Nossa Comunidade
-                </button>
-              </div>
-
-              <div>
-                {/* Leadership */}
-                <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white rounded-lg p-8 mb-8 shadow-xl">
-                  <h4 class="text-2xl font-bold mb-6">Liderança</h4>
-                  
-                  <div class="mb-6">
-                    <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-2">Fundadores</p>
-                    <p class="text-lg font-semibold">Pr. Otávio Amorim e Natália Müller</p>
-                  </div>
-
-                  <div class="mb-6">
-                    <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-2">Co-Fundadores</p>
-                    <p class="text-lg">Luciane Gomes e Ilson Gomes</p>
-                  </div>
-
-                  <div class="mb-6">
-                    <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-3">Diretoria</p>
-                    <div class="space-y-2 text-neutral-200">
-                      <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Douglas Fontes - Presidente</p>
-                      <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Taís Fontes - Vice Presidente</p>
-                      <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Elias Silveira - 1º Secretário</p>
-                      <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Priscila Silveira - 2ª Secretária</p>
-                      <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Sandra Godfrey - Tesoureira</p>
-                      <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Fabiano Ventura - 2º Tesoureiro</p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-3">Ministério de Louvor</p>
-                    <div class="space-y-2 text-neutral-200">
-                      <p><i class="fas fa-music mr-2 text-neutral-400"></i>Líder: Renata Ventura</p>
-                      <p><i class="fas fa-music mr-2 text-neutral-400"></i>Diretora Musical: Pra. Natália Müller</p>
-                      <p><i class="fas fa-music mr-2 text-neutral-400"></i>Coordenadores: Fabiano e Ana</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Photo */}
-                <div class="relative">
-                  <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
-                    <img 
-                      src="https://page.gensparksite.com/v1/base64_upload/6bfe356fa6a0d80d8f425c6c3735ada0" 
-                      alt="Pr. Otávio Amorim e Natália Müller - Fundadores da Igreja Família em Cristo" 
-                      class="w-full h-full object-cover object-center"
-                      style="object-position: center 30%;"
-                    />
-                  </div>
-                  <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
