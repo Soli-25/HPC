@@ -1482,7 +1482,7 @@ app.get('/blog', async (c) => {
             <div class="flex justify-between items-center h-20">
               <div class="flex items-center gap-3">
                 <img src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" alt="HPC Atlanta Logo" class="h-12 w-12 object-contain" />
-                <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">HPC Atlanta</h1>
+                <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">IGREJA FAMÍLIA EM CRISTO</h1>
               </div>
               <div class="flex items-center gap-6">
                 <a href="/" class="text-sm font-medium text-neutral-600 hover:text-neutral-900 transition">
@@ -1618,7 +1618,7 @@ app.get('/blog', async (c) => {
               </div>
             </div>
             <div class="border-t border-neutral-800 pt-8 text-center">
-              <p class="text-neutral-500 text-sm">© 2025 HPC Atlanta - House of Prayer for all Nations. Todos os direitos reservados.</p>
+              <p class="text-neutral-500 text-sm">© 2025 Igreja Família em Cristo - Uma Casa de Oração para Todas as Nações. Todos os direitos reservados.</p>
             </div>
           </div>
         </footer>
@@ -1665,7 +1665,7 @@ app.get('/', async (c) => {
                 alt="House of Prayer - New Destiny Logo" 
                 class="h-12 w-12 object-contain"
               />
-              <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">HPC Atlanta</h1>
+              <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">IGREJA FAMÍLIA EM CRISTO</h1>
             </div>
             <div class="hidden md:flex space-x-8 items-center">
               <a href="#discover" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Descobrir</a>
@@ -1707,7 +1707,7 @@ app.get('/', async (c) => {
         <div class="absolute inset-0 z-0">
           <img 
             src="https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa" 
-            alt="HPC Atlanta - House of Prayer for all Nations - Adoração e Louvor"
+            alt="Igreja Família em Cristo - Adoração e Louvor"
             class="w-full h-full object-cover"
             onError="this.style.display='none'; this.parentElement.style.background='linear-gradient(to bottom right, rgb(38, 38, 38), rgb(64, 64, 64), rgb(23, 23, 23))'"
           />
@@ -1718,7 +1718,7 @@ app.get('/', async (c) => {
         <div class="relative z-10 w-full text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
           <div class="text-center max-w-4xl mx-auto">
-            <p class="text-sm font-medium tracking-widest text-neutral-300 uppercase mb-6">HPC - House of Prayer for all Nations</p>
+            <p class="text-sm font-medium tracking-widest text-neutral-300 uppercase mb-6">IGREJA FAMÍLIA EM CRISTO - Uma Casa de Oração para Todas as Nações</p>
             <h2 class="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">Dê Seu Próximo Passo.</h2>
             <p class="text-xl md:text-2xl mb-12 text-neutral-200 font-light leading-relaxed">
               Uma casa de oração para todas as nações. Venha viver o que Deus tem para você!
@@ -1730,7 +1730,7 @@ app.get('/', async (c) => {
                 Faça Parte
               </button>
               <a href="#discover" class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-lg text-lg font-bold hover:bg-white hover:text-neutral-900 transition transform hover:scale-105">
-                Conheça a HPC
+                Conheça a Igreja
               </a>
             </div>
 
@@ -1762,42 +1762,230 @@ app.get('/', async (c) => {
         </div>
       </section>
 
-      {/* Discover Grace Church Section */}
+      {/* Discover Church Section - IGREJA FAMÍLIA EM CRISTO */}
       <section id="discover" class="py-24 md:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid md:grid-cols-2 gap-16 items-center">
+          {/* Church Introduction */}
+          <div class="text-center mb-20">
+            <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Bem-vindo</p>
+            <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-8 leading-tight">Igreja Família em Cristo</h3>
+            <p class="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+              Uma casa de oração para todas as nações. Há 10 anos servindo a comunidade em Marietta, Georgia.
+            </p>
+          </div>
+
+          {/* Main Info Grid */}
+          <div class="grid md:grid-cols-2 gap-16 items-start mb-24">
             <div>
-              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Bem-vindo</p>
-              <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-8 leading-tight">Descubra a HPC</h3>
+              <h4 class="text-2xl font-bold text-neutral-900 mb-6">Nossa História</h4>
+              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                A Igreja Família em Cristo começou sua trajetória na residência dos fundadores, movendo-se posteriormente para um hotel, até encontrar seu lar permanente há 10 anos no endereço atual em 3379 Marietta, Georgia.
+              </p>
               <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
-                Na HPC Atlanta, somos uma igreja brasileira apaixonada por criar uma casa de oração para todas as nações. Venha celebrar e experimentar o amor de Deus conosco!
+                Somos uma igreja brasileira apaixonada por criar uma casa de oração para todas as nações, onde cada pessoa pode experimentar o amor transformador de Deus.
               </p>
-              <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-8 mb-8">
+
+              {/* Location */}
+              <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-6 mb-8">
                 <p class="text-sm font-medium text-neutral-500 mb-3 uppercase tracking-wide">
-                  <i class="far fa-calendar mr-2"></i>
-                  Horários de Culto
+                  <i class="fas fa-map-marker-alt mr-2"></i>
+                  Localização
                 </p>
-                <p class="text-xl font-semibold text-neutral-900 mb-2">Domingo às 10:00 AM</p>
-                <p class="text-neutral-600 mb-1">Terça-feira às 8:00 PM</p>
-                <p class="text-neutral-600">Quinta-feira às 8:00 PM</p>
+                <p class="text-xl font-semibold text-neutral-900">3379 Canton Rd, Marietta, GA 30066</p>
+                <p class="text-neutral-600 mt-2">Há 10 anos neste local</p>
               </div>
-              <p class="text-neutral-600 mb-8 leading-relaxed">
-                Pastores: Pr. Otávio Amorim e Natália Müller. Uma comunidade onde todos são bem-vindos!
-              </p>
-              <button class="btn-primary" onclick="openModal('discover')">
-                Inscreva-se Agora
+
+              {/* Service Schedule */}
+              <div class="bg-neutral-50 border border-neutral-200 rounded-lg p-6 mb-8">
+                <p class="text-sm font-medium text-neutral-500 mb-4 uppercase tracking-wide">
+                  <i class="far fa-calendar mr-2"></i>
+                  Horários de Cultos e Atividades
+                </p>
+                <div class="space-y-3">
+                  <div>
+                    <p class="text-lg font-semibold text-neutral-900">Domingo - 10:00 AM</p>
+                    <p class="text-neutral-600 text-sm">Culto de Celebração</p>
+                  </div>
+                  <div>
+                    <p class="text-lg font-semibold text-neutral-900">Quarta-feira - 19:00 (7:00 PM)</p>
+                    <p class="text-neutral-600 text-sm">Culto de Oração</p>
+                  </div>
+                  <div>
+                    <p class="text-lg font-semibold text-neutral-900">Sexta-feira - 19:00 (7:00 PM)</p>
+                    <p class="text-neutral-600 text-sm">Estudo Bíblico</p>
+                  </div>
+                  <div>
+                    <p class="text-lg font-semibold text-neutral-900">Segunda-feira - Noite</p>
+                    <p class="text-neutral-600 text-sm">Escola Teológica</p>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn-primary w-full" onclick="openModal('discover')">
+                Faça Parte da Nossa Comunidade
               </button>
             </div>
-            <div class="relative">
-              <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
-                <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/6bfe356fa6a0d80d8f425c6c3735ada0" 
-                  alt="Pr. Otávio Amorim - Pastor HPC Atlanta" 
-                  class="w-full h-full object-cover object-center"
-                  style="object-position: center 30%;"
-                />
+
+            <div>
+              {/* Leadership */}
+              <div class="bg-gradient-to-br from-neutral-900 to-neutral-800 text-white rounded-lg p-8 mb-8 shadow-xl">
+                <h4 class="text-2xl font-bold mb-6">Liderança</h4>
+                
+                <div class="mb-6">
+                  <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-2">Fundadores</p>
+                  <p class="text-lg font-semibold">Pr. Otávio Amorim e Natália Müller</p>
+                </div>
+
+                <div class="mb-6">
+                  <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-2">Co-Fundadores</p>
+                  <p class="text-lg">Luciane Gomes e Ilson Gomes</p>
+                </div>
+
+                <div class="mb-6">
+                  <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-3">Diretoria</p>
+                  <div class="space-y-2 text-neutral-200">
+                    <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Douglas Fontes - Presidente</p>
+                    <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Taís Fontes - Vice Presidente</p>
+                    <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Elias Silveira - 1º Secretário</p>
+                    <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Priscila Silveira - 2ª Secretária</p>
+                    <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Sandra Godfrey - Tesoureira</p>
+                    <p><i class="fas fa-user-tie mr-2 text-neutral-400"></i>Fabiano Ventura - 2º Tesoureiro</p>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="text-xs font-medium tracking-widest text-neutral-300 uppercase mb-3">Ministério de Louvor</p>
+                  <div class="space-y-2 text-neutral-200">
+                    <p><i class="fas fa-music mr-2 text-neutral-400"></i>Líder: Renata Ventura</p>
+                    <p><i class="fas fa-music mr-2 text-neutral-400"></i>Diretora Musical: Pra. Natália Müller</p>
+                    <p><i class="fas fa-music mr-2 text-neutral-400"></i>Coordenadores: Fabiano e Ana</p>
+                  </div>
+                </div>
               </div>
-              <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
+
+              {/* Photo */}
+              <div class="relative">
+                <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
+                  <img 
+                    src="https://page.gensparksite.com/v1/base64_upload/6bfe356fa6a0d80d8f425c6c3735ada0" 
+                    alt="Pr. Otávio Amorim e Natália Müller - Fundadores da Igreja Família em Cristo" 
+                    class="w-full h-full object-cover object-center"
+                    style="object-position: center 30%;"
+                  />
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Missionary Projects Section */}
+          <div class="mb-24">
+            <div class="text-center mb-12">
+              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Alcançando Nações</p>
+              <h4 class="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">Projetos Missionários</h4>
+              <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+                Levando o amor de Cristo às nações através de projetos transformadores
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Guinea-Bissau */}
+              <div class="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-globe-africa text-white text-xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Guiné-Bissau</h5>
+                <p class="text-neutral-600 mb-3">Projeto missionário na África apoiando orfanato infantil e escola para crianças.</p>
+                <p class="text-sm text-neutral-500">
+                  <i class="fas fa-user mr-2"></i>Missionário: Gilbert
+                </p>
+              </div>
+
+              {/* India */}
+              <div class="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-hands-praying text-white text-xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Índia</h5>
+                <p class="text-neutral-600 mb-3">Capacitação de 30 pastores indígenas através do Project Compassion.</p>
+                <p class="text-sm text-neutral-500">
+                  <i class="fas fa-user mr-2"></i>Missionário: Marcelo
+                </p>
+              </div>
+
+              {/* Portugal */}
+              <div class="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-church text-white text-xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Portugal</h5>
+                <p class="text-neutral-600 mb-3">Implantação de congregação e apoio a missões portuguesas.</p>
+                <p class="text-sm text-neutral-500">
+                  <i class="fas fa-user mr-2"></i>Missionário: Pr. Carlos Antunes
+                </p>
+              </div>
+
+              {/* Brazil */}
+              <div class="bg-white border border-neutral-200 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center mb-4">
+                  <i class="fas fa-heart text-white text-xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Brasil</h5>
+                <p class="text-neutral-600 mb-3">Apoio a projetos sociais e evangelísticos em comunidades brasileiras.</p>
+                <p class="text-sm text-neutral-500">
+                  <i class="fas fa-map-marker-alt mr-2"></i>Várias regiões
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Programs Section */}
+          <div>
+            <div class="text-center mb-12">
+              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Servindo a Comunidade</p>
+              <h4 class="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">Programas e Iniciativas</h4>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+              {/* Sports Program */}
+              <div class="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg p-8">
+                <div class="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-futbol text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Escola de Futebol</h5>
+                <p class="text-neutral-700 mb-3 font-semibold">Pavillion One</p>
+                <p class="text-neutral-600">
+                  Programa esportivo para crianças e jovens, desenvolvendo talentos e valores cristãos através do esporte.
+                </p>
+              </div>
+
+              {/* Social Initiatives */}
+              <div class="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-lg p-8">
+                <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-hands-helping text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Iniciativas Sociais</h5>
+                <p class="text-neutral-600 space-y-2">
+                  <span class="block">• Visitas a lares de idosos</span>
+                  <span class="block">• Apoio a orfanatos</span>
+                  <span class="block">• Cafés comunitários</span>
+                  <span class="block">• Assistência a necessitados</span>
+                </p>
+              </div>
+
+              {/* Special Projects */}
+              <div class="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-8">
+                <div class="w-14 h-14 bg-purple-600 rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-star text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3">Projeto Taysha Souza</h5>
+                <p class="text-neutral-600 mb-3">
+                  Desfiles de moda evangelísticos apresentando a mensagem de Cristo através da arte e da moda.
+                </p>
+                <p class="text-sm text-neutral-500 italic">
+                  Unindo criatividade e evangelismo
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -1822,7 +2010,7 @@ app.get('/', async (c) => {
               <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Oportunidades de Servir</p>
               <h3 class="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">Faça Parte da Equipe</h3>
               <p class="text-lg text-neutral-300 mb-8 leading-relaxed">
-                Explore a vida da HPC Atlanta, incluindo nossos ministérios vibrantes, eventos futuros e oportunidades de servir no Reino de Deus.
+                Explore a vida da Igreja Família em Cristo, incluindo nossos ministérios vibrantes, eventos futuros e oportunidades de servir no Reino de Deus.
               </p>
               <p class="text-neutral-300 mb-8 leading-relaxed">
                 Seja parte de uma casa de oração para todas as nações. Venha usar seus dons e talentos para abençoar vidas e glorificar a Deus!
@@ -1850,7 +2038,7 @@ app.get('/', async (c) => {
               <div class="aspect-square bg-gradient-to-br from-blue-50 via-blue-100 to-cyan-50 rounded-lg shadow-xl overflow-hidden border border-blue-200">
                 <img 
                   src="https://page.gensparksite.com/v1/base64_upload/ae40562804a7da5523cd995eb819d9b5" 
-                  alt="Batismo na HPC Atlanta - Momento poderoso de nova vida em Cristo" 
+                  alt="Batismo na Igreja Família em Cristo - Momento poderoso de nova vida em Cristo" 
                   class="w-full h-full object-cover"
                   style="object-position: center 45%;"
                 />
@@ -1883,9 +2071,9 @@ app.get('/', async (c) => {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16">
             <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Nossa Comunidade</p>
-            <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-6">Momentos da HPC</h3>
+            <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-6">Momentos da Igreja</h3>
             <p class="text-xl text-neutral-600 max-w-2xl mx-auto mb-8">
-              Confira os momentos especiais da nossa igreja através do Instagram
+              Confira os momentos especiais da Igreja Família em Cristo através do Instagram
             </p>
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="inline-flex items-center text-neutral-900 hover:text-neutral-600 transition font-semibold">
               <i class="fab fa-instagram text-2xl mr-2"></i>
