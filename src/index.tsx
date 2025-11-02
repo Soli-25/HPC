@@ -1766,12 +1766,39 @@ app.get('/', async (c) => {
       <section id="discover" class="py-24 md:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Church Introduction */}
-          <div class="text-center mb-12">
+          <div class="text-center mb-20">
             <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Bem-vindo</p>
-            <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-8 leading-tight">Igreja Família em Cristo</h3>
+            <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-8 leading-tight">Descubra a Igreja</h3>
             <p class="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
               Uma casa de oração para todas as nações. Há 10 anos servindo a comunidade em Marietta, Georgia.
             </p>
+          </div>
+
+          {/* Nossa História and Photo Grid */}
+          <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h4 class="text-2xl font-bold text-neutral-900 mb-6">Nossa História</h4>
+              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                A Igreja Família em Cristo começou sua trajetória na residência dos fundadores, movendo-se posteriormente para um hotel, até encontrar seu lar permanente há 10 anos no endereço atual em 3379 Marietta, Georgia.
+              </p>
+              <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+                Somos uma igreja brasileira apaixonada por criar uma casa de oração para todas as nações, onde cada pessoa pode experimentar o amor transformador de Deus.
+              </p>
+              <button class="btn-primary" onclick="openModal('discover')">
+                Inscreva-se Agora
+              </button>
+            </div>
+            <div class="relative">
+              <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
+                <img 
+                  src="https://page.gensparksite.com/v1/base64_upload/6bfe356fa6a0d80d8f425c6c3735ada0" 
+                  alt="Pr. Otávio Amorim - Pastor da Igreja Família em Cristo" 
+                  class="w-full h-full object-cover object-center"
+                  style="object-position: center 30%;"
+                />
+              </div>
+              <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
+            </div>
           </div>
 
         </div>
