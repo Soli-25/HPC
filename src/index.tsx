@@ -421,10 +421,10 @@ app.get('/admin/dashboard', (c) => {
                 </p>
               </div>
               <div class="flex gap-2">
-                <button class="px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition">
+                <button onclick="editPost(1)" class="px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition" title="Editar post">
                   <i class="fas fa-edit"></i>
                 </button>
-                <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+                <button onclick="deletePost(1)" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition" title="Deletar post">
                   <i class="fas fa-trash"></i>
                 </button>
               </div>
@@ -440,10 +440,10 @@ app.get('/admin/dashboard', (c) => {
                 </p>
               </div>
               <div class="flex gap-2">
-                <button class="px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition">
+                <button onclick="editPost(2)" class="px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition" title="Editar post">
                   <i class="fas fa-edit"></i>
                 </button>
-                <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+                <button onclick="deletePost(2)" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition" title="Deletar post">
                   <i class="fas fa-trash"></i>
                 </button>
               </div>
@@ -459,10 +459,10 @@ app.get('/admin/dashboard', (c) => {
                 </p>
               </div>
               <div class="flex gap-2">
-                <button class="px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition">
+                <button onclick="editPost(3)" class="px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition" title="Editar post">
                   <i class="fas fa-edit"></i>
                 </button>
-                <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+                <button onclick="deletePost(3)" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition" title="Deletar post">
                   <i class="fas fa-trash"></i>
                 </button>
               </div>
@@ -498,6 +498,34 @@ app.get('/admin/dashboard', (c) => {
 
         function showPostsList() {
           window.location.href = '/admin/posts';
+        }
+
+        function editPost(postId) {
+          window.location.href = '/admin/posts/edit/' + postId;
+        }
+
+        async function deletePost(postId) {
+          if (!confirm('Tem certeza que deseja deletar este post?\\n\\nEsta ação não pode ser desfeita!')) {
+            return;
+          }
+
+          try {
+            const response = await fetch('/api/posts/' + postId, {
+              method: 'DELETE'
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+              alert('Post deletado com sucesso! ✅');
+              window.location.reload();
+            } else {
+              alert('Erro ao deletar post: ' + (data.error || 'Erro desconhecido'));
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            alert('Erro ao deletar post. Por favor, tente novamente.');
+          }
         }
       </script>
     </body>
@@ -847,6 +875,369 @@ app.get('/admin/posts/new', (c) => {
   `)
 })
 
+// Edit post page
+app.get('/admin/posts/edit/:id', async (c) => {
+  const postId = c.req.param('id')
+  
+  return c.html(`
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Editar Mensagem - HPC Atlanta Blog</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+      <!-- Quill Editor -->
+      <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+      <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    </head>
+    <body class="bg-neutral-50">
+      <!-- Check authentication -->
+      <script>
+        const token = localStorage.getItem('hpc_admin_token');
+        if (!token) {
+          window.location.href = '/admin';
+        }
+      </script>
+
+      <!-- Top Navigation -->
+      <nav class="bg-white border-b border-neutral-200 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-4">
+              <a href="/admin/dashboard" class="text-neutral-600 hover:text-neutral-900 transition">
+                <i class="fas fa-arrow-left text-xl"></i>
+              </a>
+              <div class="flex items-center gap-3">
+                <i class="fas fa-church text-2xl text-neutral-900"></i>
+                <div>
+                  <h1 class="text-lg font-bold text-neutral-900">Editar Mensagem</h1>
+                  <p class="text-xs text-neutral-500">Atualizar post existente</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <button onclick="saveDraft()" class="text-neutral-600 hover:text-neutral-900 transition">
+                <i class="fas fa-save mr-2"></i>Salvar Rascunho
+              </button>
+              <button onclick="previewPost()" class="text-neutral-600 hover:text-neutral-900 transition">
+                <i class="fas fa-eye mr-2"></i>Prévia
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Loading State -->
+      <div id="loadingState" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <i class="fas fa-spinner fa-spin text-4xl text-neutral-400 mb-4"></i>
+        <p class="text-neutral-600">Carregando post...</p>
+      </div>
+
+      <!-- Main Content -->
+      <div id="editForm" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 hidden">
+        <form id="postForm" class="space-y-6">
+          
+          <!-- Title -->
+          <div class="bg-white rounded-xl shadow-md border border-neutral-200 p-8">
+            <label class="block text-sm font-bold text-neutral-700 mb-3">
+              <i class="fas fa-heading mr-2"></i>Título da Mensagem *
+            </label>
+            <input 
+              type="text" 
+              id="title" 
+              name="title" 
+              required
+              class="w-full px-4 py-4 text-2xl font-bold border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition"
+              placeholder="Ex: O Poder da Oração que Transforma"
+            />
+            <p class="text-xs text-neutral-500 mt-2">
+              <i class="fas fa-info-circle mr-1"></i>
+              O slug (URL) será atualizado baseado no título
+            </p>
+          </div>
+
+          <!-- Category and Settings -->
+          <div class="bg-white rounded-xl shadow-md border border-neutral-200 p-8">
+            <div class="grid md:grid-cols-3 gap-6">
+              <div>
+                <label class="block text-sm font-bold text-neutral-700 mb-3">
+                  <i class="fas fa-tag mr-2"></i>Categoria *
+                </label>
+                <select 
+                  id="category" 
+                  name="category" 
+                  required
+                  class="w-full px-4 py-3 border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition"
+                >
+                  <option value="">Selecione...</option>
+                  <option value="Mensagens">Mensagens</option>
+                  <option value="Adoração">Adoração</option>
+                  <option value="Batismo">Batismo</option>
+                  <option value="Estudo Bíblico">Estudo Bíblico</option>
+                  <option value="Testemunhos">Testemunhos</option>
+                  <option value="Oração">Oração</option>
+                  <option value="Família">Família</option>
+                  <option value="Juventude">Juventude</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-bold text-neutral-700 mb-3">
+                  <i class="fas fa-clock mr-2"></i>Tempo de Leitura
+                </label>
+                <input 
+                  type="text" 
+                  id="readTime" 
+                  name="readTime" 
+                  placeholder="Ex: 5 min"
+                  class="w-full px-4 py-3 border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-bold text-neutral-700 mb-3">
+                  <i class="fas fa-star mr-2"></i>Post em Destaque?
+                </label>
+                <label class="flex items-center cursor-pointer">
+                  <input type="checkbox" id="featured" name="featured" class="mr-3 w-5 h-5" />
+                  <span class="text-neutral-700">Destacar na homepage</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Excerpt -->
+          <div class="bg-white rounded-xl shadow-md border border-neutral-200 p-8">
+            <label class="block text-sm font-bold text-neutral-700 mb-3">
+              <i class="fas fa-align-left mr-2"></i>Resumo da Mensagem *
+            </label>
+            <textarea 
+              id="excerpt" 
+              name="excerpt" 
+              required
+              rows="3"
+              class="w-full px-4 py-3 border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition"
+              placeholder="Breve resumo que aparecerá nos cards do blog (máx. 200 caracteres)"
+              maxlength="200"
+            ></textarea>
+            <p class="text-xs text-neutral-500 mt-2">
+              <span id="excerptCount">0</span>/200 caracteres
+            </p>
+          </div>
+
+          <!-- Image URL -->
+          <div class="bg-white rounded-xl shadow-md border border-neutral-200 p-8">
+            <label class="block text-sm font-bold text-neutral-700 mb-3">
+              <i class="fas fa-image mr-2"></i>URL da Imagem de Capa
+            </label>
+            <input 
+              type="url" 
+              id="imageUrl" 
+              name="imageUrl" 
+              class="w-full px-4 py-3 border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition mb-3"
+              placeholder="https://exemplo.com/imagem.jpg"
+            />
+            <div class="flex flex-wrap gap-2">
+              <button type="button" onclick="setImage('https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa')" class="px-3 py-2 bg-neutral-100 hover:bg-neutral-200 rounded text-xs transition">
+                📸 Foto 1
+              </button>
+              <button type="button" onclick="setImage('https://page.gensparksite.com/v1/base64_upload/b49314cd2e986919e25794a9b6e028fc')" class="px-3 py-2 bg-neutral-100 hover:bg-neutral-200 rounded text-xs transition">
+                📸 Foto 2
+              </button>
+              <button type="button" onclick="setImage('https://page.gensparksite.com/v1/base64_upload/ae40562804a7da5523cd995eb819d9b5')" class="px-3 py-2 bg-neutral-100 hover:bg-neutral-200 rounded text-xs transition">
+                📸 Foto 3
+              </button>
+            </div>
+          </div>
+
+          <!-- Content Editor -->
+          <div class="bg-white rounded-xl shadow-md border border-neutral-200 p-8">
+            <label class="block text-sm font-bold text-neutral-700 mb-3">
+              <i class="fas fa-pen mr-2"></i>Conteúdo Completo *
+            </label>
+            <div id="editor" style="min-height: 500px;"></div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex justify-between items-center bg-white rounded-xl shadow-md border border-neutral-200 p-8">
+            <a href="/admin/dashboard" class="px-6 py-3 border-2 border-neutral-300 text-neutral-700 rounded-lg font-semibold hover:bg-neutral-50 transition">
+              <i class="fas fa-times mr-2"></i>Cancelar
+            </a>
+            <button 
+              type="submit"
+              class="px-8 py-3 bg-neutral-900 text-white rounded-lg font-bold hover:bg-neutral-800 transition transform hover:scale-105 shadow-lg"
+            >
+              <i class="fas fa-save mr-2"></i>Atualizar Mensagem
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <script>
+        let quill;
+        let currentPost = null;
+        const postId = ${postId};
+
+        // Load post data
+        async function loadPost() {
+          try {
+            const response = await fetch(\`/api/posts/\${postId}\`, {
+              method: 'GET'
+            });
+            
+            if (!response.ok) {
+              throw new Error('Post not found');
+            }
+            
+            const data = await response.json();
+            currentPost = data.post;
+            
+            // Populate form
+            document.getElementById('title').value = currentPost.title;
+            document.getElementById('category').value = currentPost.category;
+            document.getElementById('readTime').value = currentPost.read_time || '';
+            document.getElementById('featured').checked = currentPost.featured === 1;
+            document.getElementById('excerpt').value = currentPost.excerpt;
+            document.getElementById('imageUrl').value = currentPost.image_url || '';
+            
+            // Update excerpt counter
+            document.getElementById('excerptCount').textContent = currentPost.excerpt.length;
+            
+            // Initialize Quill with content
+            initializeQuill();
+            quill.root.innerHTML = currentPost.content;
+            
+            // Show form, hide loading
+            document.getElementById('loadingState').classList.add('hidden');
+            document.getElementById('editForm').classList.remove('hidden');
+            
+          } catch (error) {
+            console.error('Error loading post:', error);
+            alert('Erro ao carregar post. Redirecionando para dashboard...');
+            window.location.href = '/admin/dashboard';
+          }
+        }
+
+        function initializeQuill() {
+          quill = new Quill('#editor', {
+            theme: 'snow',
+            modules: {
+              toolbar: [
+                [{ 'header': [1, 2, 3, false] }],
+                ['bold', 'italic', 'underline', 'strike'],
+                ['blockquote', 'code-block'],
+                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                [{ 'align': [] }],
+                ['link'],
+                ['clean']
+              ]
+            }
+          });
+        }
+
+        // Excerpt counter
+        document.addEventListener('DOMContentLoaded', () => {
+          const excerptField = document.getElementById('excerpt');
+          if (excerptField) {
+            excerptField.addEventListener('input', (e) => {
+              document.getElementById('excerptCount').textContent = e.target.value.length;
+            });
+          }
+        });
+
+        // Set image
+        function setImage(url) {
+          document.getElementById('imageUrl').value = url;
+        }
+
+        // Preview
+        function previewPost() {
+          const title = document.getElementById('title').value;
+          const content = quill.root.innerHTML;
+          
+          const previewWindow = window.open('', '_blank');
+          previewWindow.document.write(\`
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <title>\${title}</title>
+              <script src="https://cdn.tailwindcss.com"><\/script>
+              <style>
+                body { font-family: system-ui; line-height: 1.6; }
+                .content h1 { font-size: 2em; font-weight: bold; margin: 1em 0 0.5em; }
+                .content h2 { font-size: 1.5em; font-weight: bold; margin: 1em 0 0.5em; }
+                .content h3 { font-size: 1.25em; font-weight: bold; margin: 1em 0 0.5em; }
+                .content p { margin: 1em 0; }
+                .content ul, .content ol { margin: 1em 0; padding-left: 2em; }
+                .content blockquote { border-left: 4px solid #ccc; padding-left: 1em; margin: 1em 0; font-style: italic; }
+              </style>
+            </head>
+            <body class="bg-gray-50 p-8">
+              <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <h1 class="text-4xl font-bold mb-4">\${title}</h1>
+                <div class="content">\${content}</div>
+              </div>
+            </body>
+            </html>
+          \`);
+        }
+
+        // Save draft
+        function saveDraft() {
+          alert('Funcionalidade de rascunho será implementada em breve!');
+        }
+
+        // Form submission
+        document.getElementById('postForm').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          const formData = {
+            title: document.getElementById('title').value,
+            slug: document.getElementById('title').value.toLowerCase()
+              .normalize('NFD').replace(/[\\u0300-\\u036f]/g, '')
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-+|-+$/g, ''),
+            excerpt: document.getElementById('excerpt').value,
+            content: quill.root.innerHTML,
+            category: document.getElementById('category').value,
+            image_url: document.getElementById('imageUrl').value || 'https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa',
+            read_time: document.getElementById('readTime').value || '5 min',
+            featured: document.getElementById('featured').checked ? 1 : 0
+          };
+          
+          try {
+            const response = await fetch(\`/api/posts/\${postId}\`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(formData)
+            });
+            
+            const data = await response.json();
+            
+            if (data.success) {
+              alert('Post atualizado com sucesso! ✅');
+              window.location.href = '/admin/dashboard';
+            } else {
+              alert('Erro ao atualizar post: ' + (data.error || 'Erro desconhecido'));
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            alert('Erro ao enviar dados. Por favor, tente novamente.');
+          }
+        });
+
+        // Load post on page load
+        loadPost();
+      </script>
+    </body>
+    </html>
+  `)
+})
+
 // Authentication API Routes
 
 // Login with credentials and generate token
@@ -954,13 +1345,24 @@ app.get('/api/posts', async (c) => {
   }
 })
 
-// GET single post by slug
-app.get('/api/posts/:slug', async (c) => {
+// GET single post by ID
+app.get('/api/posts/:id', async (c) => {
   try {
-    const slug = c.req.param('slug')
-    const post = await c.env.DB.prepare(
-      'SELECT * FROM blog_posts WHERE slug = ?'
-    ).bind(slug).first()
+    const id = c.req.param('id')
+    
+    // Check if it's a number (ID) or string (slug)
+    const isNumeric = /^\d+$/.test(id)
+    
+    let query, param
+    if (isNumeric) {
+      query = 'SELECT * FROM blog_posts WHERE id = ?'
+      param = parseInt(id)
+    } else {
+      query = 'SELECT * FROM blog_posts WHERE slug = ?'
+      param = id
+    }
+    
+    const post = await c.env.DB.prepare(query).bind(param).first()
     
     if (!post) {
       return c.json({ success: false, error: 'Post not found' }, 404)
