@@ -5,6 +5,324 @@ const app = new Hono()
 
 app.use(renderer)
 
+// Admin login route
+app.get('/admin', (c) => {
+  return c.html(`
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Admin - HPC Atlanta Blog</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 min-h-screen flex items-center justify-center p-4">
+      <div class="max-w-md w-full">
+        <div class="text-center mb-8">
+          <i class="fas fa-church text-6xl text-white mb-4"></i>
+          <h1 class="text-3xl font-bold text-white mb-2">HPC Atlanta</h1>
+          <p class="text-neutral-300">Painel Administrativo do Blog</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-2xl p-8">
+          <h2 class="text-2xl font-bold text-neutral-900 mb-6">Login de Administrador</h2>
+          
+          <form id="loginForm" class="space-y-6">
+            <div>
+              <label class="block text-sm font-semibold text-neutral-700 mb-2">
+                <i class="fas fa-user mr-2"></i>Usuário
+              </label>
+              <input 
+                type="text" 
+                id="username" 
+                required
+                class="w-full px-4 py-3 border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition"
+                placeholder="Digite seu usuário"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-neutral-700 mb-2">
+                <i class="fas fa-lock mr-2"></i>Senha
+              </label>
+              <input 
+                type="password" 
+                id="password" 
+                required
+                class="w-full px-4 py-3 border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition"
+                placeholder="Digite sua senha"
+              />
+            </div>
+
+            <button 
+              type="submit"
+              class="w-full bg-neutral-900 text-white py-4 rounded-lg font-bold hover:bg-neutral-800 transition transform hover:scale-105 shadow-lg"
+            >
+              <i class="fas fa-sign-in-alt mr-2"></i>Entrar no Painel
+            </button>
+          </form>
+
+          <div id="error-message" class="hidden mt-4 p-4 bg-red-50 border-2 border-red-200 rounded-lg">
+            <p class="text-red-700 text-sm font-semibold">
+              <i class="fas fa-exclamation-circle mr-2"></i>
+              <span id="error-text">Usuário ou senha incorretos</span>
+            </p>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-neutral-200">
+            <p class="text-xs text-neutral-500 text-center">
+              <i class="fas fa-shield-alt mr-1"></i>
+              Acesso restrito apenas para administradores autorizados
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-6">
+          <a href="/" class="text-white hover:text-neutral-300 transition">
+            <i class="fas fa-arrow-left mr-2"></i>Voltar ao site
+          </a>
+        </div>
+      </div>
+
+      <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+          const errorDiv = document.getElementById('error-message');
+          const errorText = document.getElementById('error-text');
+          
+          // Credenciais padrão (em produção, isso seria verificado no servidor)
+          // Usuário: pastor
+          // Senha: HPC@2025!
+          
+          if (username === 'pastor' && password === 'HPC@2025!') {
+            // Salvar sessão no localStorage
+            localStorage.setItem('hpc_admin_session', btoa(username + ':' + new Date().getTime()));
+            
+            // Redirecionar para dashboard
+            window.location.href = '/admin/dashboard';
+          } else {
+            errorDiv.classList.remove('hidden');
+            errorText.textContent = 'Usuário ou senha incorretos. Tente novamente.';
+            
+            // Limpar mensagem de erro após 3 segundos
+            setTimeout(() => {
+              errorDiv.classList.add('hidden');
+            }, 3000);
+          }
+        });
+      </script>
+    </body>
+    </html>
+  `)
+})
+
+// Admin dashboard route
+app.get('/admin/dashboard', (c) => {
+  return c.html(`
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dashboard Admin - HPC Atlanta Blog</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-neutral-50">
+      <!-- Check authentication -->
+      <script>
+        const session = localStorage.getItem('hpc_admin_session');
+        if (!session) {
+          window.location.href = '/admin';
+        }
+      </script>
+
+      <!-- Top Navigation -->
+      <nav class="bg-white border-b border-neutral-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-church text-2xl text-neutral-900"></i>
+              <div>
+                <h1 class="text-lg font-bold text-neutral-900">HPC Atlanta</h1>
+                <p class="text-xs text-neutral-500">Painel Administrativo</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <a href="/" target="_blank" class="text-neutral-600 hover:text-neutral-900 transition">
+                <i class="fas fa-external-link-alt mr-2"></i>Ver Site
+              </a>
+              <button onclick="logout()" class="text-red-600 hover:text-red-700 transition font-semibold">
+                <i class="fas fa-sign-out-alt mr-2"></i>Sair
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Welcome Header -->
+        <div class="bg-gradient-to-r from-neutral-900 to-neutral-800 rounded-2xl p-8 text-white mb-8">
+          <h2 class="text-3xl font-bold mb-2">Bem-vindo, Pastor Otávio!</h2>
+          <p class="text-neutral-300">Gerencie as mensagens e estudos do blog da HPC Atlanta</p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <button onclick="showNewPostForm()" class="bg-white border-2 border-neutral-900 text-neutral-900 p-8 rounded-xl hover:bg-neutral-900 hover:text-white transition transform hover:scale-105 shadow-lg group">
+            <i class="fas fa-plus-circle text-5xl mb-4 group-hover:scale-110 transition"></i>
+            <h3 class="text-xl font-bold mb-2">Nova Mensagem</h3>
+            <p class="text-sm opacity-75">Criar um novo post para o blog</p>
+          </button>
+
+          <button onclick="showPostsList()" class="bg-white border-2 border-neutral-200 text-neutral-900 p-8 rounded-xl hover:border-neutral-900 transition transform hover:scale-105 shadow-lg group">
+            <i class="fas fa-list text-5xl mb-4 group-hover:scale-110 transition"></i>
+            <h3 class="text-xl font-bold mb-2">Gerenciar Posts</h3>
+            <p class="text-sm opacity-75">Ver, editar ou deletar mensagens existentes</p>
+          </button>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="grid md:grid-cols-4 gap-6 mb-8">
+          <div class="bg-white rounded-xl p-6 shadow-md border border-neutral-200">
+            <div class="flex items-center justify-between mb-2">
+              <i class="fas fa-file-alt text-3xl text-blue-600"></i>
+              <span class="text-3xl font-bold text-neutral-900">3</span>
+            </div>
+            <p class="text-sm text-neutral-600 font-semibold">Total de Posts</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md border border-neutral-200">
+            <div class="flex items-center justify-between mb-2">
+              <i class="fas fa-star text-3xl text-yellow-600"></i>
+              <span class="text-3xl font-bold text-neutral-900">2</span>
+            </div>
+            <p class="text-sm text-neutral-600 font-semibold">Posts em Destaque</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md border border-neutral-200">
+            <div class="flex items-center justify-between mb-2">
+              <i class="fas fa-tags text-3xl text-green-600"></i>
+              <span class="text-3xl font-bold text-neutral-900">3</span>
+            </div>
+            <p class="text-sm text-neutral-600 font-semibold">Categorias</p>
+          </div>
+
+          <div class="bg-white rounded-xl p-6 shadow-md border border-neutral-200">
+            <div class="flex items-center justify-between mb-2">
+              <i class="fas fa-calendar text-3xl text-purple-600"></i>
+              <span class="text-3xl font-bold text-neutral-900">Jan</span>
+            </div>
+            <p class="text-sm text-neutral-600 font-semibold">Último Post</p>
+          </div>
+        </div>
+
+        <!-- Recent Posts Preview -->
+        <div class="bg-white rounded-2xl shadow-lg border border-neutral-200 p-8">
+          <h3 class="text-2xl font-bold text-neutral-900 mb-6">
+            <i class="fas fa-clock mr-3 text-neutral-600"></i>Posts Recentes
+          </h3>
+          
+          <div class="space-y-4">
+            <div class="flex items-center justify-between p-4 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition">
+              <div class="flex-1">
+                <h4 class="font-bold text-neutral-900 mb-1">A Casa de Oração Para Todas as Nações</h4>
+                <p class="text-sm text-neutral-600">
+                  <i class="far fa-calendar mr-2"></i>15 de janeiro de 2025
+                  <span class="mx-2">•</span>
+                  <span class="px-2 py-1 bg-neutral-900 text-white text-xs rounded-full">Mensagens</span>
+                </p>
+              </div>
+              <div class="flex gap-2">
+                <button class="px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition">
+              <div class="flex-1">
+                <h4 class="font-bold text-neutral-900 mb-1">O Poder da Adoração Autêntica</h4>
+                <p class="text-sm text-neutral-600">
+                  <i class="far fa-calendar mr-2"></i>8 de janeiro de 2025
+                  <span class="mx-2">•</span>
+                  <span class="px-2 py-1 bg-neutral-900 text-white text-xs rounded-full">Adoração</span>
+                </p>
+              </div>
+              <div class="flex gap-2">
+                <button class="px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition">
+              <div class="flex-1">
+                <h4 class="font-bold text-neutral-900 mb-1">Batismo: Declaração Pública de Fé</h4>
+                <p class="text-sm text-neutral-600">
+                  <i class="far fa-calendar mr-2"></i>1 de janeiro de 2025
+                  <span class="mx-2">•</span>
+                  <span class="px-2 py-1 bg-neutral-900 text-white text-xs rounded-full">Batismo</span>
+                </p>
+              </div>
+              <div class="flex gap-2">
+                <button class="px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Help -->
+        <div class="mt-8 bg-blue-50 border-2 border-blue-200 rounded-xl p-6">
+          <h4 class="font-bold text-blue-900 mb-3">
+            <i class="fas fa-info-circle mr-2"></i>Como usar o painel administrativo
+          </h4>
+          <ul class="text-sm text-blue-800 space-y-2">
+            <li><i class="fas fa-check mr-2"></i>Clique em "Nova Mensagem" para criar um novo post</li>
+            <li><i class="fas fa-check mr-2"></i>Use "Gerenciar Posts" para editar ou deletar mensagens existentes</li>
+            <li><i class="fas fa-check mr-2"></i>Os posts aparecem automaticamente no site após serem salvos</li>
+            <li><i class="fas fa-check mr-2"></i>Use formatação HTML no conteúdo para títulos, listas e destaques</li>
+          </ul>
+        </div>
+      </div>
+
+      <script>
+        function logout() {
+          if (confirm('Tem certeza que deseja sair?')) {
+            localStorage.removeItem('hpc_admin_session');
+            window.location.href = '/admin';
+          }
+        }
+
+        function showNewPostForm() {
+          alert('Funcionalidade de criar novo post será implementada em breve!\\n\\nPor enquanto, entre em contato com o desenvolvedor para adicionar novos posts.');
+        }
+
+        function showPostsList() {
+          alert('Funcionalidade de gerenciar posts será implementada em breve!\\n\\nPor enquanto, os posts existentes estão funcionando perfeitamente no site.');
+        }
+      </script>
+    </body>
+    </html>
+  `)
+})
+
 app.get('/', (c) => {
   return c.render(
     <div class="min-h-screen bg-neutral-50">
