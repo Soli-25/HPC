@@ -198,11 +198,11 @@ app.get('/', (c) => {
           </div>
           <div class="grid md:grid-cols-2 gap-16 items-center">
             <div class="relative">
-              <div class="aspect-square bg-gradient-to-br from-neutral-200 via-neutral-100 to-white rounded-lg shadow-xl flex items-center justify-center overflow-hidden border border-neutral-200 p-12">
+              <div class="aspect-square bg-gradient-to-br from-blue-50 via-blue-100 to-cyan-50 rounded-lg shadow-xl overflow-hidden border border-blue-200">
                 <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" 
-                  alt="House of Prayer Logo" 
-                  class="w-full h-full object-contain"
+                  src="https://page.gensparksite.com/v1/base64_upload/f10247914d6289f0af75486bffa997fb" 
+                  alt="Batismo na HPC Atlanta - Nova vida em Cristo" 
+                  class="w-full h-full object-cover"
                 />
               </div>
               <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
