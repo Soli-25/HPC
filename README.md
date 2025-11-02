@@ -59,7 +59,8 @@ Uma igreja brasileira (Brazilian Church) em Marietta, GA. Uma casa de oração p
    - Banner com horários de culto destacados (Domingo 10AM, Terça 8PM, Quinta 8PM)
 
 2. **Descubra a HPC**
-   - **Foto real dos pastores**: Pr. Otávio Amorim e Natália Müller
+   - **Foto profissional da liderança**: Três líderes em frente ao logo HPC
+   - Foto elegante e profissional mostrando a liderança
    - Informações sobre a igreja brasileira
    - Horários de culto completos
    - Informações dos pastores
