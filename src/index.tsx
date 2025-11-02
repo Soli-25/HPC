@@ -142,10 +142,10 @@ app.get('/', (c) => {
             <div class="relative">
               <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
                 <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/83e4ca4ceb1cb41bfa31534864273b94" 
-                  alt="Pastores Pr. Otávio Amorim e Natália Müller - HPC Atlanta" 
-                  class="w-full h-full object-cover object-center scale-110"
-                  style="object-position: center 30%;"
+                  src="https://page.gensparksite.com/v1/base64_upload/9638b9b069990adadcc7eb9e8dd78439" 
+                  alt="Liderança HPC Atlanta - Pastores e líderes em frente ao logo" 
+                  class="w-full h-full object-cover object-center"
+                  style="object-position: center 40%;"
                 />
               </div>
               <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
