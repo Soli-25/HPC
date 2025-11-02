@@ -57,8 +57,8 @@ app.get('/', (c) => {
         {/* Background Image */}
         <div class="absolute inset-0 z-0">
           <img 
-            src="https://page.gensparksite.com/v1/base64_upload/69b8d7407c00cb3f6eb54c1c9442525c" 
-            alt="HPC Atlanta - House of Prayer for all Nations - Momento de Louvor"
+            src="https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa" 
+            alt="HPC Atlanta - House of Prayer for all Nations - Adoração e Louvor"
             class="w-full h-full object-cover"
             onError="this.style.display='none'; this.parentElement.style.background='linear-gradient(to bottom right, rgb(38, 38, 38), rgb(64, 64, 64), rgb(23, 23, 23))'"
           />
