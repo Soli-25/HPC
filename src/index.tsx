@@ -315,21 +315,7 @@ app.get('/', (c) => {
               </div>
             </a>
 
-            {/* Instagram Photo 6 - Leadership Team */}
-            <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
-              <img 
-                src="https://page.gensparksite.com/v1/base64_upload/9638b9b069990adadcc7eb9e8dd78439" 
-                alt="HPC Atlanta - Equipe de Liderança"
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-neutral-900/80 to-transparent opacity-0 group-hover:opacity-100 transition">
-                <p class="text-white text-sm font-medium">Equipe HPC</p>
-              </div>
-            </a>
-
-            {/* Instagram Photo 7 - Church Logo */}
+            {/* Instagram Photo 6 - Church Logo */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
                 src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" 
@@ -343,7 +329,7 @@ app.get('/', (c) => {
               </div>
             </a>
 
-            {/* Instagram Photo 8 - Preaching House of Prayer */}
+            {/* Instagram Photo 7 - Preaching House of Prayer */}
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="aspect-square rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl transition relative block">
               <img 
                 src="https://page.gensparksite.com/v1/base64_upload/a9eef18df924d19ddf1f7d71fcaf3398" 
