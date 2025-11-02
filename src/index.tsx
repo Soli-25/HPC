@@ -24,6 +24,7 @@ app.get('/', (c) => {
               <a href="#discover" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Descobrir</a>
               <a href="#team" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Servir</a>
               <a href="#baptism" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Batismo</a>
+              <a href="#blog" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Blog</a>
               <a href="#groups" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Grupos</a>
               <a href="#connect" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Conectar</a>
               <button onclick="openModal('give')" class="bg-neutral-900 text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-neutral-800 transition transform hover:scale-105 shadow-md flex items-center gap-2">
@@ -42,6 +43,7 @@ app.get('/', (c) => {
             <a href="#discover" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Descobrir</a>
             <a href="#team" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Servir</a>
             <a href="#baptism" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Batismo</a>
+            <a href="#blog" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Blog</a>
             <a href="#groups" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Grupos</a>
             <a href="#connect" class="block px-3 py-3 text-neutral-700 hover:bg-neutral-100 transition">Conectar</a>
             <button onclick="openModal('give')" class="w-full text-left px-3 py-3 bg-neutral-900 text-white hover:bg-neutral-800 transition font-semibold flex items-center gap-2">
@@ -307,6 +309,127 @@ app.get('/', (c) => {
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="inline-flex items-center bg-neutral-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-neutral-800 transition">
               <i class="fab fa-instagram text-xl mr-3"></i>
               Siga-nos no Instagram
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section - Pastor's Messages */}
+      <section id="blog" class="py-24 md:py-32 bg-neutral-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Palavra do Pastor</p>
+            <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-6">Mensagens e Estudos</h3>
+            <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
+              Reflexões, ensinamentos e palavra profética do Pr. Otávio Amorim
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
+            {/* Blog Post 1 */}
+            <a href="/blog/casa-de-oracao-para-todas-nacoes" class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+              <div class="relative h-64 overflow-hidden">
+                <img 
+                  src="https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa" 
+                  alt="A Casa de Oração Para Todas as Nações"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div class="absolute top-4 left-4 bg-neutral-900 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                  Mensagens
+                </div>
+              </div>
+              <div class="p-6 flex-1 flex flex-col">
+                <div class="flex items-center text-sm text-neutral-500 mb-3">
+                  <i class="far fa-calendar mr-2"></i>
+                  <span>15 de janeiro de 2025</span>
+                  <span class="mx-2">•</span>
+                  <i class="far fa-clock mr-2"></i>
+                  <span>5 min</span>
+                </div>
+                <h4 class="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-600 transition">
+                  A Casa de Oração Para Todas as Nações
+                </h4>
+                <p class="text-neutral-600 mb-4 leading-relaxed flex-1">
+                  Deus está chamando Seu povo para uma vida de oração profunda e transformadora. Descubra o que significa ser uma casa de oração.
+                </p>
+                <div class="flex items-center text-neutral-900 font-semibold group-hover:gap-2 transition-all">
+                  <span>Ler mensagem</span>
+                  <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+              </div>
+            </a>
+
+            {/* Blog Post 2 */}
+            <a href="/blog/poder-da-adoracao-autentica" class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+              <div class="relative h-64 overflow-hidden">
+                <img 
+                  src="https://page.gensparksite.com/v1/base64_upload/b49314cd2e986919e25794a9b6e028fc" 
+                  alt="O Poder da Adoração Autêntica"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div class="absolute top-4 left-4 bg-neutral-900 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                  Adoração
+                </div>
+              </div>
+              <div class="p-6 flex-1 flex flex-col">
+                <div class="flex items-center text-sm text-neutral-500 mb-3">
+                  <i class="far fa-calendar mr-2"></i>
+                  <span>8 de janeiro de 2025</span>
+                  <span class="mx-2">•</span>
+                  <i class="far fa-clock mr-2"></i>
+                  <span>4 min</span>
+                </div>
+                <h4 class="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-600 transition">
+                  O Poder da Adoração Autêntica
+                </h4>
+                <p class="text-neutral-600 mb-4 leading-relaxed flex-1">
+                  A verdadeira adoração transcende músicas e rituais. É um estilo de vida que transforma nosso coração e nossa comunidade.
+                </p>
+                <div class="flex items-center text-neutral-900 font-semibold group-hover:gap-2 transition-all">
+                  <span>Ler mensagem</span>
+                  <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+              </div>
+            </a>
+
+            {/* Blog Post 3 */}
+            <a href="/blog/batismo-declaracao-publica-fe" class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+              <div class="relative h-64 overflow-hidden">
+                <img 
+                  src="https://page.gensparksite.com/v1/base64_upload/ae40562804a7da5523cd995eb819d9b5" 
+                  alt="Batismo: Declaração Pública de Fé"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div class="absolute top-4 left-4 bg-neutral-900 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                  Batismo
+                </div>
+              </div>
+              <div class="p-6 flex-1 flex flex-col">
+                <div class="flex items-center text-sm text-neutral-500 mb-3">
+                  <i class="far fa-calendar mr-2"></i>
+                  <span>1 de janeiro de 2025</span>
+                  <span class="mx-2">•</span>
+                  <i class="far fa-clock mr-2"></i>
+                  <span>6 min</span>
+                </div>
+                <h4 class="text-xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-600 transition">
+                  Batismo: Declaração Pública de Fé
+                </h4>
+                <p class="text-neutral-600 mb-4 leading-relaxed flex-1">
+                  O batismo é mais que ritual religioso - é poderosa declaração de transformação e compromisso com Cristo.
+                </p>
+                <div class="flex items-center text-neutral-900 font-semibold group-hover:gap-2 transition-all">
+                  <span>Ler mensagem</span>
+                  <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="text-center">
+            <a href="/blog" class="inline-flex items-center bg-neutral-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-neutral-800 transition">
+              <i class="fas fa-book-open text-xl mr-3"></i>
+              Ver Todas as Mensagens
             </a>
           </div>
         </div>
