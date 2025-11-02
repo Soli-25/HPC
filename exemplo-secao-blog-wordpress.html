@@ -1,0 +1,133 @@
+<!-- ========================================== -->
+<!-- SEÇÃO BLOG - Integração com WordPress    -->
+<!-- ========================================== -->
+<!-- 
+  INSTRUÇÕES:
+  1. Substituir a seção de blog atual pela seção abaixo
+  2. Adicionar o script wordpress-integration.js antes do </body>
+  3. Verificar se o ID "blog-posts-container" está presente
+-->
+
+<!-- NOVA SEÇÃO DE BLOG -->
+<section id="blog" class="py-24 md:py-32 bg-neutral-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Cabeçalho da Seção -->
+    <div class="text-center mb-16">
+      <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">
+        <i class="fas fa-book-open mr-2"></i>Palavra do Pastor
+      </p>
+      <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-6">
+        Mensagens e Estudos
+      </h3>
+      <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
+        Reflexões, ensinamentos e palavra profética do Pr. Otávio Amorim
+      </p>
+    </div>
+    
+    <!-- Container Dinâmico para Posts -->
+    <!-- IMPORTANTE: ID "blog-posts-container" é obrigatório -->
+    <div id="blog-posts-container" class="grid md:grid-cols-3 gap-8 mb-12">
+      <!-- Posts do WordPress serão carregados aqui via JavaScript -->
+      <!-- Enquanto carrega, mostra loading spinner -->
+      <div class="col-span-3 text-center py-12">
+        <i class="fas fa-spinner fa-spin text-4xl text-neutral-400 mb-4"></i>
+        <p class="text-neutral-600">Carregando mensagens...</p>
+      </div>
+    </div>
+    
+    <!-- Botão Ver Todas as Mensagens -->
+    <div class="text-center">
+      <a 
+        href="https://blog.houseofprayeratl.com" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center bg-neutral-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-neutral-800 transition transform hover:scale-105 shadow-lg"
+      >
+        <i class="fas fa-book-open text-xl mr-3"></i>
+        Ver Todas as Mensagens
+      </a>
+    </div>
+    
+  </div>
+</section>
+
+<!-- ========================================== -->
+<!-- ADICIONAR NO FINAL DO <body>              -->
+<!-- ANTES do </body>                          -->
+<!-- ========================================== -->
+
+<!-- Script de Integração com WordPress -->
+<script src="/js/wordpress-integration.js"></script>
+
+<!-- ========================================== -->
+<!-- FIM DA INTEGRAÇÃO                         -->
+<!-- ========================================== -->
+
+<!-- 
+═══════════════════════════════════════════════
+ESTRUTURA DE ARQUIVOS NO cPANEL:
+═══════════════════════════════════════════════
+
+public_html/
+├── index.html (modificar seção de blog)
+├── js/
+│   ├── app.js (seu JavaScript existente)
+│   └── wordpress-integration.js (NOVO - fazer upload)
+├── css/
+│   └── style.css (seus estilos)
+└── blog/ (WordPress instalado aqui)
+    └── (arquivos WordPress)
+
+═══════════════════════════════════════════════
+CHECKLIST DE IMPLEMENTAÇÃO:
+═══════════════════════════════════════════════
+
+PASSO 1: WordPress
+☐ Criar subdomínio: blog.houseofprayeratl.com
+☐ Instalar WordPress via Softaculous
+☐ Configurar WordPress (idioma, permalinks, etc.)
+☐ Criar categorias (Mensagens, Adoração, etc.)
+☐ Criar primeiro post de teste
+☐ Verificar se REST API funciona:
+   https://blog.houseofprayeratl.com/wp-json/wp/v2/posts
+
+PASSO 2: Site Principal
+☐ Fazer backup do index.html atual
+☐ Substituir seção de blog pela nova (acima)
+☐ Upload de wordpress-integration.js para /public_html/js/
+☐ Verificar se script está linkado antes de </body>
+
+PASSO 3: Testar
+☐ Abrir: https://houseofprayeratl.com
+☐ Rolar até seção "Mensagens e Estudos"
+☐ Verificar se posts do WordPress aparecem
+☐ Clicar em um post → Deve abrir no WordPress
+☐ Clicar "Ver Todas" → Deve abrir blog WordPress
+
+═══════════════════════════════════════════════
+TROUBLESHOOTING:
+═══════════════════════════════════════════════
+
+PROBLEMA: Posts não carregam
+SOLUÇÃO:
+1. Abrir console do navegador (F12)
+2. Ver se há erros JavaScript
+3. Verificar se WordPress REST API está funcionando:
+   https://blog.houseofprayeratl.com/wp-json/wp/v2/posts
+4. Verificar CORS (pode precisar configurar no WordPress)
+
+PROBLEMA: Imagens não aparecem
+SOLUÇÃO:
+1. Verificar se posts têm "Imagem Destacada"
+2. No WordPress: Post → Imagem Destacada → Definir
+3. Salvar post novamente
+
+PROBLEMA: Erro de CORS
+SOLUÇÃO:
+1. Instalar plugin "WP Cors" no WordPress
+2. OU adicionar no wp-config.php:
+   header('Access-Control-Allow-Origin: *');
+
+═══════════════════════════════════════════════
+-->
