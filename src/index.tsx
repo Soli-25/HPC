@@ -144,7 +144,8 @@ app.get('/', (c) => {
                 <img 
                   src="https://page.gensparksite.com/v1/base64_upload/83e4ca4ceb1cb41bfa31534864273b94" 
                   alt="Pastores Pr. Otávio Amorim e Natália Müller - HPC Atlanta" 
-                  class="w-full h-full object-cover"
+                  class="w-full h-full object-cover object-center scale-110"
+                  style="object-position: center 30%;"
                 />
               </div>
               <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
@@ -162,7 +163,8 @@ app.get('/', (c) => {
                 <img 
                   src="https://page.gensparksite.com/v1/base64_upload/a9eef18df924d19ddf1f7d71fcaf3398" 
                   alt="Pregação na HPC Atlanta - Pr. Otávio Amorim" 
-                  class="w-full h-full object-cover"
+                  class="w-full h-full object-cover scale-125"
+                  style="object-position: center 35%;"
                 />
               </div>
               <div class="absolute -top-6 -left-6 w-32 h-32 bg-neutral-100 rounded-lg -z-10"></div>
