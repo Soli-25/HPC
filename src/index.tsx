@@ -493,12 +493,354 @@ app.get('/admin/dashboard', (c) => {
         }
 
         function showNewPostForm() {
-          alert('Funcionalidade de criar novo post será implementada em breve!\\n\\nPor enquanto, entre em contato com o desenvolvedor para adicionar novos posts.');
+          window.location.href = '/admin/posts/new';
         }
 
         function showPostsList() {
-          alert('Funcionalidade de gerenciar posts será implementada em breve!\\n\\nPor enquanto, os posts existentes estão funcionando perfeitamente no site.');
+          window.location.href = '/admin/posts';
         }
+      </script>
+    </body>
+    </html>
+  `)
+})
+
+// Admin - Create/Edit Post Page
+app.get('/admin/posts/new', (c) => {
+  return c.html(`
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Nova Mensagem - HPC Atlanta Blog</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+      <!-- Quill Editor -->
+      <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+      <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    </head>
+    <body class="bg-neutral-50">
+      <!-- Check authentication -->
+      <script>
+        const token = localStorage.getItem('hpc_admin_token');
+        if (!token) {
+          window.location.href = '/admin';
+        }
+      </script>
+
+      <!-- Top Navigation -->
+      <nav class="bg-white border-b border-neutral-200 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-4">
+              <a href="/admin/dashboard" class="text-neutral-600 hover:text-neutral-900 transition">
+                <i class="fas fa-arrow-left text-xl"></i>
+              </a>
+              <div class="flex items-center gap-3">
+                <i class="fas fa-church text-2xl text-neutral-900"></i>
+                <div>
+                  <h1 class="text-lg font-bold text-neutral-900">Nova Mensagem</h1>
+                  <p class="text-xs text-neutral-500">Criar novo post para o blog</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <button onclick="saveDraft()" class="text-neutral-600 hover:text-neutral-900 transition">
+                <i class="fas fa-save mr-2"></i>Salvar Rascunho
+              </button>
+              <button onclick="previewPost()" class="text-neutral-600 hover:text-neutral-900 transition">
+                <i class="fas fa-eye mr-2"></i>Prévia
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <form id="postForm" class="space-y-6">
+          
+          <!-- Title -->
+          <div class="bg-white rounded-xl shadow-md border border-neutral-200 p-8">
+            <label class="block text-sm font-bold text-neutral-700 mb-3">
+              <i class="fas fa-heading mr-2"></i>Título da Mensagem *
+            </label>
+            <input 
+              type="text" 
+              id="title" 
+              name="title" 
+              required
+              class="w-full px-4 py-4 text-2xl font-bold border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition"
+              placeholder="Ex: O Poder da Oração que Transforma"
+            />
+            <p class="text-xs text-neutral-500 mt-2">
+              <i class="fas fa-info-circle mr-1"></i>
+              Será gerada automaticamente uma URL amigável baseada no título
+            </p>
+          </div>
+
+          <!-- Category and Settings -->
+          <div class="bg-white rounded-xl shadow-md border border-neutral-200 p-8">
+            <div class="grid md:grid-cols-3 gap-6">
+              <div>
+                <label class="block text-sm font-bold text-neutral-700 mb-3">
+                  <i class="fas fa-tag mr-2"></i>Categoria *
+                </label>
+                <select 
+                  id="category" 
+                  name="category" 
+                  required
+                  class="w-full px-4 py-3 border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition"
+                >
+                  <option value="">Selecione...</option>
+                  <option value="Mensagens">Mensagens</option>
+                  <option value="Adoração">Adoração</option>
+                  <option value="Batismo">Batismo</option>
+                  <option value="Estudo Bíblico">Estudo Bíblico</option>
+                  <option value="Testemunhos">Testemunhos</option>
+                  <option value="Oração">Oração</option>
+                  <option value="Família">Família</option>
+                  <option value="Juventude">Juventude</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-bold text-neutral-700 mb-3">
+                  <i class="fas fa-clock mr-2"></i>Tempo de Leitura
+                </label>
+                <input 
+                  type="text" 
+                  id="readTime" 
+                  name="readTime" 
+                  placeholder="Ex: 5 min"
+                  class="w-full px-4 py-3 border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition"
+                />
+              </div>
+
+              <div>
+                <label class="block text-sm font-bold text-neutral-700 mb-3">
+                  <i class="fas fa-star mr-2"></i>Post em Destaque?
+                </label>
+                <label class="flex items-center cursor-pointer">
+                  <input type="checkbox" id="featured" name="featured" class="mr-3 w-5 h-5" />
+                  <span class="text-neutral-700">Destacar na homepage</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Excerpt -->
+          <div class="bg-white rounded-xl shadow-md border border-neutral-200 p-8">
+            <label class="block text-sm font-bold text-neutral-700 mb-3">
+              <i class="fas fa-align-left mr-2"></i>Resumo da Mensagem *
+            </label>
+            <textarea 
+              id="excerpt" 
+              name="excerpt" 
+              required
+              rows="3"
+              class="w-full px-4 py-3 border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition"
+              placeholder="Breve resumo que aparecerá nos cards do blog (máx. 200 caracteres)"
+              maxlength="200"
+            ></textarea>
+            <p class="text-xs text-neutral-500 mt-2">
+              <span id="excerptCount">0</span>/200 caracteres
+            </p>
+          </div>
+
+          <!-- Image URL -->
+          <div class="bg-white rounded-xl shadow-md border border-neutral-200 p-8">
+            <label class="block text-sm font-bold text-neutral-700 mb-3">
+              <i class="fas fa-image mr-2"></i>URL da Imagem de Capa
+            </label>
+            <input 
+              type="url" 
+              id="imageUrl" 
+              name="imageUrl" 
+              class="w-full px-4 py-3 border-2 border-neutral-200 rounded-lg focus:border-neutral-900 focus:outline-none transition"
+              placeholder="https://exemplo.com/imagem.jpg"
+            />
+            <p class="text-xs text-neutral-500 mt-2">
+              <i class="fas fa-info-circle mr-1"></i>
+              Deixe em branco para usar imagem padrão. Imagens sugeridas das fotos da HPC:
+              <br>
+              <button type="button" onclick="useDefaultImage('worship')" class="text-blue-600 hover:underline text-xs mt-1">Adoração</button> • 
+              <button type="button" onclick="useDefaultImage('preaching')" class="text-blue-600 hover:underline text-xs">Pregação</button> • 
+              <button type="button" onclick="useDefaultImage('baptism')" class="text-blue-600 hover:underline text-xs">Batismo</button>
+            </p>
+          </div>
+
+          <!-- Content Editor -->
+          <div class="bg-white rounded-xl shadow-md border border-neutral-200 p-8">
+            <label class="block text-sm font-bold text-neutral-700 mb-3">
+              <i class="fas fa-pen mr-2"></i>Conteúdo da Mensagem *
+            </label>
+            <div id="editor" style="min-height: 500px;"></div>
+            <input type="hidden" id="content" name="content" />
+            
+            <div class="mt-4 bg-blue-50 border-2 border-blue-200 rounded-lg p-4">
+              <p class="text-sm text-blue-800">
+                <i class="fas fa-lightbulb mr-2"></i>
+                <strong>Dicas de formatação:</strong> Use os botões da barra de ferramentas para:
+                <br>• <strong>Negrito</strong> para ênfase
+                <br>• <em>Itálico</em> para citações
+                <br>• Títulos (H2, H3) para organizar o conteúdo
+                <br>• Listas para pontos importantes
+                <br>• Blockquotes para versículos bíblicos
+              </p>
+            </div>
+          </div>
+
+          <!-- Submit Buttons -->
+          <div class="bg-white rounded-xl shadow-md border border-neutral-200 p-8">
+            <div class="flex gap-4">
+              <button 
+                type="submit"
+                class="flex-1 bg-neutral-900 text-white py-4 rounded-lg font-bold hover:bg-neutral-800 transition transform hover:scale-105 shadow-lg"
+              >
+                <i class="fas fa-check-circle mr-2"></i>Publicar Mensagem
+              </button>
+              <button 
+                type="button"
+                onclick="window.location.href='/admin/dashboard'"
+                class="px-8 py-4 border-2 border-neutral-300 text-neutral-700 rounded-lg font-bold hover:bg-neutral-100 transition"
+              >
+                <i class="fas fa-times mr-2"></i>Cancelar
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <script>
+        // Initialize Quill editor
+        const quill = new Quill('#editor', {
+          theme: 'snow',
+          placeholder: 'Escreva aqui o conteúdo da mensagem...',
+          modules: {
+            toolbar: [
+              [{ 'header': [2, 3, false] }],
+              ['bold', 'italic', 'underline'],
+              ['blockquote', 'code-block'],
+              [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+              ['link'],
+              ['clean']
+            ]
+          }
+        });
+
+        // Character counter for excerpt
+        document.getElementById('excerpt').addEventListener('input', (e) => {
+          document.getElementById('excerptCount').textContent = e.target.value.length;
+        });
+
+        // Use default images
+        function useDefaultImage(type) {
+          const imageUrl = document.getElementById('imageUrl');
+          const images = {
+            worship: 'https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa',
+            preaching: 'https://page.gensparksite.com/v1/base64_upload/f48ffac985009bf0799538a2150bb9fb',
+            baptism: 'https://page.gensparksite.com/v1/base64_upload/ae40562804a7da5523cd995eb819d9b5'
+          };
+          imageUrl.value = images[type];
+        }
+
+        // Save draft (TODO: implement)
+        function saveDraft() {
+          alert('Funcionalidade de rascunho em desenvolvimento. Por enquanto, use Publicar para salvar.');
+        }
+
+        // Preview post (TODO: implement)
+        function previewPost() {
+          const title = document.getElementById('title').value;
+          const content = quill.root.innerHTML;
+          
+          if (!title) {
+            alert('Digite um título primeiro');
+            return;
+          }
+          
+          const previewWindow = window.open('', '_blank');
+          previewWindow.document.write(\`
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <meta charset="UTF-8">
+              <title>Prévia: \${title}</title>
+              <script src="https://cdn.tailwindcss.com"></script>
+              <style>
+                body { font-family: Georgia, serif; line-height: 1.8; }
+                h2 { font-size: 1.8em; font-weight: bold; margin: 30px 0 15px; }
+                h3 { font-size: 1.4em; font-weight: bold; margin: 25px 0 12px; }
+                p { margin-bottom: 15px; }
+                blockquote { border-left: 4px solid #ddd; padding-left: 20px; font-style: italic; margin: 20px 0; }
+                ul, ol { margin: 15px 0; padding-left: 30px; }
+              </style>
+            </head>
+            <body class="bg-neutral-50 p-8">
+              <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-12">
+                <h1 class="text-4xl font-bold mb-6">\${title}</h1>
+                <div class="prose">\${content}</div>
+              </div>
+            </body>
+            </html>
+          \`);
+        }
+
+        // Form submission
+        document.getElementById('postForm').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          const submitBtn = e.target.querySelector('button[type="submit"]');
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Publicando...';
+          
+          // Get form data
+          const formData = {
+            title: document.getElementById('title').value,
+            category: document.getElementById('category').value,
+            excerpt: document.getElementById('excerpt').value,
+            content: quill.root.innerHTML,
+            image_url: document.getElementById('imageUrl').value || 'https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa',
+            read_time: document.getElementById('readTime').value || '5 min',
+            featured: document.getElementById('featured').checked
+          };
+          
+          // Validate
+          if (!formData.title || !formData.category || !formData.excerpt) {
+            alert('Por favor, preencha todos os campos obrigatórios (*)');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Publicar Mensagem';
+            return;
+          }
+          
+          try {
+            const response = await fetch('/api/posts', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(formData)
+            });
+            
+            const data = await response.json();
+            
+            if (data.success) {
+              alert('✅ Mensagem publicada com sucesso!\\n\\nRedirecionando para o dashboard...');
+              window.location.href = '/admin/dashboard';
+            } else {
+              alert('❌ Erro ao publicar mensagem: ' + data.error);
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Publicar Mensagem';
+            }
+          } catch (error) {
+            alert('❌ Erro ao conectar com servidor: ' + error);
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Publicar Mensagem';
+          }
+        });
       </script>
     </body>
     </html>
