@@ -1774,30 +1774,84 @@ app.get('/', async (c) => {
             </p>
           </div>
 
-          {/* Nossa História and Photo Grid */}
-          <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h4 class="text-2xl font-bold text-neutral-900 mb-6">Nossa História</h4>
-              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
-                A Igreja Família em Cristo começou sua trajetória na residência dos fundadores, movendo-se posteriormente para um hotel, até encontrar seu lar permanente há 10 anos no endereço atual em 3379 Marietta, Georgia.
-              </p>
-              <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
-                Somos uma igreja brasileira apaixonada por criar uma casa de oração para todas as nações, onde cada pessoa pode experimentar o amor transformador de Deus.
-              </p>
-              <button class="btn-primary" onclick="openModal('discover')">
-                Inscreva-se Agora
-              </button>
-            </div>
-            <div class="relative">
-              <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
-                <img 
-                  src="https://page.gensparksite.com/v1/base64_upload/6bfe356fa6a0d80d8f425c6c3735ada0" 
-                  alt="Pr. Otávio Amorim - Pastor da Igreja Família em Cristo" 
-                  class="w-full h-full object-cover object-center"
-                  style="object-position: center 30%;"
-                />
+          {/* Nossa História - Enhanced with Timeline */}
+          <div class="mb-20">
+            <div class="grid md:grid-cols-2 gap-16 items-start mb-16">
+              <div>
+                <h4 class="text-3xl font-serif font-bold text-neutral-900 mb-8">Nossa História</h4>
+                <p class="text-lg text-neutral-700 mb-6 leading-relaxed">
+                  A <strong>Igreja House of Prayer</strong> nasceu na cidade de Atlanta, em Marietta, na casa do casal de pastores <strong>Dione Souza e Tatiana Souza</strong>.
+                </p>
+                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                  O que começou como cultos em lares, marcados pela presença poderosa de Deus, cresceu até encontrar seu lar permanente há 10 anos em 3379 Marietta, Georgia.
+                </p>
+                <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+                  Somos uma igreja brasileira apaixonada por criar uma casa de oração para todas as nações, onde cada pessoa pode experimentar o amor transformador de Deus.
+                </p>
+                <button class="btn-primary" onclick="openModal('discover')">
+                  Inscreva-se Agora
+                </button>
               </div>
-              <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
+              <div class="relative">
+                <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
+                  <img 
+                    src="https://page.gensparksite.com/v1/base64_upload/6bfe356fa6a0d80d8f425c6c3735ada0" 
+                    alt="Pr. Otávio Amorim - Pastor da Igreja Família em Cristo" 
+                    class="w-full h-full object-cover object-center"
+                    style="object-position: center 30%;"
+                  />
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
+              </div>
+            </div>
+
+            {/* Timeline - Three Phases */}
+            <div class="grid md:grid-cols-3 gap-8">
+              {/* Phase 1 - Lares */}
+              <div class="bg-neutral-50 rounded-xl p-8 border-2 border-neutral-200 shadow-md hover:shadow-lg transition-shadow">
+                <div class="flex items-center justify-center w-16 h-16 bg-neutral-900 rounded-full mb-6 mx-auto">
+                  <i class="fas fa-home text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3 text-center">O Começo</h5>
+                <p class="text-sm font-semibold text-neutral-500 mb-4 text-center uppercase tracking-wide">Cultos em Lares</p>
+                <p class="text-neutral-600 leading-relaxed text-center">
+                  Tudo começou na casa dos fundadores, onde cultos eram realizados e a presença de Deus se manifestava poderosamente, atraindo pessoas sedentas por um encontro genuíno com o Senhor.
+                </p>
+              </div>
+
+              {/* Phase 2 - Hotel */}
+              <div class="bg-neutral-50 rounded-xl p-8 border-2 border-neutral-200 shadow-md hover:shadow-lg transition-shadow">
+                <div class="flex items-center justify-center w-16 h-16 bg-neutral-700 rounded-full mb-6 mx-auto">
+                  <i class="fas fa-hotel text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3 text-center">O Crescimento</h5>
+                <p class="text-sm font-semibold text-neutral-500 mb-4 text-center uppercase tracking-wide">Cultos em Hotel</p>
+                <p class="text-neutral-600 leading-relaxed text-center">
+                  Com o crescimento da igreja, os cultos foram transferidos para um hotel, um espaço temporário que serviu como ponte para o próximo capítulo da nossa história.
+                </p>
+              </div>
+
+              {/* Phase 3 - Sede Permanente */}
+              <div class="bg-neutral-50 rounded-xl p-8 border-2 border-neutral-200 shadow-md hover:shadow-lg transition-shadow">
+                <div class="flex items-center justify-center w-16 h-16 bg-neutral-900 rounded-full mb-6 mx-auto">
+                  <i class="fas fa-church text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3 text-center">A Permanência</h5>
+                <p class="text-sm font-semibold text-neutral-500 mb-4 text-center uppercase tracking-wide">Nossa Sede</p>
+                <p class="text-neutral-600 leading-relaxed text-center">
+                  Há 10 anos estabelecidos em nossa sede permanente, continuamos sendo um farol de esperança e fé para pessoas de 5 continentes diferentes.
+                </p>
+              </div>
+            </div>
+
+            {/* Mission Statement Banner */}
+            <div class="mt-12 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 rounded-xl p-10 text-center shadow-xl">
+              <p class="text-xl md:text-2xl font-serif text-white leading-relaxed italic">
+                "Uma casa de oração nascida em lares, crescida na fé, e estabelecida no propósito de servir todas as nações com o amor de Cristo."
+              </p>
+              <p class="text-neutral-300 mt-4 text-sm tracking-wide">
+                Igreja House of Prayer - Marietta, Georgia
+              </p>
             </div>
           </div>
 
