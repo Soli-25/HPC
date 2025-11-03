@@ -2127,6 +2127,141 @@ app.get('/', async (c) => {
             </div>
           </div>
 
+          {/* Detailed Church History Section - After HPC Guide */}
+          <div class="mt-24 mb-24">
+            <div class="text-center mb-16">
+              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">House of Prayer</p>
+              <h4 class="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-6">Nossa Jornada de Fé</h4>
+              <p class="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+                Uma casa de oração nascida em lares, crescida na fé e estabelecida no propósito de Deus
+              </p>
+            </div>
+
+            {/* Timeline Cards */}
+            <div class="space-y-12 mb-16">
+              {/* O COMEÇO */}
+              <div class="relative">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                  <div class="md:w-1/3 text-center md:text-right">
+                    <div class="inline-block bg-gradient-to-br from-green-600 to-emerald-600 text-white rounded-full w-24 h-24 flex items-center justify-center mb-4 md:mb-0 shadow-lg">
+                      <i class="fas fa-home text-3xl"></i>
+                    </div>
+                  </div>
+                  <div class="md:w-2/3 bg-white rounded-xl p-8 shadow-lg border border-neutral-200">
+                    <h5 class="text-2xl font-bold text-neutral-900 mb-3">O COMEÇO - Cultos em Lares</h5>
+                    <p class="text-neutral-600 leading-relaxed mb-4">
+                      A Igreja House of Prayer nasceu na cidade de Atlanta, em Marietta, na casa do casal de pastores <strong>Dione Souza e Tatiana Souza</strong>.
+                    </p>
+                    <p class="text-neutral-600 leading-relaxed">
+                      O início foi marcado por cultos realizados em lares, onde a presença de Deus se manifestava de maneira poderosa, atraindo um número crescente de pessoas que buscavam a fé e um encontro genuíno com o Senhor.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* O CRESCIMENTO */}
+              <div class="relative">
+                <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+                  <div class="md:w-1/3 text-center md:text-left">
+                    <div class="inline-block bg-gradient-to-br from-blue-600 to-cyan-600 text-white rounded-full w-24 h-24 flex items-center justify-center mb-4 md:mb-0 shadow-lg">
+                      <i class="fas fa-building text-3xl"></i>
+                    </div>
+                  </div>
+                  <div class="md:w-2/3 bg-white rounded-xl p-8 shadow-lg border border-neutral-200">
+                    <h5 class="text-2xl font-bold text-neutral-900 mb-3">O CRESCIMENTO - Cultos em Hotel</h5>
+                    <p class="text-neutral-600 leading-relaxed mb-4">
+                      Com o crescimento da congregação, Deus abriu uma porta para realizarmos nossos cultos em um hotel, proporcionando um espaço maior para acolher todos aqueles que chegavam sedentos pela Palavra.
+                    </p>
+                    <p class="text-neutral-600 leading-relaxed">
+                      Essa nova fase foi um grande passo de fé, demonstrando que Deus estava ampliando nossas fronteiras e preparando algo ainda maior.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* A PERMANÊNCIA */}
+              <div class="relative">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                  <div class="md:w-1/3 text-center md:text-right">
+                    <div class="inline-block bg-gradient-to-br from-purple-600 to-pink-600 text-white rounded-full w-24 h-24 flex items-center justify-center mb-4 md:mb-0 shadow-lg">
+                      <i class="fas fa-church text-3xl"></i>
+                    </div>
+                  </div>
+                  <div class="md:w-2/3 bg-white rounded-xl p-8 shadow-lg border border-neutral-200">
+                    <h5 class="text-2xl font-bold text-neutral-900 mb-3">A PERMANÊNCIA - Nossa Sede</h5>
+                    <p class="text-neutral-600 leading-relaxed mb-4">
+                      Logo percebemos a necessidade de um local próprio e permanente, um lugar que pudéssemos chamar de lar espiritual.
+                    </p>
+                    <p class="text-neutral-600 leading-relaxed">
+                      Assim, alugamos um espaço na <strong>3379 Marietta</strong>, onde estamos <strong>há 10 anos</strong>, servindo a comunidade, edificando vidas e expandindo o Reino de Deus através de projetos missionários, sociais e evangelísticos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mission Cards Grid */}
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+              {/* Nossos Cultos */}
+              <div class="bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-200 rounded-xl p-8 text-center">
+                <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-hands-praying text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-4">✝️ Nossos Cultos</h5>
+                <p class="text-neutral-600 leading-relaxed">
+                  Os cultos são momentos centrais da vida da nossa igreja, onde nos reunimos para adorar, aprender e crescer juntos na fé. Experimentamos a manifestação poderosa da presença de Deus, edificando vidas, curando corações e fortalecendo a comunhão entre os irmãos.
+                </p>
+              </div>
+
+              {/* Nossa Essência */}
+              <div class="bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 rounded-xl p-8 text-center">
+                <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-heart text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-4">🎯 Nossa Essência</h5>
+                <p class="text-neutral-600 leading-relaxed mb-4">
+                  Uma casa de oração nascida em lares, crescida na fé e estabelecida no propósito de Deus.
+                </p>
+                <p class="text-neutral-700 font-semibold italic">
+                  "Um lugar onde pertencemos e crescemos juntos"
+                </p>
+              </div>
+
+              {/* Our Impact */}
+              <div class="bg-gradient-to-br from-rose-50 to-pink-50 border-2 border-rose-200 rounded-xl p-8 text-center">
+                <div class="w-16 h-16 bg-rose-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-globe-americas text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-4">🌍 Nosso Impacto</h5>
+                <div class="space-y-3 text-neutral-700">
+                  <p class="flex items-center justify-center">
+                    <i class="fas fa-check-circle text-rose-600 mr-2"></i>
+                    <span><strong>10 anos</strong> servindo Marietta</span>
+                  </p>
+                  <p class="flex items-center justify-center">
+                    <i class="fas fa-check-circle text-rose-600 mr-2"></i>
+                    <span>Expandindo em <strong>5 continentes</strong></span>
+                  </p>
+                  <p class="flex items-center justify-center">
+                    <i class="fas fa-check-circle text-rose-600 mr-2"></i>
+                    <span>Família unida em Cristo</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Quote Banner */}
+            <div class="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 rounded-xl p-12 text-center text-white shadow-2xl">
+              <p class="text-3xl md:text-4xl font-serif italic mb-6 leading-relaxed">
+                "Somos uma família unida pelo amor de Cristo, comprometida em impactar vidas e transformar comunidades através do Evangelho e da oração."
+              </p>
+              <div class="border-t border-neutral-700 pt-6 mt-6">
+                <p class="text-xl font-bold mb-2">Igreja House of Prayer</p>
+                <p class="text-neutral-300">3379 Marietta, Georgia - Atlanta, USA</p>
+              </div>
+            </div>
+          </div>
+
           {/* Schedule and Leadership Section - After HPC Guide */}
           <div class="mt-24 mb-24">
             <div class="text-center mb-16">
