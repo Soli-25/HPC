@@ -1786,7 +1786,7 @@ app.get('/', async (c) => {
                   O que começou como cultos em lares, marcados pela presença poderosa de Deus, cresceu até encontrar seu lar permanente há 10 anos em 3379 Marietta, Georgia.
                 </p>
                 <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
-                  Somos uma igreja brasileira apaixonada por criar uma casa de oração para todas as nações, onde cada pessoa pode experimentar o amor transformador de Deus.
+                  Somos uma igreja brasileira comprometida em criar uma casa de oração para todas as nações, onde cada pessoa pode experimentar o amor transformador de Deus.
                 </p>
                 <button class="btn-primary" onclick="openModal('discover')">
                   Inscreva-se Agora
@@ -1897,7 +1897,7 @@ app.get('/', async (c) => {
             <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Um Passo de Fé</p>
             <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-6">Batismo</h3>
             <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
-              Adoraríamos que você participasse do Batismo!
+              Ficaríamos felizes se você participasse do Batismo!
             </p>
           </div>
           <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -2149,7 +2149,7 @@ app.get('/', async (c) => {
               <i class="fas fa-praying-hands text-5xl text-neutral-700 mb-6"></i>
               <h4 class="text-xl font-semibold text-neutral-900 mb-4">Pedidos de Oração</h4>
               <p class="text-neutral-600 mb-8 leading-relaxed">
-                Compartilhe seus pedidos de oração conosco. Adoraríamos orar por você.
+                Compartilhe seus pedidos de oração conosco. Ficaríamos felizes em orar por você.
               </p>
               <button class="btn-secondary" onclick="openModal('prayer')">
                 Enviar Pedido
@@ -2263,7 +2263,7 @@ app.get('/', async (c) => {
                 </div>
                 <h5 class="text-xl font-bold text-neutral-900 mb-4">Nossos Cultos</h5>
                 <p class="text-neutral-600 leading-relaxed">
-                  Os cultos são momentos centrais da vida da nossa igreja, onde nos reunimos para adorar, aprender e crescer juntos na fé. Experimentamos a manifestação poderosa da presença de Deus, edificando vidas, curando corações e fortalecendo a comunhão entre os irmãos.
+                  Os cultos são momentos centrais da vida da nossa igreja, onde nos reunimos para louvar, aprender e crescer juntos na fé. Experimentamos a manifestação poderosa da presença de Deus, edificando vidas, curando corações e fortalecendo a comunhão entre os irmãos.
                 </p>
               </div>
 
