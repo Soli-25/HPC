@@ -1482,7 +1482,7 @@ app.get('/blog', async (c) => {
             <div class="flex justify-between items-center h-20">
               <div class="flex items-center gap-3">
                 <img src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" alt="HPC Atlanta Logo" class="h-12 w-12 object-contain" />
-                <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">IGREJA FAMÍLIA EM CRISTO</h1>
+                <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">HPC Atlanta</h1>
               </div>
               <div class="flex items-center gap-6">
                 <a href="/" class="text-sm font-medium text-neutral-600 hover:text-neutral-900 transition">
@@ -1618,7 +1618,7 @@ app.get('/blog', async (c) => {
               </div>
             </div>
             <div class="border-t border-neutral-800 pt-8 text-center">
-              <p class="text-neutral-500 text-sm">© 2025 Igreja Família em Cristo - Uma Casa de Oração para Todas as Nações. Todos os direitos reservados.</p>
+              <p class="text-neutral-500 text-sm">© 2025 HPC Atlanta - House of Prayer for All Nations. Todos os direitos reservados.</p>
             </div>
           </div>
         </footer>
@@ -1707,7 +1707,7 @@ app.get('/', async (c) => {
         <div class="absolute inset-0 z-0">
           <img 
             src="https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa" 
-            alt="Igreja Família em Cristo - Adoração e Louvor"
+            alt="HPC Atlanta - Adoração e Louvor"
             class="w-full h-full object-cover"
             onError="this.style.display='none'; this.parentElement.style.background='linear-gradient(to bottom right, rgb(38, 38, 38), rgb(64, 64, 64), rgb(23, 23, 23))'"
           />
@@ -1718,7 +1718,7 @@ app.get('/', async (c) => {
         <div class="relative z-10 w-full text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
           <div class="text-center max-w-4xl mx-auto">
-            <p class="text-sm font-medium tracking-widest text-neutral-300 uppercase mb-6">IGREJA FAMÍLIA EM CRISTO - Uma Casa de Oração para Todas as Nações</p>
+            <p class="text-sm font-medium tracking-widest text-neutral-300 uppercase mb-6">HPC Atlanta - House of Prayer for All Nations</p>
             <h2 class="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">Dê Seu Próximo Passo.</h2>
             <p class="text-xl md:text-2xl mb-12 text-neutral-200 font-light leading-relaxed">
               Uma casa de oração para todas as nações. Venha viver o que Deus tem para você!
@@ -1762,7 +1762,7 @@ app.get('/', async (c) => {
         </div>
       </section>
 
-      {/* Discover Church Section - IGREJA FAMÍLIA EM CRISTO */}
+      {/* Discover Church Section - HPC Atlanta */}
       <section id="discover" class="py-24 md:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Church Introduction */}
@@ -1796,7 +1796,7 @@ app.get('/', async (c) => {
                 <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
                   <img 
                     src="https://page.gensparksite.com/v1/base64_upload/6bfe356fa6a0d80d8f425c6c3735ada0" 
-                    alt="Pr. Otávio Amorim - Pastor da Igreja Família em Cristo" 
+                    alt="Pr. Otávio Amorim - Pastor da HPC Atlanta" 
                     class="w-full h-full object-cover object-center"
                     style="object-position: center 30%;"
                   />
@@ -1877,7 +1877,7 @@ app.get('/', async (c) => {
               <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Oportunidades de Servir</p>
               <h3 class="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">Faça Parte da Equipe</h3>
               <p class="text-lg text-neutral-300 mb-8 leading-relaxed">
-                Explore a vida da Igreja Família em Cristo, incluindo nossos ministérios vibrantes, eventos futuros e oportunidades de servir no Reino de Deus.
+                Explore a vida da HPC Atlanta, incluindo nossos ministérios vibrantes, eventos futuros e oportunidades de servir no Reino de Deus.
               </p>
               <p class="text-neutral-300 mb-8 leading-relaxed">
                 Seja parte de uma casa de oração para todas as nações. Venha usar seus dons e talentos para abençoar vidas e glorificar a Deus!
@@ -1905,7 +1905,7 @@ app.get('/', async (c) => {
               <div class="aspect-square bg-gradient-to-br from-blue-50 via-blue-100 to-cyan-50 rounded-lg shadow-xl overflow-hidden border border-blue-200">
                 <img 
                   src="https://page.gensparksite.com/v1/base64_upload/ae40562804a7da5523cd995eb819d9b5" 
-                  alt="Batismo na Igreja Família em Cristo - Momento poderoso de nova vida em Cristo" 
+                  alt="Batismo na HPC Atlanta - Momento poderoso de nova vida em Cristo" 
                   class="w-full h-full object-cover"
                   style="object-position: center 45%;"
                 />
@@ -1940,7 +1940,7 @@ app.get('/', async (c) => {
             <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Nossa Comunidade</p>
             <h3 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-6">Momentos da Igreja</h3>
             <p class="text-xl text-neutral-600 max-w-2xl mx-auto mb-8">
-              Confira os momentos especiais da Igreja Família em Cristo através do Instagram
+              Confira os momentos especiais da HPC Atlanta através do Instagram
             </p>
             <a href="https://www.instagram.com/hpcatlanta/" target="_blank" class="inline-flex items-center text-neutral-900 hover:text-neutral-600 transition font-semibold">
               <i class="fab fa-instagram text-2xl mr-2"></i>
@@ -2322,7 +2322,7 @@ app.get('/', async (c) => {
               <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Informações da Igreja</p>
               <h4 class="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">Horários e Liderança</h4>
               <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
-                Conheça nossos horários de cultos e a liderança da Igreja Família em Cristo
+                Conheça nossos horários de cultos e a liderança da HPC Atlanta
               </p>
             </div>
 
