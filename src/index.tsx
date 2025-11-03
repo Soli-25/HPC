@@ -2261,7 +2261,7 @@ app.get('/', async (c) => {
                 <div class="w-16 h-16 bg-neutral-900 rounded-full flex items-center justify-center mx-auto mb-4">
                   <i class="fas fa-hands-praying text-white text-2xl"></i>
                 </div>
-                <h5 class="text-xl font-bold text-neutral-900 mb-4">✝️ Nossos Cultos</h5>
+                <h5 class="text-xl font-bold text-neutral-900 mb-4">Nossos Cultos</h5>
                 <p class="text-neutral-600 leading-relaxed">
                   Os cultos são momentos centrais da vida da nossa igreja, onde nos reunimos para adorar, aprender e crescer juntos na fé. Experimentamos a manifestação poderosa da presença de Deus, edificando vidas, curando corações e fortalecendo a comunhão entre os irmãos.
                 </p>
@@ -2272,7 +2272,7 @@ app.get('/', async (c) => {
                 <div class="w-16 h-16 bg-neutral-700 rounded-full flex items-center justify-center mx-auto mb-4">
                   <i class="fas fa-heart text-white text-2xl"></i>
                 </div>
-                <h5 class="text-xl font-bold text-neutral-900 mb-4">🎯 Nossa Essência</h5>
+                <h5 class="text-xl font-bold text-neutral-900 mb-4">Nossa Essência</h5>
                 <p class="text-neutral-600 leading-relaxed mb-4">
                   Uma casa de oração nascida em lares, crescida na fé e estabelecida no propósito de Deus.
                 </p>
@@ -2286,7 +2286,7 @@ app.get('/', async (c) => {
                 <div class="w-16 h-16 bg-neutral-900 rounded-full flex items-center justify-center mx-auto mb-4">
                   <i class="fas fa-globe-americas text-white text-2xl"></i>
                 </div>
-                <h5 class="text-xl font-bold text-neutral-900 mb-4">🌍 Nosso Impacto</h5>
+                <h5 class="text-xl font-bold text-neutral-900 mb-4">Nosso Impacto</h5>
                 <div class="space-y-3 text-neutral-700">
                   <p class="flex items-center justify-center">
                     <i class="fas fa-check-circle text-neutral-900 mr-2"></i>
