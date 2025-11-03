@@ -2191,17 +2191,17 @@ app.get('/', async (c) => {
               </p>
             </div>
 
-            {/* Timeline Cards */}
+            {/* Timeline Cards - Elegant Black/White/Gray */}
             <div class="space-y-12 mb-16">
               {/* O COMEÇO */}
               <div class="relative">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                   <div class="md:w-1/3 text-center md:text-right">
-                    <div class="inline-block bg-gradient-to-br from-green-600 to-emerald-600 text-white rounded-full w-24 h-24 flex items-center justify-center mb-4 md:mb-0 shadow-lg">
+                    <div class="inline-block bg-neutral-900 text-white rounded-full w-24 h-24 flex items-center justify-center mb-4 md:mb-0 shadow-xl">
                       <i class="fas fa-home text-3xl"></i>
                     </div>
                   </div>
-                  <div class="md:w-2/3 bg-white rounded-xl p-8 shadow-lg border border-neutral-200">
+                  <div class="md:w-2/3 bg-neutral-50 rounded-xl p-8 shadow-lg border-2 border-neutral-200 hover:shadow-xl transition">
                     <h5 class="text-2xl font-bold text-neutral-900 mb-3">O COMEÇO - Cultos em Lares</h5>
                     <p class="text-neutral-600 leading-relaxed mb-4">
                       A Igreja House of Prayer nasceu na cidade de Atlanta, em Marietta, na casa do casal de pastores <strong>Dione Souza e Tatiana Souza</strong>.
@@ -2217,11 +2217,11 @@ app.get('/', async (c) => {
               <div class="relative">
                 <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
                   <div class="md:w-1/3 text-center md:text-left">
-                    <div class="inline-block bg-gradient-to-br from-blue-600 to-cyan-600 text-white rounded-full w-24 h-24 flex items-center justify-center mb-4 md:mb-0 shadow-lg">
+                    <div class="inline-block bg-neutral-700 text-white rounded-full w-24 h-24 flex items-center justify-center mb-4 md:mb-0 shadow-xl">
                       <i class="fas fa-building text-3xl"></i>
                     </div>
                   </div>
-                  <div class="md:w-2/3 bg-white rounded-xl p-8 shadow-lg border border-neutral-200">
+                  <div class="md:w-2/3 bg-neutral-50 rounded-xl p-8 shadow-lg border-2 border-neutral-200 hover:shadow-xl transition">
                     <h5 class="text-2xl font-bold text-neutral-900 mb-3">O CRESCIMENTO - Cultos em Hotel</h5>
                     <p class="text-neutral-600 leading-relaxed mb-4">
                       Com o crescimento da congregação, Deus abriu uma porta para realizarmos nossos cultos em um hotel, proporcionando um espaço maior para acolher todos aqueles que chegavam sedentos pela Palavra.
@@ -2237,11 +2237,11 @@ app.get('/', async (c) => {
               <div class="relative">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                   <div class="md:w-1/3 text-center md:text-right">
-                    <div class="inline-block bg-gradient-to-br from-purple-600 to-pink-600 text-white rounded-full w-24 h-24 flex items-center justify-center mb-4 md:mb-0 shadow-lg">
+                    <div class="inline-block bg-neutral-900 text-white rounded-full w-24 h-24 flex items-center justify-center mb-4 md:mb-0 shadow-xl">
                       <i class="fas fa-church text-3xl"></i>
                     </div>
                   </div>
-                  <div class="md:w-2/3 bg-white rounded-xl p-8 shadow-lg border border-neutral-200">
+                  <div class="md:w-2/3 bg-neutral-50 rounded-xl p-8 shadow-lg border-2 border-neutral-200 hover:shadow-xl transition">
                     <h5 class="text-2xl font-bold text-neutral-900 mb-3">A PERMANÊNCIA - Nossa Sede</h5>
                     <p class="text-neutral-600 leading-relaxed mb-4">
                       Logo percebemos a necessidade de um local próprio e permanente, um lugar que pudéssemos chamar de lar espiritual.
@@ -2254,11 +2254,11 @@ app.get('/', async (c) => {
               </div>
             </div>
 
-            {/* Mission Cards Grid */}
+            {/* Mission Cards Grid - Elegant Black/White/Gray */}
             <div class="grid md:grid-cols-3 gap-8 mb-16">
               {/* Nossos Cultos */}
-              <div class="bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-200 rounded-xl p-8 text-center">
-                <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="bg-neutral-50 border-2 border-neutral-200 rounded-xl p-8 text-center shadow-md hover:shadow-xl transition">
+                <div class="w-16 h-16 bg-neutral-900 rounded-full flex items-center justify-center mx-auto mb-4">
                   <i class="fas fa-hands-praying text-white text-2xl"></i>
                 </div>
                 <h5 class="text-xl font-bold text-neutral-900 mb-4">✝️ Nossos Cultos</h5>
@@ -2268,8 +2268,8 @@ app.get('/', async (c) => {
               </div>
 
               {/* Nossa Essência */}
-              <div class="bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 rounded-xl p-8 text-center">
-                <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="bg-neutral-50 border-2 border-neutral-200 rounded-xl p-8 text-center shadow-md hover:shadow-xl transition">
+                <div class="w-16 h-16 bg-neutral-700 rounded-full flex items-center justify-center mx-auto mb-4">
                   <i class="fas fa-heart text-white text-2xl"></i>
                 </div>
                 <h5 class="text-xl font-bold text-neutral-900 mb-4">🎯 Nossa Essência</h5>
@@ -2282,22 +2282,22 @@ app.get('/', async (c) => {
               </div>
 
               {/* Our Impact */}
-              <div class="bg-gradient-to-br from-rose-50 to-pink-50 border-2 border-rose-200 rounded-xl p-8 text-center">
-                <div class="w-16 h-16 bg-rose-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div class="bg-neutral-50 border-2 border-neutral-200 rounded-xl p-8 text-center shadow-md hover:shadow-xl transition">
+                <div class="w-16 h-16 bg-neutral-900 rounded-full flex items-center justify-center mx-auto mb-4">
                   <i class="fas fa-globe-americas text-white text-2xl"></i>
                 </div>
                 <h5 class="text-xl font-bold text-neutral-900 mb-4">🌍 Nosso Impacto</h5>
                 <div class="space-y-3 text-neutral-700">
                   <p class="flex items-center justify-center">
-                    <i class="fas fa-check-circle text-rose-600 mr-2"></i>
+                    <i class="fas fa-check-circle text-neutral-900 mr-2"></i>
                     <span><strong>10 anos</strong> servindo Marietta</span>
                   </p>
                   <p class="flex items-center justify-center">
-                    <i class="fas fa-check-circle text-rose-600 mr-2"></i>
+                    <i class="fas fa-check-circle text-neutral-900 mr-2"></i>
                     <span>Expandindo em <strong>5 continentes</strong></span>
                   </p>
                   <p class="flex items-center justify-center">
-                    <i class="fas fa-check-circle text-rose-600 mr-2"></i>
+                    <i class="fas fa-check-circle text-neutral-900 mr-2"></i>
                     <span>Família unida em Cristo</span>
                   </p>
                 </div>
@@ -2327,77 +2327,77 @@ app.get('/', async (c) => {
             </div>
 
             <div class="grid md:grid-cols-2 gap-16">
-              {/* Schedule Card */}
-              <div class="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-xl p-8 shadow-lg">
+              {/* Schedule Card - Elegant Black/White/Gray */}
+              <div class="bg-neutral-50 border-2 border-neutral-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition">
                 <div class="flex items-center mb-6">
-                  <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                  <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mr-4">
                     <i class="far fa-calendar-alt text-white text-2xl"></i>
                   </div>
                   <h5 class="text-2xl font-bold text-neutral-900">Horários de Cultos</h5>
                 </div>
                 
                 <div class="space-y-4">
-                  <div class="bg-white rounded-lg p-5 border border-blue-100 hover:shadow-md transition">
+                  <div class="bg-white rounded-lg p-5 border-2 border-neutral-200 hover:shadow-md transition">
                     <div class="flex items-center justify-between">
                       <div>
                         <p class="text-xl font-bold text-neutral-900 mb-1">Domingo</p>
                         <p class="text-neutral-600 text-sm">Culto de Celebração</p>
                       </div>
                       <div class="text-right">
-                        <p class="text-2xl font-bold text-blue-600">10:00 AM</p>
+                        <p class="text-2xl font-bold text-neutral-900">10:00 AM</p>
                       </div>
                     </div>
                   </div>
 
-                  <div class="bg-white rounded-lg p-5 border border-blue-100 hover:shadow-md transition">
+                  <div class="bg-white rounded-lg p-5 border-2 border-neutral-200 hover:shadow-md transition">
                     <div class="flex items-center justify-between">
                       <div>
                         <p class="text-xl font-bold text-neutral-900 mb-1">Quarta-feira</p>
                         <p class="text-neutral-600 text-sm">Culto de Oração</p>
                       </div>
                       <div class="text-right">
-                        <p class="text-2xl font-bold text-blue-600">19:00</p>
+                        <p class="text-2xl font-bold text-neutral-900">19:00</p>
                         <p class="text-xs text-neutral-500">7:00 PM</p>
                       </div>
                     </div>
                   </div>
 
-                  <div class="bg-white rounded-lg p-5 border border-blue-100 hover:shadow-md transition">
+                  <div class="bg-white rounded-lg p-5 border-2 border-neutral-200 hover:shadow-md transition">
                     <div class="flex items-center justify-between">
                       <div>
                         <p class="text-xl font-bold text-neutral-900 mb-1">Sexta-feira</p>
                         <p class="text-neutral-600 text-sm">Estudo Bíblico</p>
                       </div>
                       <div class="text-right">
-                        <p class="text-2xl font-bold text-blue-600">19:00</p>
+                        <p class="text-2xl font-bold text-neutral-900">19:00</p>
                         <p class="text-xs text-neutral-500">7:00 PM</p>
                       </div>
                     </div>
                   </div>
 
-                  <div class="bg-white rounded-lg p-5 border border-blue-100 hover:shadow-md transition">
+                  <div class="bg-white rounded-lg p-5 border-2 border-neutral-200 hover:shadow-md transition">
                     <div class="flex items-center justify-between">
                       <div>
                         <p class="text-xl font-bold text-neutral-900 mb-1">Segunda-feira</p>
                         <p class="text-neutral-600 text-sm">Escola Teológica</p>
                       </div>
                       <div class="text-right">
-                        <p class="text-2xl font-bold text-blue-600">Noite</p>
+                        <p class="text-2xl font-bold text-neutral-900">Noite</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="mt-6 pt-6 border-t border-blue-200">
+                <div class="mt-6 pt-6 border-t border-neutral-300">
                   <div class="flex items-center text-neutral-600">
-                    <i class="fas fa-map-marker-alt mr-3 text-blue-600"></i>
+                    <i class="fas fa-map-marker-alt mr-3 text-neutral-900"></i>
                     <div>
                       <p class="font-semibold text-neutral-900">3379 Canton Rd</p>
                       <p class="text-sm">Marietta, GA 30066</p>
                     </div>
                   </div>
                   <div class="flex items-center text-neutral-600 mt-3">
-                    <i class="fas fa-phone mr-3 text-blue-600"></i>
+                    <i class="fas fa-phone mr-3 text-neutral-900"></i>
                     <p class="font-semibold">+1 (770) 862-0756</p>
                   </div>
                 </div>
@@ -2554,9 +2554,9 @@ app.get('/', async (c) => {
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-              {/* Sports Program */}
-              <div class="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg p-8">
-                <div class="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center mb-4">
+              {/* Sports Program - Elegant Black/White/Gray */}
+              <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-8 shadow-md hover:shadow-xl transition">
+                <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-4">
                   <i class="fas fa-futbol text-white text-2xl"></i>
                 </div>
                 <h5 class="text-xl font-bold text-neutral-900 mb-3">Escola de Futebol</h5>
@@ -2566,9 +2566,9 @@ app.get('/', async (c) => {
                 </p>
               </div>
 
-              {/* Social Initiatives */}
-              <div class="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-lg p-8">
-                <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center mb-4">
+              {/* Social Initiatives - Elegant Black/White/Gray */}
+              <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-8 shadow-md hover:shadow-xl transition">
+                <div class="w-14 h-14 bg-neutral-700 rounded-full flex items-center justify-center mb-4">
                   <i class="fas fa-hands-helping text-white text-2xl"></i>
                 </div>
                 <h5 class="text-xl font-bold text-neutral-900 mb-3">Iniciativas Sociais</h5>
@@ -2580,9 +2580,9 @@ app.get('/', async (c) => {
                 </p>
               </div>
 
-              {/* Special Projects */}
-              <div class="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-8">
-                <div class="w-14 h-14 bg-purple-600 rounded-full flex items-center justify-center mb-4">
+              {/* Special Projects - Elegant Black/White/Gray */}
+              <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-8 shadow-md hover:shadow-xl transition">
+                <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-4">
                   <i class="fas fa-star text-white text-2xl"></i>
                 </div>
                 <h5 class="text-xl font-bold text-neutral-900 mb-3">Projeto Taysha Souza</h5>
