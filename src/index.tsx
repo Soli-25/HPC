@@ -1665,7 +1665,7 @@ app.get('/', async (c) => {
                 alt="House of Prayer - New Destiny Logo" 
                 class="h-12 w-12 object-contain"
               />
-              <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">IGREJA FAMÍLIA EM CRISTO</h1>
+              <h1 class="text-2xl font-serif font-bold tracking-tight text-neutral-900">HPC Atlanta</h1>
             </div>
             <div class="hidden md:flex space-x-8 items-center">
               <a href="#discover" class="text-sm font-medium tracking-wide text-neutral-600 hover:text-neutral-900 transition uppercase">Descobrir</a>
