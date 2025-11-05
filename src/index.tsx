@@ -2316,6 +2316,153 @@ app.get('/', async (c) => {
             </div>
           </div>
 
+          {/* MISSÕES - Nova Seção com Fotos */}
+          <div class="mt-32 mb-24">
+            <div class="text-center mb-16">
+              <p class="text-xs font-medium tracking-widest text-neutral-400 uppercase mb-4">Nosso Coração Missionário</p>
+              <h4 class="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">Missões</h4>
+              <p class="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+                A HPC Atlanta tem um coração voltado para as missões globais. Levamos esperança, amor e o Evangelho a comunidades carentes, 
+                impactando vidas em diferentes continentes através de projetos sociais, educacionais e evangelísticos.
+              </p>
+            </div>
+
+            {/* Estatísticas de Impacto */}
+            <div class="grid md:grid-cols-4 gap-6 mb-16">
+              <div class="bg-neutral-900 text-white rounded-xl p-8 text-center shadow-lg">
+                <div class="text-4xl font-bold mb-2">5</div>
+                <p class="text-neutral-300 text-sm uppercase tracking-wide">Continentes</p>
+              </div>
+              <div class="bg-neutral-700 text-white rounded-xl p-8 text-center shadow-lg">
+                <div class="text-4xl font-bold mb-2">1000+</div>
+                <p class="text-neutral-300 text-sm uppercase tracking-wide">Crianças Alcançadas</p>
+              </div>
+              <div class="bg-neutral-900 text-white rounded-xl p-8 text-center shadow-lg">
+                <div class="text-4xl font-bold mb-2">50+</div>
+                <p class="text-neutral-300 text-sm uppercase tracking-wide">Projetos Realizados</p>
+              </div>
+              <div class="bg-neutral-700 text-white rounded-xl p-8 text-center shadow-lg">
+                <div class="text-4xl font-bold mb-2">10</div>
+                <p class="text-neutral-300 text-sm uppercase tracking-wide">Anos de Missões</p>
+              </div>
+            </div>
+
+            {/* Grid de Fotos Missionárias */}
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+              {/* Foto 1 - Crianças com Presentes */}
+              <div class="bg-neutral-50 rounded-xl overflow-hidden shadow-lg border-2 border-neutral-200 hover:shadow-2xl transition group">
+                <div class="aspect-video overflow-hidden">
+                  <img 
+                    src="https://page.gensparksite.com/v1/base64_upload/74297c0a9d329ebdac912832fc4eccb6" 
+                    alt="Projeto Missionário - Crianças" 
+                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center mb-3">
+                    <div class="w-10 h-10 bg-neutral-900 rounded-full flex items-center justify-center mr-3">
+                      <i class="fas fa-gift text-white"></i>
+                    </div>
+                    <h5 class="text-xl font-bold text-neutral-900">Doação de Presentes</h5>
+                  </div>
+                  <p class="text-neutral-600 leading-relaxed">
+                    Levamos alegria e esperança a crianças em comunidades carentes, distribuindo presentes e compartilhando o amor de Cristo através de ações práticas.
+                  </p>
+                </div>
+              </div>
+
+              {/* Foto 2 - Escola/Comunidade */}
+              <div class="bg-neutral-50 rounded-xl overflow-hidden shadow-lg border-2 border-neutral-200 hover:shadow-2xl transition group">
+                <div class="aspect-video overflow-hidden">
+                  <img 
+                    src="https://page.gensparksite.com/v1/base64_upload/962b03a14b7bc582d21ba22c74d55939" 
+                    alt="Projeto Missionário - Escola" 
+                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center mb-3">
+                    <div class="w-10 h-10 bg-neutral-700 rounded-full flex items-center justify-center mr-3">
+                      <i class="fas fa-school text-white"></i>
+                    </div>
+                    <h5 class="text-xl font-bold text-neutral-900">Projetos Educacionais</h5>
+                  </div>
+                  <p class="text-neutral-600 leading-relaxed">
+                    Apoiamos comunidades através de projetos educacionais, fornecendo material escolar, recursos e palavras de esperança para centenas de crianças.
+                  </p>
+                </div>
+              </div>
+
+              {/* Foto 3 - Quadra Esportiva */}
+              <div class="bg-neutral-50 rounded-xl overflow-hidden shadow-lg border-2 border-neutral-200 hover:shadow-2xl transition group">
+                <div class="aspect-video overflow-hidden">
+                  <img 
+                    src="https://page.gensparksite.com/v1/base64_upload/02df4000e5537052f53ae95f81ce465f" 
+                    alt="Projeto Missionário - Esporte" 
+                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center mb-3">
+                    <div class="w-10 h-10 bg-neutral-900 rounded-full flex items-center justify-center mr-3">
+                      <i class="fas fa-futbol text-white"></i>
+                    </div>
+                    <h5 class="text-xl font-bold text-neutral-900">Infraestrutura Comunitária</h5>
+                  </div>
+                  <p class="text-neutral-600 leading-relaxed">
+                    Construímos e reformamos espaços comunitários, como quadras esportivas, criando ambientes seguros para crianças e jovens crescerem com dignidade.
+                  </p>
+                </div>
+              </div>
+
+              {/* Foto 4 - Arrecadação de Suprimentos */}
+              <div class="bg-neutral-50 rounded-xl overflow-hidden shadow-lg border-2 border-neutral-200 hover:shadow-2xl transition group">
+                <div class="aspect-video overflow-hidden">
+                  <img 
+                    src="https://page.gensparksite.com/v1/base64_upload/bcfd0e5e8f712a2a2d6d32fcc135c2a4" 
+                    alt="Projeto Missionário - Arrecadação" 
+                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center mb-3">
+                    <div class="w-10 h-10 bg-neutral-700 rounded-full flex items-center justify-center mr-3">
+                      <i class="fas fa-hands-helping text-white"></i>
+                    </div>
+                    <h5 class="text-xl font-bold text-neutral-900">Arrecadação e Envio</h5>
+                  </div>
+                  <p class="text-neutral-600 leading-relaxed">
+                    Mobilizamos nossa comunidade para arrecadar alimentos, roupas, medicamentos e suprimentos essenciais, enviando esperança a quem mais precisa.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Chamado para Ação Missionária */}
+            <div class="bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 rounded-2xl p-12 text-center text-white shadow-2xl">
+              <div class="max-w-3xl mx-auto">
+                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i class="fas fa-heart text-neutral-900 text-3xl"></i>
+                </div>
+                <h5 class="text-3xl font-bold mb-4">Faça Parte desta Missão</h5>
+                <p class="text-xl text-neutral-300 mb-8 leading-relaxed">
+                  Cada contribuição, cada oração, cada gesto de amor transforma vidas. 
+                  Junte-se a nós nesta jornada de levar esperança ao mundo.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <a href="#contact" class="inline-flex items-center px-8 py-4 bg-white text-neutral-900 rounded-full font-bold hover:bg-neutral-100 transition shadow-lg">
+                    <i class="fas fa-envelope mr-3"></i>
+                    Entre em Contato
+                  </a>
+                  <a href="tel:+17708620756" class="inline-flex items-center px-8 py-4 bg-neutral-700 text-white rounded-full font-bold hover:bg-neutral-600 transition">
+                    <i class="fas fa-phone mr-3"></i>
+                    +1 (770) 862-0756
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Schedule and Leadership Section - After HPC Guide */}
           <div class="mt-24 mb-24">
             <div class="text-center mb-16">
