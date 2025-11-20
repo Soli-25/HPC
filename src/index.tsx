@@ -1450,6 +1450,182 @@ app.delete('/api/posts/:id', async (c) => {
   }
 })
 
+// Contact form API route - Send emails to infipros@solihull.pt
+app.post('/api/contact', async (c) => {
+  try {
+    const data = await c.req.json()
+    
+    // Prepare email content based on form type
+    const formType = data.formType || 'contact'
+    let emailSubject = ''
+    let emailBody = ''
+    
+    switch(formType) {
+      case 'discover':
+        emailSubject = `[HPC Atlanta] Nova Inscrição: Descubra a HPC`
+        emailBody = `
+          Nova Inscrição - Descubra a HPC Atlanta
+          
+          Nome: ${data.name || 'Não informado'}
+          Email: ${data.email || 'Não informado'}
+          Telefone: ${data.phone || 'Não informado'}
+          
+          Formulário recebido em: ${new Date().toLocaleString('pt-BR')}
+        `
+        break
+        
+      case 'team':
+        emailSubject = `[HPC Atlanta] Novo Voluntário: Junte-se à Equipe`
+        emailBody = `
+          Novo Voluntário - Equipe HPC
+          
+          Nome: ${data.name || 'Não informado'}
+          Email: ${data.email || 'Não informado'}
+          Telefone: ${data.phone || 'Não informado'}
+          Área de Interesse: ${data.interest || 'Não especificada'}
+          
+          Formulário recebido em: ${new Date().toLocaleString('pt-BR')}
+        `
+        break
+        
+      case 'baptism':
+        emailSubject = `[HPC Atlanta] Pedido de Batismo`
+        emailBody = `
+          Novo Pedido de Batismo
+          
+          Nome: ${data.name || 'Não informado'}
+          Email: ${data.email || 'Não informado'}
+          Telefone: ${data.phone || 'Não informado'}
+          Já foi batizado antes: ${data.previous_baptism === 'yes' ? 'Sim' : 'Não'}
+          
+          Testemunho:
+          ${data.testimony || 'Não fornecido'}
+          
+          Formulário recebido em: ${new Date().toLocaleString('pt-BR')}
+        `
+        break
+        
+      case 'groups':
+        emailSubject = `[HPC Atlanta] Interesse em Grupo de Conexão`
+        emailBody = `
+          Interesse em Grupo de Conexão
+          
+          Nome: ${data.name || 'Não informado'}
+          Email: ${data.email || 'Não informado'}
+          Telefone: ${data.phone || 'Não informado'}
+          Tipo de Grupo: ${data.group_type || 'Não especificado'}
+          Dia Preferido: ${data.preferred_day || 'Não especificado'}
+          
+          Formulário recebido em: ${new Date().toLocaleString('pt-BR')}
+        `
+        break
+        
+      case 'connect':
+        emailSubject = `[HPC Atlanta] Cartão de Conexão`
+        emailBody = `
+          Novo Cartão de Conexão
+          
+          Nome: ${data.name || 'Não informado'}
+          Email: ${data.email || 'Não informado'}
+          Telefone: ${data.phone || 'Não informado'}
+          Como conheceu a HPC: ${data.how_found || 'Não informado'}
+          
+          Pedido de Oração:
+          ${data.prayer_request || 'Não fornecido'}
+          
+          Formulário recebido em: ${new Date().toLocaleString('pt-BR')}
+        `
+        break
+        
+      case 'prayer':
+        emailSubject = `[HPC Atlanta] Pedido de Oração`
+        emailBody = `
+          Novo Pedido de Oração
+          
+          Nome: ${data.name || 'Não informado'}
+          Email: ${data.email || 'Não informado'}
+          Telefone: ${data.phone || 'Não informado'}
+          Permitir compartilhar publicamente: ${data.public_prayer ? 'Sim (anônimo)' : 'Não'}
+          
+          Pedido de Oração:
+          ${data.prayer_request || 'Não fornecido'}
+          
+          Formulário recebido em: ${new Date().toLocaleString('pt-BR')}
+        `
+        break
+        
+      case 'give':
+        emailSubject = `[HPC Atlanta] Nova Contribuição/Doação`
+        emailBody = `
+          Nova Intenção de Contribuição
+          
+          Tipo: ${data.giving_type === 'tithe' ? 'Dízimo' : 'Oferta'}
+          Valor: $${data.amount || '0'}
+          Frequência: ${data.frequency || 'Não informada'}
+          
+          Formulário recebido em: ${new Date().toLocaleString('pt-BR')}
+          
+          Nota: O doador deve prosseguir com o pagamento através das plataformas indicadas.
+        `
+        break
+        
+      default:
+        emailSubject = `[HPC Atlanta] Novo Contato do Site`
+        emailBody = `
+          Novo Contato do Site
+          
+          Nome: ${data.name || 'Não informado'}
+          Email: ${data.email || 'Não informado'}
+          Telefone: ${data.phone || 'Não informado'}
+          
+          Dados completos:
+          ${JSON.stringify(data, null, 2)}
+          
+          Formulário recebido em: ${new Date().toLocaleString('pt-BR')}
+        `
+    }
+    
+    // Here you would integrate with an email service
+    // For now, we'll just log and return success
+    // In production, integrate with SendGrid, Mailgun, Resend, etc.
+    
+    console.log('Email to send:', {
+      to: 'infipros@solihull.pt',
+      subject: emailSubject,
+      body: emailBody
+    })
+    
+    // Simulate successful email send
+    // TODO: Replace with actual email API call
+    // Example with SendGrid:
+    // await fetch('https://api.sendgrid.com/v3/mail/send', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Authorization': `Bearer ${c.env.SENDGRID_API_KEY}`,
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({
+    //     personalizations: [{ to: [{ email: 'infipros@solihull.pt' }] }],
+    //     from: { email: 'noreply@hpcatlanta.com' },
+    //     subject: emailSubject,
+    //     content: [{ type: 'text/plain', value: emailBody }]
+    //   })
+    // })
+    
+    return c.json({ 
+      success: true, 
+      message: 'Mensagem enviada com sucesso!' 
+    })
+    
+  } catch (error) {
+    console.error('Error processing contact form:', error)
+    return c.json({ 
+      success: false, 
+      message: 'Erro ao enviar mensagem. Por favor, tente novamente.' 
+    }, 500)
+  }
+})
+
 // Blog listing page
 app.get('/blog', async (c) => {
   let blogPosts = []

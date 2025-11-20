@@ -474,33 +474,64 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.textContent = 'Enviando...';
       submitBtn.disabled = true;
       
-      // Simulate form submission (replace with actual API call)
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Show success message
-      const formData = new FormData(modalForm);
-      const data = Object.fromEntries(formData.entries());
-      
-      console.log('Form submitted:', {
-        type: modalForm.dataset.formType,
-        data: data
-      });
-      
-      // Reset button
-      submitBtn.classList.remove('loading');
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-      
-      // Show success and close modal
-      const successDiv = document.createElement('div');
-      successDiv.className = 'success-message';
-      successDiv.textContent = 'Obrigado! Entraremos em contato em breve.';
-      modalForm.appendChild(successDiv);
-      
-      setTimeout(() => {
-        closeModal();
-        successDiv.remove();
-      }, 2000);
+      // Send form data to API
+      try {
+        const formData = new FormData(modalForm);
+        const data = Object.fromEntries(formData.entries());
+        data.formType = modalForm.dataset.formType;
+        
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        
+        // Reset button
+        submitBtn.classList.remove('loading');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        
+        if (result.success) {
+          // Show success message
+          const successDiv = document.createElement('div');
+          successDiv.className = 'success-message';
+          successDiv.textContent = result.message || 'Obrigado! Entraremos em contato em breve.';
+          modalForm.appendChild(successDiv);
+          
+          setTimeout(() => {
+            closeModal();
+            successDiv.remove();
+          }, 2000);
+        } else {
+          throw new Error(result.message || 'Erro ao enviar formulário');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        
+        // Reset button
+        submitBtn.classList.remove('loading');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        
+        // Show error message
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.textContent = 'Erro ao enviar formulário. Por favor, tente novamente.';
+        errorDiv.style.color = 'red';
+        errorDiv.style.padding = '10px';
+        errorDiv.style.marginTop = '10px';
+        errorDiv.style.backgroundColor = '#fee';
+        errorDiv.style.borderRadius = '5px';
+        modalForm.appendChild(errorDiv);
+        
+        setTimeout(() => {
+          errorDiv.remove();
+        }, 3000);
+      }
     });
   }
 });
