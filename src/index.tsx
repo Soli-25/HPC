@@ -1607,7 +1607,7 @@ app.post('/api/contact', async (c) => {
         },
         body: JSON.stringify({
           from: 'HPC Atlanta <onboarding@resend.dev>',
-          to: ['infipros@solihull.pt'],
+          to: ['info@somamotors.pt'],
           subject: emailSubject,
           text: emailBody
         })
