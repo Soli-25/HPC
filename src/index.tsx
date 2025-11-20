@@ -1585,37 +1585,58 @@ app.post('/api/contact', async (c) => {
         `
     }
     
-    // Here you would integrate with an email service
-    // For now, we'll just log and return success
-    // In production, integrate with SendGrid, Mailgun, Resend, etc.
-    
-    console.log('Email to send:', {
-      to: 'infipros@solihull.pt',
-      subject: emailSubject,
-      body: emailBody
-    })
-    
-    // Simulate successful email send
-    // TODO: Replace with actual email API call
-    // Example with SendGrid:
-    // await fetch('https://api.sendgrid.com/v3/mail/send', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Authorization': `Bearer ${c.env.SENDGRID_API_KEY}`,
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({
-    //     personalizations: [{ to: [{ email: 'infipros@solihull.pt' }] }],
-    //     from: { email: 'noreply@hpcatlanta.com' },
-    //     subject: emailSubject,
-    //     content: [{ type: 'text/plain', value: emailBody }]
-    //   })
-    // })
-    
-    return c.json({ 
-      success: true, 
-      message: 'Mensagem enviada com sucesso!' 
-    })
+    // Send email via Resend API
+    try {
+      const resendApiKey = c.env.RESEND_API_KEY || ''
+      
+      if (!resendApiKey) {
+        console.warn('RESEND_API_KEY not configured. Email will not be sent.')
+        console.log('Email data:', { to: 'infipros@solihull.pt', subject: emailSubject, body: emailBody })
+        
+        return c.json({ 
+          success: true, 
+          message: 'Mensagem recebida! (Email não configurado ainda)' 
+        })
+      }
+      
+      const emailResponse = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${resendApiKey}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          from: 'HPC Atlanta <onboarding@resend.dev>',
+          to: ['infipros@solihull.pt'],
+          subject: emailSubject,
+          text: emailBody
+        })
+      })
+      
+      const emailResult = await emailResponse.json()
+      
+      if (!emailResponse.ok) {
+        console.error('Failed to send email:', emailResult)
+        return c.json({ 
+          success: false, 
+          message: 'Erro ao enviar email. Por favor, tente novamente.' 
+        }, 500)
+      }
+      
+      console.log('Email sent successfully:', emailResult)
+      
+      return c.json({ 
+        success: true, 
+        message: 'Mensagem enviada com sucesso! Entraremos em contato em breve.' 
+      })
+      
+    } catch (emailError) {
+      console.error('Email send error:', emailError)
+      return c.json({ 
+        success: false, 
+        message: 'Erro ao enviar mensagem. Por favor, tente novamente mais tarde.' 
+      }, 500)
+    }
     
   } catch (error) {
     console.error('Error processing contact form:', error)
