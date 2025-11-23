@@ -1973,36 +1973,37 @@ app.get('/', async (c) => {
 
           {/* Nossa História - Enhanced with Timeline */}
           <div class="mb-20">
-            <div class="grid md:grid-cols-2 gap-16 items-start mb-16">
-              <div>
-                <h4 class="text-3xl font-serif font-bold text-neutral-900 mb-8">Nossa História - Como Tudo Começou</h4>
-                <p class="text-lg text-neutral-700 mb-6 leading-relaxed">
-                  <strong>Deixe-me contar como Deus escreveu esta história.</strong>
-                </p>
-                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
-                  Há alguns anos, eu estava na Flórida quando Deus me deu uma visão que mudaria completamente minha vida. Não foi algo vago ou confuso - foi claro, direto: <strong>"Vá para Atlanta"</strong>.
-                </p>
-                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
-                  Mas não era só um endereço. Naquela experiência com Deus, Ele me mostrou algo que mexeu profundamente comigo: havia um povo esperando naquela cidade. Pessoas que Ele já havia preparado. Corações já sensibilizados. E de alguma forma, eu faria parte do propósito divino na vida delas.
-                </p>
-                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
-                  Eu não sabia como isso ia acontecer. Mas conhecia o Deus que estava me chamando.
-                </p>
-                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
-                  O mais incrível é que Deus já estava orquestrando tudo nos bastidores. Os pastores <strong>Dione Souza e Tatiana Souza</strong> - com quem servi por anos lado a lado no ministério House of Prayer na Flórida - já moravam em Marietta, Georgia, bem na região de Atlanta. Eles nem sabiam que faziam parte da resposta à minha visão.
-                </p>
-                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
-                  Quando nos reencontramos e começamos a conversar, foi como se peças de um quebra-cabeça celestial se encaixassem perfeitamente. Eles me contaram o que Deus estava fazendo em suas vidas. Eu compartilhei a visão que havia recebido. E ali, naquele momento, entendemos: nossos propósitos se encontraram.
-                </p>
-                <p class="text-lg text-neutral-700 mb-6 leading-relaxed font-medium italic">
-                  Não foi coincidência. Foi Deus.
-                </p>
-                <button class="btn-primary" onclick="openModal('discover')">
-                  Inscreva-se Agora
-                </button>
-              </div>
+            {/* Header Centralizado */}
+            <div class="text-center mb-16">
+              <h4 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-6">Nossa História</h4>
+              <p class="text-2xl font-serif text-neutral-700 italic max-w-3xl mx-auto">
+                Como Tudo Começou
+              </p>
+            </div>
+
+            {/* História Principal - Centralizada */}
+            <div class="max-w-4xl mx-auto mb-16">
+              <p class="text-xl text-neutral-700 mb-8 leading-relaxed text-center font-medium">
+                Deixe-me contar como Deus escreveu esta história.
+              </p>
+              
+              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                Há alguns anos, eu estava na Flórida quando Deus me deu uma visão que mudaria completamente minha vida. Não foi algo vago ou confuso - foi claro, direto: <strong>"Vá para Atlanta"</strong>.
+              </p>
+              
+              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                Mas não era só um endereço. Naquela experiência com Deus, Ele me mostrou algo que mexeu profundamente comigo: havia um povo esperando naquela cidade. Pessoas que Ele já havia preparado. Corações já sensibilizados. E de alguma forma, eu faria parte do propósito divino na vida delas.
+              </p>
+              
+              <p class="text-lg text-neutral-700 mb-8 leading-relaxed italic text-center font-medium">
+                Eu não sabia como isso ia acontecer. Mas conhecia o Deus que estava me chamando.
+              </p>
+            </div>
+
+            {/* Foto do Pastor - Centralizada */}
+            <div class="max-w-md mx-auto mb-16">
               <div class="relative">
-                <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-lg shadow-xl overflow-hidden">
+                <div class="aspect-square bg-gradient-to-br from-neutral-300 via-neutral-200 to-neutral-100 rounded-xl shadow-2xl overflow-hidden">
                   <img 
                     src="https://page.gensparksite.com/v1/base64_upload/6bfe356fa6a0d80d8f425c6c3735ada0" 
                     alt="Pr. Otávio Amorim - Pastor da HPC Atlanta" 
@@ -2010,25 +2011,44 @@ app.get('/', async (c) => {
                     style="object-position: center 30%;"
                   />
                 </div>
-                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-lg -z-10"></div>
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-neutral-900 rounded-xl -z-10"></div>
               </div>
+              <p class="text-center text-sm text-neutral-500 mt-6 font-medium uppercase tracking-wide">
+                Pr. Otávio Amorim - Pastor da HPC Atlanta
+              </p>
             </div>
 
-            {/* Continuação da História - Parte 2 */}
-            <div class="mb-16 max-w-4xl">
+            {/* Continuação da História - Centralizada */}
+            <div class="max-w-4xl mx-auto mb-16">
+              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                O mais incrível é que Deus já estava orquestrando tudo nos bastidores. Os pastores <strong>Dione Souza e Tatiana Souza</strong> - com quem servi por anos lado a lado no ministério House of Prayer na Flórida - já moravam em Marietta, Georgia, bem na região de Atlanta. Eles nem sabiam que faziam parte da resposta à minha visão.
+              </p>
+              
+              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                Quando nos reencontramos e começamos a conversar, foi como se peças de um quebra-cabeça celestial se encaixassem perfeitamente. Eles me contaram o que Deus estava fazendo em suas vidas. Eu compartilhei a visão que havia recebido. E ali, naquele momento, entendemos: nossos propósitos se encontraram.
+              </p>
+              
+              <p class="text-xl text-neutral-900 mb-8 leading-relaxed text-center font-bold italic">
+                Não foi coincidência. Foi Deus.
+              </p>
+              
               <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
                 Começamos pequenos - cultos na casa deles, em Marietta. Mas desde o primeiro encontro, sentíamos algo diferente no ar. A presença de Deus era tangível. Pessoas chegavam feridas e saíam restauradas. Corações fechados se abriam. Vidas eram transformadas.
               </p>
+              
               <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
                 Aqueles encontros caseiros eram simples, mas carregavam peso de eternidade. Ali, sem holofotes ou grande estrutura, Deus estava cumprindo o que havia me mostrado na visão: <strong>o povo que Ele disse que estaria esperando começou a aparecer.</strong>
               </p>
-              <p class="text-lg text-neutral-700 mb-6 leading-relaxed font-medium">
+              
+              <p class="text-xl text-neutral-900 mb-8 leading-relaxed text-center font-bold">
                 E Deus fez crescer o que começou pequeno.
               </p>
+              
               <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
                 Há 10 anos, encontramos nosso lar permanente aqui na <strong>3379 Marietta Highway</strong>. Mas posso dizer com toda sinceridade: este não é apenas um endereço ou um prédio. <strong>Este é o cumprimento de uma promessa que Deus me fez.</strong> Este é o lugar onde aquela visão se tornou realidade.
               </p>
-              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+              
+              <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
                 Cada pessoa que entra por estas portas faz parte daquele "povo esperando" que Deus me mostrou. Cada história de transformação é uma confirmação de que não estávamos seguindo nossos sonhos - estávamos obedecendo à voz de Deus.
               </p>
             </div>
@@ -2072,20 +2092,30 @@ app.get('/', async (c) => {
               </div>
             </div>
 
-            {/* Continuação Final da História */}
-            <div class="mb-12 max-w-4xl">
-              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+            {/* Continuação Final da História - Centralizada */}
+            <div class="mb-12 max-w-4xl mx-auto">
+              <p class="text-lg text-neutral-600 mb-8 leading-relaxed text-center">
                 Hoje, olho para trás e me emociono. Da Flórida à Georgia. Da visão ao cumprimento. Dos propósitos separados ao alinhamento divino. Da casa à igreja estabelecida.
               </p>
-              <p class="text-lg text-neutral-700 mb-6 leading-relaxed font-medium">
+              
+              <p class="text-2xl text-neutral-900 mb-8 leading-relaxed text-center font-bold">
                 Nossa missão continua clara: ser uma casa de oração para todas as nações.
               </p>
-              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+              
+              <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
                 Um lugar onde brasileiros e pessoas de qualquer lugar do mundo podem encontrar mais do que programas religiosos - podem encontrar uma família, podem encontrar esperança, podem encontrar a Deus.
               </p>
-              <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+              
+              <p class="text-lg text-neutral-700 mb-8 leading-relaxed italic bg-neutral-50 border-l-4 border-neutral-900 pl-6 py-4">
                 Aprendi algo profundo nesta jornada: <strong>quando você obedece à voz de Deus, descobre que Ele já estava trabalhando muito antes de você chegar.</strong> Ele já havia preparado pessoas. Já havia alinhado propósitos. Já havia garantido que nada falharia.
               </p>
+              
+              <div class="text-center mt-12">
+                <button class="btn-primary text-lg px-10 py-4" onclick="openModal('discover')">
+                  <i class="fas fa-heart mr-2"></i>
+                  Faça Parte Desta História
+                </button>
+              </div>
             </div>
 
             {/* Mission Statement Banner */}
