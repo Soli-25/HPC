@@ -3,7 +3,7 @@
 ## ✅ O QUE FOI IMPLEMENTADO
 
 Todos os formulários do site agora enviam automaticamente um email para:
-### **📬 infipros@solihull.pt**
+### **📬 otavioamorim@houseprayeratl.com** (Pastor Otávio Amorim)
 
 ---
 

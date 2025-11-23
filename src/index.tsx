@@ -1450,7 +1450,7 @@ app.delete('/api/posts/:id', async (c) => {
   }
 })
 
-// Contact form API route - Send emails to infipros@solihull.pt
+// Contact form API route - Send emails to Pastor Otávio
 app.post('/api/contact', async (c) => {
   try {
     const data = await c.req.json()
@@ -1591,7 +1591,7 @@ app.post('/api/contact', async (c) => {
       
       if (!resendApiKey) {
         console.warn('RESEND_API_KEY not configured. Email will not be sent.')
-        console.log('Email data:', { to: 'infipros@solihull.pt', subject: emailSubject, body: emailBody })
+        console.log('Email data:', { to: 'otavioamorim@houseprayeratl.com', subject: emailSubject, body: emailBody })
         
         return c.json({ 
           success: true, 
@@ -1607,7 +1607,7 @@ app.post('/api/contact', async (c) => {
         },
         body: JSON.stringify({
           from: 'HPC Atlanta <onboarding@resend.dev>',
-          to: ['info@somamotors.pt'],
+          to: ['otavioamorim@houseprayeratl.com'],
           subject: emailSubject,
           text: emailBody
         })

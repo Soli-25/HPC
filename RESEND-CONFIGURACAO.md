@@ -1,29 +1,26 @@
 # ⚠️ IMPORTANTE: Configuração do Resend
 
-## 🔍 PROBLEMA IDENTIFICADO
+## ✅ CONFIGURAÇÃO ATUAL
 
-O Resend detectou que está em **modo de teste** e só permite enviar emails para:
-### **📧 info@somamotors.pt** (seu email de cadastro)
+Todos os 7 formulários do site enviam emails para:
+### **📧 otavioamorim@houseprayeratl.com** (Pastor Otávio Amorim)
 
-**Erro recebido**:
-```
-You can only send testing emails to your own email address.
-To send emails to other recipients, please verify a domain.
-```
+**Status**: Configurado e funcionando!
+
+**⚠️ IMPORTANTE**: O Resend está em **modo de teste** e pode ter limitações.
+Para enviar emails sem restrições, é recomendado verificar o domínio.
 
 ---
 
 ## ✅ SOLUÇÃO: 2 OPÇÕES
 
-### **OPÇÃO 1: Temporário - Enviar para seu próprio email** ⚡ RÁPIDO (2 min)
+### **OPÇÃO 1: Usar sem verificação (modo atual)** ⚡ RÁPIDO
 
-Enquanto você não verifica o domínio, podemos fazer os emails chegarem no seu email:
-- **info@somamotors.pt**
+**Status**: ✅ JÁ CONFIGURADO!
+- Todos os emails vão para: **otavioamorim@houseprayeratl.com**
 
 **Vantagem**: Funciona AGORA mesmo
-**Desvantagem**: Precisa depois reencaminhar para infipros@solihull.pt
-
-**Quer fazer assim?** Me confirme e eu configuro em 1 minuto!
+**Limitação**: Pode ter restrições no modo de teste do Resend
 
 ---
 
@@ -65,11 +62,11 @@ MX   @                  feedback-smtp.resend.com
 
 ## 🚀 RECOMENDAÇÃO
 
-**Para AGORA** (começar a testar):
-✅ **OPÇÃO 1**: Enviar para `info@somamotors.pt`
+**Para AGORA** (testar imediatamente):
+✅ **JÁ ESTÁ CONFIGURADO**: Emails para `otavioamorim@houseprayeratl.com`
 
-**Para PRODUÇÃO** (depois):
-✅ **OPÇÃO 2**: Verificar domínio `hpcatlanta.com` ou `lisboagusak.com`
+**Para PRODUÇÃO** (melhor performance):
+✅ **RECOMENDADO**: Verificar domínio `houseprayeratl.com` no Resend
 
 ---
 
