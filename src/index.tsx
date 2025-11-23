@@ -1975,15 +1975,27 @@ app.get('/', async (c) => {
           <div class="mb-20">
             <div class="grid md:grid-cols-2 gap-16 items-start mb-16">
               <div>
-                <h4 class="text-3xl font-serif font-bold text-neutral-900 mb-8">Nossa História</h4>
+                <h4 class="text-3xl font-serif font-bold text-neutral-900 mb-8">Nossa História - Como Tudo Começou</h4>
                 <p class="text-lg text-neutral-700 mb-6 leading-relaxed">
-                  A <strong>Igreja House of Prayer</strong> nasceu na cidade de Atlanta, em Marietta, na casa do casal de pastores <strong>Dione Souza e Tatiana Souza</strong>.
+                  <strong>Deixe-me contar como Deus escreveu esta história.</strong>
                 </p>
                 <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
-                  O que começou como cultos em lares, marcados pela presença poderosa de Deus, cresceu até encontrar seu lar permanente há 10 anos em 3379 Marietta, Georgia.
+                  Há alguns anos, eu estava na Flórida quando Deus me deu uma visão que mudaria completamente minha vida. Não foi algo vago ou confuso - foi claro, direto: <strong>"Vá para Atlanta"</strong>.
                 </p>
-                <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
-                  Somos uma igreja brasileira comprometida em criar uma casa de oração para todas as nações, onde cada pessoa pode experimentar o amor transformador de Deus.
+                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                  Mas não era só um endereço. Naquela experiência com Deus, Ele me mostrou algo que mexeu profundamente comigo: havia um povo esperando naquela cidade. Pessoas que Ele já havia preparado. Corações já sensibilizados. E de alguma forma, eu faria parte do propósito divino na vida delas.
+                </p>
+                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                  Eu não sabia como isso ia acontecer. Mas conhecia o Deus que estava me chamando.
+                </p>
+                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                  O mais incrível é que Deus já estava orquestrando tudo nos bastidores. Os pastores <strong>Dione Souza e Tatiana Souza</strong> - com quem servi por anos lado a lado no ministério House of Prayer na Flórida - já moravam em Marietta, Georgia, bem na região de Atlanta. Eles nem sabiam que faziam parte da resposta à minha visão.
+                </p>
+                <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                  Quando nos reencontramos e começamos a conversar, foi como se peças de um quebra-cabeça celestial se encaixassem perfeitamente. Eles me contaram o que Deus estava fazendo em suas vidas. Eu compartilhei a visão que havia recebido. E ali, naquele momento, entendemos: nossos propósitos se encontraram.
+                </p>
+                <p class="text-lg text-neutral-700 mb-6 leading-relaxed font-medium italic">
+                  Não foi coincidência. Foi Deus.
                 </p>
                 <button class="btn-primary" onclick="openModal('discover')">
                   Inscreva-se Agora
@@ -2002,52 +2014,93 @@ app.get('/', async (c) => {
               </div>
             </div>
 
+            {/* Continuação da História - Parte 2 */}
+            <div class="mb-16 max-w-4xl">
+              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                Começamos pequenos - cultos na casa deles, em Marietta. Mas desde o primeiro encontro, sentíamos algo diferente no ar. A presença de Deus era tangível. Pessoas chegavam feridas e saíam restauradas. Corações fechados se abriam. Vidas eram transformadas.
+              </p>
+              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                Aqueles encontros caseiros eram simples, mas carregavam peso de eternidade. Ali, sem holofotes ou grande estrutura, Deus estava cumprindo o que havia me mostrado na visão: <strong>o povo que Ele disse que estaria esperando começou a aparecer.</strong>
+              </p>
+              <p class="text-lg text-neutral-700 mb-6 leading-relaxed font-medium">
+                E Deus fez crescer o que começou pequeno.
+              </p>
+              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                Há 10 anos, encontramos nosso lar permanente aqui na <strong>3379 Marietta Highway</strong>. Mas posso dizer com toda sinceridade: este não é apenas um endereço ou um prédio. <strong>Este é o cumprimento de uma promessa que Deus me fez.</strong> Este é o lugar onde aquela visão se tornou realidade.
+              </p>
+              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                Cada pessoa que entra por estas portas faz parte daquele "povo esperando" que Deus me mostrou. Cada história de transformação é uma confirmação de que não estávamos seguindo nossos sonhos - estávamos obedecendo à voz de Deus.
+              </p>
+            </div>
+
             {/* Timeline - Three Phases */}
-            <div class="grid md:grid-cols-3 gap-8">
-              {/* Phase 1 - Lares */}
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+              {/* Phase 1 - A Visão */}
               <div class="bg-neutral-50 rounded-xl p-8 border-2 border-neutral-200 shadow-md hover:shadow-lg transition-shadow">
                 <div class="flex items-center justify-center w-16 h-16 bg-neutral-900 rounded-full mb-6 mx-auto">
+                  <i class="fas fa-eye text-white text-2xl"></i>
+                </div>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3 text-center">A Visão</h5>
+                <p class="text-sm font-semibold text-neutral-500 mb-4 text-center uppercase tracking-wide">Flórida</p>
+                <p class="text-neutral-600 leading-relaxed text-center">
+                  Deus me deu uma visão clara: "Vá para Atlanta". Havia um povo esperando. Corações já preparados. Um propósito divino a ser cumprido.
+                </p>
+              </div>
+
+              {/* Phase 2 - Os Cultos em Lares */}
+              <div class="bg-neutral-50 rounded-xl p-8 border-2 border-neutral-200 shadow-md hover:shadow-lg transition-shadow">
+                <div class="flex items-center justify-center w-16 h-16 bg-neutral-700 rounded-full mb-6 mx-auto">
                   <i class="fas fa-home text-white text-2xl"></i>
                 </div>
                 <h5 class="text-xl font-bold text-neutral-900 mb-3 text-center">O Começo</h5>
                 <p class="text-sm font-semibold text-neutral-500 mb-4 text-center uppercase tracking-wide">Cultos em Lares</p>
                 <p class="text-neutral-600 leading-relaxed text-center">
-                  Tudo começou na casa dos fundadores, onde cultos eram realizados e a presença de Deus se manifestava poderosamente, atraindo pessoas sedentas por um encontro genuíno com o Senhor.
+                  Na casa dos pastores Dione e Tatiana em Marietta. Simples, mas com peso de eternidade. A presença de Deus era tangível. Vidas eram transformadas.
                 </p>
               </div>
 
-              {/* Phase 2 - Hotel */}
-              <div class="bg-neutral-50 rounded-xl p-8 border-2 border-neutral-200 shadow-md hover:shadow-lg transition-shadow">
-                <div class="flex items-center justify-center w-16 h-16 bg-neutral-700 rounded-full mb-6 mx-auto">
-                  <i class="fas fa-hotel text-white text-2xl"></i>
-                </div>
-                <h5 class="text-xl font-bold text-neutral-900 mb-3 text-center">O Crescimento</h5>
-                <p class="text-sm font-semibold text-neutral-500 mb-4 text-center uppercase tracking-wide">Cultos em Hotel</p>
-                <p class="text-neutral-600 leading-relaxed text-center">
-                  Com o crescimento da igreja, os cultos foram transferidos para um hotel, um espaço temporário que serviu como ponte para o próximo capítulo da nossa história.
-                </p>
-              </div>
-
-              {/* Phase 3 - Sede Permanente */}
+              {/* Phase 3 - A Promessa Cumprida */}
               <div class="bg-neutral-50 rounded-xl p-8 border-2 border-neutral-200 shadow-md hover:shadow-lg transition-shadow">
                 <div class="flex items-center justify-center w-16 h-16 bg-neutral-900 rounded-full mb-6 mx-auto">
                   <i class="fas fa-church text-white text-2xl"></i>
                 </div>
-                <h5 class="text-xl font-bold text-neutral-900 mb-3 text-center">A Permanência</h5>
-                <p class="text-sm font-semibold text-neutral-500 mb-4 text-center uppercase tracking-wide">Nossa Sede</p>
+                <h5 class="text-xl font-bold text-neutral-900 mb-3 text-center">O Cumprimento</h5>
+                <p class="text-sm font-semibold text-neutral-500 mb-4 text-center uppercase tracking-wide">3379 Marietta Highway</p>
                 <p class="text-neutral-600 leading-relaxed text-center">
-                  Há 10 anos estabelecidos em nossa sede permanente, continuamos sendo um farol de esperança e fé para pessoas de 5 continentes diferentes.
+                  Há 10 anos em nosso lar permanente. A visão se tornou realidade. A promessa foi cumprida. Uma casa de oração para todas as nações.
                 </p>
               </div>
             </div>
 
+            {/* Continuação Final da História */}
+            <div class="mb-12 max-w-4xl">
+              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                Hoje, olho para trás e me emociono. Da Flórida à Georgia. Da visão ao cumprimento. Dos propósitos separados ao alinhamento divino. Da casa à igreja estabelecida.
+              </p>
+              <p class="text-lg text-neutral-700 mb-6 leading-relaxed font-medium">
+                Nossa missão continua clara: ser uma casa de oração para todas as nações.
+              </p>
+              <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                Um lugar onde brasileiros e pessoas de qualquer lugar do mundo podem encontrar mais do que programas religiosos - podem encontrar uma família, podem encontrar esperança, podem encontrar a Deus.
+              </p>
+              <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+                Aprendi algo profundo nesta jornada: <strong>quando você obedece à voz de Deus, descobre que Ele já estava trabalhando muito antes de você chegar.</strong> Ele já havia preparado pessoas. Já havia alinhado propósitos. Já havia garantido que nada falharia.
+              </p>
+            </div>
+
             {/* Mission Statement Banner */}
             <div class="mt-12 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 rounded-xl p-10 text-center shadow-xl">
-              <p class="text-xl md:text-2xl font-serif text-white leading-relaxed italic">
-                "Uma casa de oração nascida em lares, crescida na fé, e estabelecida no propósito de servir todas as nações com o amor de Cristo."
+              <p class="text-xl md:text-2xl font-serif text-white leading-relaxed mb-6">
+                "Por isso, quando você chega aqui, não é visitante. <strong>Você é família.</strong>"
               </p>
-              <p class="text-neutral-300 mt-4 text-sm tracking-wide">
-                Igreja House of Prayer - Marietta, Georgia
+              <p class="text-lg text-neutral-200 mb-3">
+                Você é parte desta visão que Deus nos deu.
+              </p>
+              <p class="text-lg text-neutral-200 mb-6">
+                <strong>Você é um dos que estavam esperando.</strong>
+              </p>
+              <p class="text-2xl font-serif font-bold text-white italic">
+                Bem-vindo à House of Prayer.
               </p>
             </div>
           </div>
