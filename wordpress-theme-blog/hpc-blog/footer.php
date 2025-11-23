@@ -72,7 +72,7 @@
                     <?php endif; ?>
                 </p>
                 <p class="back-to-main-site">
-                    <a href="<?php echo esc_url(home_url('/')); ?>">
+                    <a href="https://houseprayeratl.com">
                         <i class="fas fa-arrow-left"></i> Voltar ao Site Principal
                     </a>
                 </p>

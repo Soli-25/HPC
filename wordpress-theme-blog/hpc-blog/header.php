@@ -24,12 +24,14 @@
     <header id="masthead" class="site-header">
         <div class="container">
             <div class="site-branding">
-                <?php
-                if (has_custom_logo()) :
-                    the_custom_logo();
-                else : ?>
-                    <img src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" alt="HPC Atlanta Logo" class="site-logo">
-                <?php endif; ?>
+                <a href="https://houseprayeratl.com" title="Voltar ao Site Principal">
+                    <?php
+                    if (has_custom_logo()) :
+                        the_custom_logo();
+                    else : ?>
+                        <img src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" alt="HPC Atlanta Logo" class="site-logo">
+                    <?php endif; ?>
+                </a>
                 
                 <div class="site-identity">
                     <?php
@@ -68,7 +70,7 @@
                 ));
                 ?>
                 
-                <a href="<?php echo esc_url(home_url('/')); ?>" class="back-to-site">
+                <a href="https://houseprayeratl.com" class="back-to-site">
                     <i class="fas fa-home"></i> Site Principal
                 </a>
             </nav>

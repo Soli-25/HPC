@@ -343,3 +343,25 @@ function hpc_blog_reading_time($content) {
     $reading_time = ceil($word_count / 200); // 200 palavras por minuto
     return $reading_time;
 }
+
+/**
+ * Remover comentário padrão do WordPress automaticamente
+ * Roda apenas uma vez quando o tema é ativado
+ */
+function hpc_blog_remove_default_comment() {
+    // Deletar o comentário padrão "A WordPress Commenter" (ID 1)
+    $default_comment = get_comment(1);
+    
+    if ($default_comment && $default_comment->comment_author === 'A WordPress Commenter') {
+        wp_delete_comment(1, true); // true = forçar deleção permanente
+    }
+}
+add_action('after_switch_theme', 'hpc_blog_remove_default_comment');
+
+/**
+ * Também executar na ativação do tema pela primeira vez
+ */
+function hpc_blog_theme_activation() {
+    hpc_blog_remove_default_comment();
+}
+add_action('after_setup_theme', 'hpc_blog_theme_activation');
