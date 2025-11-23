@@ -1791,7 +1791,7 @@ app.get('/blog', async (c) => {
                   <img src="https://page.gensparksite.com/v1/base64_upload/c546526c278c1da817935bf43ab43ce9" alt="HPC Atlanta Logo" class="h-12 w-12 object-contain" />
                   <h4 class="text-xl font-serif font-bold">HPC Atlanta</h4>
                 </div>
-                <p class="text-neutral-400 text-sm">House of Prayer for all Nations</p>
+                <p class="text-neutral-400 text-sm">New Destiny House Of Prayer</p>
               </div>
               <div>
                 <h4 class="text-lg font-semibold mb-4 uppercase tracking-wide text-neutral-300">Contato</h4>
@@ -1815,7 +1815,7 @@ app.get('/blog', async (c) => {
               </div>
             </div>
             <div class="border-t border-neutral-800 pt-8 text-center">
-              <p class="text-neutral-500 text-sm">© 2025 HPC Atlanta - House of Prayer for All Nations. Todos os direitos reservados.</p>
+              <p class="text-neutral-500 text-sm">© 2025 HPC Atlanta New Destiny House Of Prayer. Todos os direitos reservados.</p>
             </div>
           </div>
         </footer>
@@ -1915,7 +1915,7 @@ app.get('/', async (c) => {
         <div class="relative z-10 w-full text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
           <div class="text-center max-w-4xl mx-auto">
-            <p class="text-sm font-medium tracking-widest text-neutral-300 uppercase mb-6">HPC Atlanta - House of Prayer for All Nations</p>
+            <p class="text-sm font-medium tracking-widest text-neutral-300 uppercase mb-6">HPC Atlanta New Destiny House Of Prayer</p>
             <h2 class="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">Dê Seu Próximo Passo.</h2>
             <p class="text-xl md:text-2xl mb-12 text-neutral-200 font-light leading-relaxed">
               Uma casa de oração para todas as nações. Venha viver o que Deus tem para você!
@@ -3040,7 +3040,7 @@ app.get('/', async (c) => {
                 <h4 class="text-xl font-serif font-bold">HPC Atlanta</h4>
               </div>
               <p class="text-neutral-400 leading-relaxed mb-4">
-                House of Prayer for all Nations - Uma casa de oração para todas as nações.
+                New Destiny House Of Prayer - Uma casa de oração para todas as nações.
               </p>
               <p class="text-sm text-neutral-500">
                 Brazilian Church em Marietta, GA. Venha viver o que Deus tem para você!
@@ -3095,7 +3095,7 @@ app.get('/', async (c) => {
             </div>
           </div>
           <div class="border-t border-neutral-800 pt-8 text-center">
-            <p class="text-neutral-500 text-sm">&copy; 2025 HPC Atlanta - House of Prayer for all Nations. Todos os direitos reservados.</p>
+            <p class="text-neutral-500 text-sm">&copy; 2025 HPC Atlanta New Destiny House Of Prayer. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>
