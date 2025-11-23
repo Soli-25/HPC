@@ -2310,7 +2310,7 @@ app.get('/', async (c) => {
           <div class="grid md:grid-cols-3 gap-8 mb-12">
             {blogPosts.length > 0 ? (
               blogPosts.map((post: any) => (
-                <a href={`/blog/${post.slug}`} class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+                <a href={`https://houseprayeratl.com/blog/${post.slug}`} class="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
                   <div class="relative h-64 overflow-hidden">
                     <img 
                       src={post.image_url || 'https://page.gensparksite.com/v1/base64_upload/b962530fc486ec44113a0438919408aa'} 
@@ -2351,7 +2351,7 @@ app.get('/', async (c) => {
           </div>
 
           <div class="text-center">
-            <a href="/blog" class="inline-flex items-center bg-neutral-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-neutral-800 transition">
+            <a href="https://houseprayeratl.com/blog" class="inline-flex items-center bg-neutral-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-neutral-800 transition transform hover:scale-105">
               <i class="fas fa-book-open text-xl mr-3"></i>
               Ver Todas as Mensagens
             </a>
